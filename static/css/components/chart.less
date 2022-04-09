@@ -2,7 +2,14 @@
  * Chart component
  * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#chart
 */
-@import (less) "less/font-families.less";
+@import (less) "../less/font-families.less";
+@import (less) "../less/colors.less";
+
+@import (less) "../less/breakpoints.less";
+@import (less) "../less/mixins.less";
+@import (less) "../less/font-families.less";
+@import (less) "../components/flash-messages.less";
+@import (less) "../less/z-index.less";
 
 @chart-height: 140px;
 @chart-width: 998px;
@@ -56,7 +63,7 @@
   }
 }
 
-@media all and ( min-width: @width-breakpoint-desktop ) {
+@media all and ( min-width: @width-breakpoint-desktop) {
   .chart {
     float: left;
     max-width: @chart-width;

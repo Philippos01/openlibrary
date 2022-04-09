@@ -2,7 +2,8 @@
  * Open Library Form
  * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#olform
  */
-@import (less) "less/font-families.less";
+@import (less) "../less/font-families.less";
+@import (less) "../less/colors.less";
 
 .olform {
   font-family: @lucida_sans_serif-4;
@@ -119,7 +120,7 @@
   height: 265px;
 }
 
-@media all and ( min-width: @width-breakpoint-desktop ) {
+@media all {
   .olform {
     // formBackLeft and formBackRight are presently only used in
     // openlibrary/templates/books/edit/edition.html (edit form)
@@ -139,7 +140,7 @@
   }
 }
 
-@media all and ( min-width: @width-breakpoint-desktop ) {
+@media all  {
   /* stylelint-disable selector-max-specificity */
   .olform {
     input[type=text],

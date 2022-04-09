@@ -1,0 +1,125 @@
+/**
+ * Chart component
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#chart
+*/
+/**
+ * FlashMessage
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#flashmessage
+ */
+.flash-messages {
+  font-size: 1em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  clear: both;
+}
+.flash-messages span {
+  display: block;
+  background-color: hsl(58, 100%, 90%);
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+  padding: 15px 52px;
+  text-align: left;
+  background-image: url(/images/icons/icon_check.png);
+}
+.flash-messages .error span {
+  background-image: url(/images/icons/icon_alert.png);
+}
+.flash-messages .bookadded span {
+  background: hsl(58, 100%, 90%) url(/images/icons/icon_check.png) no-repeat 40px 40px;
+  padding: 40px 40px 40px 80px;
+  font-family: "Georgia", "Times New Roman", serif;
+  position: relative;
+}
+.flash-messages .bookadded span span {
+  display: inline;
+  padding: 0;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+.flash-messages .bookadded h3 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  margin: 0;
+  color: hsl(0, 0%, 0%);
+}
+.flash-messages .bookadded .brown {
+  font-size: 1.125em;
+  margin: 15px 0 30px;
+}
+.flash-messages .bookadded .list {
+  font-size: 1.5em;
+  margin: 0;
+}
+.flash-messages .bookadded h3 em {
+  font-style: italic;
+  font-weight: 700;
+  color: hsl(113, 38%, 29%);
+}
+.flash-messages .bookadded .red {
+  font-family: "Georgia", "Times New Roman", serif;
+}
+.flash-messages .bookadded .close {
+  position: absolute;
+  display: block;
+  top: 20px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+}
+.chart {
+  position: relative;
+  height: 160px;
+  width: 100%;
+  padding: 0 8px 20px 20px;
+  margin-top: 0;
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  background-color: transparent;
+  background-image: url(/images/ajax-loader-bar.gif);
+  background-repeat: no-repeat;
+  background-position: 340px 60px;
+  box-sizing: border-box;
+}
+.chartYaxis {
+  position: absolute;
+  left: -65px;
+  top: 60px;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  font-size: 10px;
+  color: hsl(81, 39%, 35%);
+  text-transform: uppercase;
+}
+.chartXaxis {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  color: hsl(81, 39%, 35%);
+  text-transform: uppercase;
+}
+.chartZoom {
+  white-space: nowrap;
+}
+.chart .thisChart {
+  height: 140px;
+  width: 100%;
+  overflow-y: hidden;
+}
+@media all and (min-width: 960px) {
+  .chart {
+    float: left;
+    max-width: 998px;
+  }
+  .chartYaxis {
+    width: 140px;
+  }
+  .chart .thisChart {
+    max-width: 998px;
+  }
+}

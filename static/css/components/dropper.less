@@ -8,7 +8,8 @@
  * - openlibrary/templates/lists/widget.html
  */
 
-@import (less) "less/z-index.less";
+@import (less) "../less/z-index.less";
+@import (less) "../less/colors.less";
 
 .dropit {
   position: relative;
@@ -261,7 +262,7 @@ div#listsWork {
 
 // The log work will always be a child of .dropper
 .log-work {
-  .display-flex();
+  
   form {
     flex: 1;
   }
@@ -303,7 +304,7 @@ div#listsWork {
   border-radius: 4px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
-  .display-flex();
+  
   h3 {
     flex: 1;
   }
@@ -316,7 +317,7 @@ div#listsWork {
 }
 
 .dropclick-prevent {
-  .display-flex();
+  
 }
 
 .dropclick-unactivated {
@@ -351,7 +352,7 @@ a.dropclick.plain {
   text-decoration: none;
 }
 
-@media only screen and (min-width: @width-breakpoint-tablet) {
+@media only screen  {
   div.Tools {
     div.dropper {
       position: absolute;

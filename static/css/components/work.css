@@ -1,0 +1,1228 @@
+/**
+ * Definition Lists
+ */
+dd,
+dt {
+  float: left;
+}
+dt,
+.list-header {
+  clear: both;
+}
+.list-header {
+  float: left;
+  margin-bottom: 10px;
+}
+dl {
+  margin: 10px 0;
+}
+dl:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+dl dt {
+  padding: 0 15px 10px 0;
+  width: 120px;
+}
+dd {
+  max-width: 270px;
+}
+dd + dd {
+  padding-left: 8px;
+}
+/* stylelint-disable no-descending-specificity */
+.workDetails {
+  padding: 20px 0;
+}
+.workDetails .book-description {
+  text-align: justify;
+}
+.editionCover {
+  min-height: 10px;
+  padding-right: 1.5em;
+}
+.editionCover .cover-animation {
+  transition: transform 0.8s, opacity 0.8s;
+}
+.editionCover .cover-animation:hover {
+  transform: perspective(465px) rotateX(0deg) rotateY(-10deg);
+  opacity: 0.8;
+}
+/**
+ * Cover
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#cover
+ */
+.right.illustration {
+  margin: 0 0 30px 30px;
+}
+.left.illustration {
+  margin: 0 30px 30px 0;
+}
+.illustration {
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+.illustration img {
+  width: 180px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 0 hsl(48, 35%, 64%);
+}
+.illustration .SRPCoverBlank {
+  position: relative;
+  width: 148px;
+  height: 225px;
+  min-width: 175px;
+  min-height: 250px;
+  padding: 15px;
+  text-align: center;
+  background: hsl(0, 0%, 87%);
+  font-size: 1em;
+  display: none;
+}
+.illustration .SRPCoverBlank .innerBorder {
+  border: 2px solid hsl(0, 0%, 100%);
+  width: 144px;
+  height: 221px;
+  margin: 0 auto;
+}
+.illustration .SRPCoverBlank.author {
+  position: relative;
+  width: 131px;
+  height: 180px;
+  text-align: center;
+  background: transparent url(/images/icons/avatar_author-lg.png) 15px 15px no-repeat;
+  font-size: 1em;
+  margin: 0 auto;
+  display: none;
+}
+.illustration .BookTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 108px;
+  margin-left: -54px;
+  height: 100px;
+  margin-top: -50px;
+  color: hsl(0, 0%, 20%);
+  overflow-wrap: break-word;
+}
+.illustration .author .BookTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 108px;
+  margin-left: -54px;
+  height: 80px;
+  margin-top: -40px;
+  color: hsl(0, 0%, 0%);
+  display: none;
+}
+.illustration .Author {
+  color: hsl(0, 0%, 40%);
+  font-style: italic;
+  padding: 4px 4px 0;
+  font-size: 11px;
+}
+.illustration .edition {
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  margin: 10px auto;
+}
+.editionCover .SRPCoverBlank {
+  width: auto;
+  height: auto;
+}
+/* stylelint-disable no-descending-specificity */
+/**
+ * Ratings form
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#ratingsform
+ */
+.star-messaging {
+  color: hsl(0, 0%, 60%);
+  background: none;
+  display: block;
+  border: 0;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.review {
+  display: flex;
+}
+.review .review-btn {
+  border-left: 1px solid hsl(0, 0%, 87%);
+  width: 35px;
+  height: 35px;
+}
+.stars {
+  background: url(/static/images/stars.png) repeat-x 0 0;
+  width: 150px;
+  cursor: pointer;
+  margin: 0 auto 10px;
+}
+.stars input[type="submit"] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.stars .star-5.star-selected ~ span {
+  width: 100%;
+}
+.stars .star-4.star-selected ~ span {
+  width: 80%;
+}
+.stars .star-3.star-selected ~ span {
+  width: 60%;
+}
+.stars .star-2.star-selected ~ span {
+  width: 40%;
+}
+.stars .star-1.star-selected ~ span {
+  width: 20%;
+}
+.stars .star-0.star-selected ~ span {
+  width: 0%;
+}
+.stars label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  text-indent: -999em;
+  float: left;
+  position: relative;
+  z-index: 3;
+  background: transparent;
+  cursor: pointer;
+}
+.stars label:hover ~ span {
+  background-position: 0 -60px;
+}
+.stars label.star-5:hover ~ span {
+  width: 100%;
+}
+.stars label.star-4:hover ~ span {
+  width: 80%;
+}
+.stars label.star-3:hover ~ span {
+  width: 60%;
+}
+.stars label.star-2:hover ~ span {
+  width: 40%;
+}
+.stars label.star-1:hover ~ span {
+  width: 20%;
+}
+.stars span {
+  display: block;
+  width: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30px;
+  background: url(/static/images/stars.png) repeat-x 0 -60px;
+}
+/* stylelint-disable no-descending-specificity */
+/**
+ * Dropper
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#dropper
+ * Provided by macro macros/databarAuthor.html
+ * Used in templates:
+ * - openlibrary/templates/lists/widget.html
+ */
+.dropit {
+  position: relative;
+  min-height: 50px;
+  z-index: 10;
+}
+.dropper.on {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.dropper.on .arrow {
+  width: 23px;
+  margin: 6px 5px;
+}
+.dropper.on .arrow.up {
+  background-position: -22px 0;
+}
+.dropper.on div.arrow-activated {
+  background-image: url(/images/icons/icon_dropit.png);
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  background-position: 0 0;
+  background-size: 45px;
+}
+.dropper.on div.arrow-unactivated {
+  background-image: url(/images/icons/icon_dropit2.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 45px;
+}
+.dropper .dropdown {
+  /* stylelint-disable selector-max-specificity */
+}
+.dropper .dropdown p.create a {
+  color: hsl(0, 0%, 20%);
+  text-decoration: none;
+}
+.dropper .dropdown .reading-lists .reading-list-title {
+  background: hsl(0, 0%, 100%);
+  padding: 5px 0 0 10px;
+  margin: 0;
+  font-size: 0.8em;
+}
+.dropper .dropdown .my-lists {
+  background: hsl(0, 0%, 100%);
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px 15px;
+  /* stylelint-enable selector-max-specificity */
+}
+.dropper .dropdown .my-lists p a {
+  display: block;
+}
+/* stylelint-disable selector-max-specificity */
+div#subjectLists div.dropit h3 {
+  font-weight: normal;
+  margin: 0;
+  padding: 5px;
+}
+div#subjectLists div.dropit p.listed {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  padding: 0 0 0 42px;
+  margin: 0 0 5px;
+}
+div#subjectLists div.dropper {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 230px;
+  z-index: 1001;
+}
+div#subjectLists div.dropper.on {
+  background-color: hsl(0, 0%, 93%);
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 4px;
+}
+div#subjectLists div.dropper h3 {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  min-height: 1.125em;
+  width: auto;
+}
+div#subjectLists div.dropper div.dropdown {
+  display: none;
+  padding-top: 10px;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+div#subjectLists div.dropper div.dropdown p {
+  font-size: 0.875em;
+  margin: 0 0 5px;
+  color: hsl(0, 0%, 40%);
+}
+div#subjectLists div.dropper div.dropdown p a {
+  font-size: 0.875em;
+}
+div#subjectLists div.dropper div.dropdown p span {
+  font-size: 0.8125em;
+}
+.widget-add div.dropper div.dropdown p.create {
+  border-top: 1px solid hsl(0, 0%, 93%);
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.widget-add.old-style-lists div.dropper {
+  margin: 0;
+  top: 0;
+  position: absolute;
+}
+div.Tools div.dropper {
+  z-index: 10000;
+}
+div.Tools div.dropper.on {
+  background-color: hsl(0, 0%, 93%);
+  box-shadow: 0 0 0 1px hsl(0, 0%, 60%);
+  border-radius: 4px;
+  width: 100%;
+}
+div.Tools div.dropper h3 {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  min-height: 1.125em;
+  width: auto;
+}
+div.Tools div.dropper div.dropdown {
+  border-top: 1px solid hsl(0, 0%, 87%);
+  display: none;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+div.Tools div.dropper div.dropdown p {
+  font-size: 0.875em;
+  padding-left: 0;
+  margin-bottom: 5px;
+  margin-top: 0;
+  color: hsl(0, 0%, 40%);
+}
+div.Tools div.dropper div.dropdown p span {
+  font-size: 0.8125em;
+}
+div.Tools div.dropper div.dropdown p a {
+  font-size: 0.875em;
+}
+div.Tools div.dropit p.listed {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  padding: 0 0 0 42px;
+  margin: 0 0 5px;
+}
+div.Tools .widget-add.old-style-lists .dropclick {
+  padding: 5px;
+  text-decoration: none;
+  /* stylelint-disable-next-line max-nesting-depth */
+}
+div.Tools .widget-add.old-style-lists .dropclick h3 {
+  font-size: 0.75em;
+  text-align: left;
+  padding: 0 10px;
+  min-width: 150px;
+}
+div#listsWork div.dropit p.listed {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  padding: 0 0 0 42px;
+  margin: 0 0 5px;
+}
+div#listsWork div.dropper {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 161px;
+  z-index: 1001;
+}
+div#listsWork div.dropper.on {
+  background-color: hsl(0, 0%, 93%);
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 4px;
+}
+div#listsWork div.dropper h3 {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  min-height: 1.125em;
+  width: auto;
+}
+div#listsWork div.dropper div.dropdown {
+  border-top: 1px solid hsl(0, 0%, 87%);
+  display: none;
+  padding-top: 10px;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+div#listsWork div.dropper div.dropdown p {
+  font-size: 0.875em;
+  padding-left: 0;
+  margin-bottom: 5px;
+  color: hsl(0, 0%, 40%);
+}
+div#listsWork div.dropper div.dropdown p a {
+  font-size: 0.875em;
+}
+div#listsWork div.dropper div.dropdown p span {
+  font-size: 0.8125em;
+}
+/* stylelint-enable selector-max-specificity */
+.log-work form {
+  flex: 1;
+}
+.log-work button[type=submit] {
+  background-color: inherit;
+  border: none;
+  border-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  cursor: pointer;
+  font-size: 1em;
+  width: 100%;
+  padding: 7px 0;
+  margin: 0;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.log-work button[type=submit].activated {
+  color: hsl(0, 0%, 20%);
+  background: hsl(0, 0%, 93%);
+  border: 2px solid hsl(0, 0%, 95%);
+  border-right: 1px solid hsl(0, 0%, 87%);
+}
+.log-work button[type=submit].unactivated {
+  color: hsl(0, 0%, 100%);
+  background: hsl(130, 61%, 33%);
+  border: 2px solid hsl(130, 61%, 33%);
+  border-right: 1px solid hsl(128, 44%, 59%);
+}
+.log-work button[type=submit] span.activated-check {
+  color: hsl(130, 61%, 33%);
+  margin-right: 2px;
+}
+.dropclick {
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.dropclick h3 {
+  flex: 1;
+}
+.dropclick .arrow {
+  width: 20px;
+  margin: 5px;
+  margin-top: 10px;
+}
+.dropclick-unactivated {
+  background-color: hsl(130, 61%, 33%);
+}
+.user-book-options div.tools-override {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.user-book-options div.tools-override div.dropit {
+  margin: 0;
+  position: relative;
+  width: auto;
+}
+div.tools-override div.dropper {
+  z-index: 10000;
+  top: unset;
+  left: -1px;
+  margin: auto;
+}
+a:hover > h3 {
+  text-decoration: underline;
+}
+a.dropclick.plain {
+  text-decoration: none;
+}
+@media only screen {
+  div.Tools div.dropper {
+    position: absolute;
+  }
+  div.tools-override div.dropper {
+    width: 180px;
+  }
+}
+/**
+ * ListLists component
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#listslists
+ */
+ul.listLists {
+  margin: 0;
+  padding: 0;
+}
+ul.listLists span {
+  display: block;
+  color: hsl(0, 0%, 40%);
+}
+ul.listLists li {
+  list-style: none !important;
+  border-radius: 3px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  background-color: hsl(0, 0%, 100%);
+  border-bottom: 1px solid hsl(0, 0%, 93%);
+}
+ul.listLists li .image {
+  width: 42px;
+  min-height: 35px;
+  padding: 0 10px;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+ul.listLists li .image img {
+  width: 32px;
+  max-width: 100%;
+}
+ul.listLists li .data {
+  padding: 3px 0;
+}
+ul.listLists li .label {
+  line-height: 1.125em;
+  font-size: 12px;
+}
+ul.listLists li .meta,
+ul.listLists li .owner {
+  font-size: 0.6875em;
+  line-height: 1.125em;
+  margin: 5px 0;
+}
+div.editionAbout {
+  margin-bottom: 20px;
+}
+div.editionAbout p {
+  margin: 1em 0;
+  font-size: 13px;
+}
+div.editionAbout p:first-child {
+  margin: 0;
+}
+div.editionAbout p.featured-count {
+  margin-bottom: 10px;
+}
+.work-title {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.work-subtitle {
+  margin-top: 0;
+}
+.work-description pre {
+  overflow: auto;
+}
+.workFooter ul.listLists {
+  display: flex;
+}
+.workFooter ul.listLists li {
+  width: 33%;
+  border: 0;
+}
+.book-description {
+  font-size: 0.9em;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.checkboxes label {
+  display: inline-block;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+.checkboxes input {
+  vertical-align: middle;
+}
+.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.clamp:hover {
+  cursor: pointer;
+}
+.clamp::before {
+  content: attr(data-before);
+}
+.restricted-view {
+  display: block;
+  z-index: 1;
+}
+.restricted-height {
+  overflow: hidden;
+  height: 57px;
+}
+.section,
+.section h6 {
+  font-size: 0.8em;
+}
+h3.edition-header {
+  font-size: 14px;
+  margin: 0;
+}
+h2.edition-byline {
+  margin: 7px 2px 20px;
+}
+.first-published-date {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8em;
+}
+.edition-overview {
+  background: hsl(0, 0%, 80%);
+  padding: 10px;
+  margin: 10px 0;
+}
+.edition-overview .edition-title {
+  margin-bottom: 0;
+  color: hsl(0, 0%, 20%);
+}
+.edition-overview .edition-subtitle {
+  margin-top: 5px;
+  font-size: 1.4em;
+  font-weight: normal;
+  color: hsl(0, 0%, 40%);
+}
+.work-menu {
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+  padding-bottom: 5px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.work-menu.sticky {
+  position: sticky;
+  top: 50px;
+  display: block;
+  background: hsl(0, 0%, 100%);
+  z-index: 3;
+  padding-top: 10px;
+}
+@media only screen and (min-width: 768px) {
+  .work-menu.sticky {
+    top: 0;
+  }
+}
+.work-menu li {
+  display: inline;
+  padding: 0 15px;
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+.work-menu li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 40%);
+}
+.work-menu li.selected {
+  border-bottom: 2px solid hsl(202, 96%, 28%);
+}
+.work-menu li:hover {
+  border-bottom: 2px solid hsl(202, 96%, 28%);
+}
+.work-menu li.selected a {
+  color: hsl(202, 96%, 28%);
+}
+a.section-anchor {
+  height: 20px;
+  display: block;
+}
+.book-overview {
+  padding-bottom: 10px;
+}
+.book-overview > div {
+  margin: 10px 0;
+}
+.meta dt,
+.meta dd {
+  font-size: 12px;
+}
+.book-subtitle {
+  margin-bottom: 0;
+}
+/**
+ * ReaderStats
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#readerstats
+ */
+.readers-stats {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.9em;
+}
+.readers-stats li {
+  list-style-type: none;
+  display: inline-block;
+}
+.readers-stats li:not(:last-child):after {
+  content: "·";
+  margin: 0 4px;
+}
+.readers-stats__star {
+  color: hsl(50, 100%, 50%);
+  font-size: 1.5em;
+}
+.readers-stats__star--half {
+  margin: 0 0 0 -5px;
+  font-size: 1.5em;
+  background: linear-gradient(90deg, hsl(50, 100%, 50%) 50%, hsl(0, 0%, 80%) 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/**
+ * Link Box
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#linkbox
+ */
+.contentQuarter div,
+.link-box div {
+  padding-right: 19px;
+}
+.link-box h6 {
+  color: hsl(0, 0%, 40%);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  display: inline;
+}
+.link-box > div {
+  font-size: 0.75em;
+}
+.link-box > div,
+div.subjects > div {
+  white-space: normal;
+  word-break: normal;
+  word-wrap: break-word;
+}
+div.editionTools {
+  min-height: 10px;
+  font-size: 100%;
+}
+div.editionTools p {
+  color: hsl(0, 0%, 40%);
+}
+/**
+ * Read Options Panel
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#read-panel
+ */
+.waitinglist-message {
+  white-space: nowrap;
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+.read-options,
+.Tools .btn-notice {
+  line-height: 1.5em;
+  font-size: 1em;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 87%);
+  margin-top: 0;
+}
+.read-options .cta-btn,
+.Tools .btn-notice .cta-btn {
+  margin-bottom: 10px;
+}
+.read-options .waitinglist-message,
+.Tools .btn-notice .waitinglist-message {
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+.read-options .cta-section,
+.Tools .btn-notice .cta-section {
+  font-size: 0.78em;
+}
+.read-options summary,
+.Tools .btn-notice summary {
+  margin: 5px -5px 0;
+}
+.read-options .check-availability,
+.Tools .btn-notice .check-availability {
+  font-size: 14px;
+  border-top: 1px solid hsl(0, 0%, 93%);
+}
+.read-options .check-other-editions,
+.Tools .btn-notice .check-other-editions {
+  text-align: center;
+}
+.read-options-panel__print-disabled-download,
+.Tools .btn-notice-panel__print-disabled-download {
+  font-size: 11px;
+  text-align: center;
+}
+.read-options strong,
+.Tools .btn-notice strong {
+  font-size: 12.5px;
+  font-weight: bold;
+}
+.read-options .cta-section-title,
+.Tools .btn-notice .cta-section-title {
+  font-size: 12.5px;
+  display: block;
+  font-weight: bold;
+}
+.read-options ul,
+.Tools .btn-notice ul {
+  margin-left: 8px;
+}
+.read-options li,
+.Tools .btn-notice li {
+  list-style: disc;
+  margin: 5px 10px 0;
+}
+.read-options table,
+.Tools .btn-notice table {
+  width: 100%;
+}
+.read-options td,
+.Tools .btn-notice td {
+  text-align: left;
+  width: 49%;
+}
+.buy-options-table .more {
+  margin-left: 0;
+}
+.buy-options-table .more::marker {
+  content: "";
+}
+.cta-section-title.world-cat-link {
+  margin-top: 0;
+}
+.sponsorship-card {
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid hsla(202, 96%, 28%, 0.2);
+  background: hsla(202, 40%, 95%, 0.5);
+  font-size: 0.8em;
+  text-align: center;
+}
+.sponsorship-card q {
+  display: block;
+  font-style: oblique;
+  text-align: center;
+}
+.sponsorship-card hr {
+  background: hsla(202, 96%, 28%, 0.35);
+}
+.sponsorship-card a.learn-more {
+  font-size: 0.9em;
+}
+.Tools .booklinks li {
+  list-style: none;
+  font-size: 12px;
+}
+/**
+ * CtaBtn
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#ctabtn
+ */
+.cta-btn,
+a.cta-btn {
+  font-size: 16px;
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  display: block;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 7px;
+  white-space: nowrap;
+  background-color: hsl(0, 0%, 40%);
+  line-height: 1.5em;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.cta-btn .btn-icon,
+a.cta-btn .btn-icon {
+  width: 40px;
+  flex-shrink: 0;
+}
+.cta-btn .btn-icon.read-aloud,
+a.cta-btn .btn-icon.read-aloud {
+  background-image: url(/static/images/icons/read%20aloud.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.cta-btn .btn-label,
+a.cta-btn .btn-label {
+  padding: 0 10px;
+}
+.cta-btn:link,
+a.cta-btn:link,
+.cta-btn:visited,
+a.cta-btn:visited {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+.cta-btn--available,
+a.cta-btn--available {
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--available:hover,
+a.cta-btn--available:hover {
+  background-color: hsl(202, 96%, 17%);
+}
+.cta-btn--external,
+a.cta-btn--external {
+  background-image: url(/static/images/icons/octicon-link-external-24.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 8px;
+}
+.cta-btn--unavailable,
+a.cta-btn--unavailable {
+  background-color: hsl(19, 95%, 40%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--unavailable:hover,
+a.cta-btn--unavailable:hover {
+  background-color: hsl(19, 95%, 20%);
+}
+.cta-btn--shell,
+a.cta-btn--shell,
+.cta-btn--shell:link,
+a.cta-btn--shell:link,
+.cta-btn--shell:visited,
+a.cta-btn--shell:visited {
+  background-color: hsl(0, 0%, 100%);
+  border: 2px solid hsl(202, 96%, 37%);
+  color: hsl(202, 96%, 37%);
+}
+.cta-btn--sponsor,
+a.cta-btn--sponsor {
+  border: 2px solid hsl(202, 96%, 28%);
+  background: hsl(202, 40%, 95%);
+}
+.cta-btn--vanilla,
+a.cta-btn--vanilla {
+  padding: 5px;
+  border: 2px solid hsl(0, 0%, 80%);
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  border-radius: 6px;
+}
+.cta-btn--sponsor:link,
+a.cta-btn--sponsor:link,
+.cta-btn--sponsor:visited,
+a.cta-btn--sponsor:visited {
+  color: hsl(202, 96%, 28%);
+}
+.cta-btn--sponsor:hover,
+a.cta-btn--sponsor:hover {
+  border: 2px solid hsl(202, 96%, 28%);
+  background-color: hsl(202, 96%, 28%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn__badge,
+a.cta-btn__badge {
+  background-color: hsl(19, 95%, 20%);
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 0.7em;
+}
+.cta-btn + form input.cta-btn,
+.cta-btn + .cta-btn {
+  margin-top: 5px;
+}
+.cta-btn--small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+.waitinglist-message {
+  white-space: nowrap;
+}
+.cta-button-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cta-button-group .cta-btn--w-icon {
+  display: flex;
+}
+.cta-button-group .cta-btn {
+  margin: 0;
+  padding: 8px 0;
+}
+.cta-button-group .cta-btn:first-child {
+  flex: 1;
+  padding: 8px;
+  overflow: hidden;
+}
+.cta-button-group .cta-btn:not(:first-child) {
+  margin-left: 1px;
+  width: 40px;
+  transition: width 0.2s;
+  overflow: hidden;
+  border-radius: 2px 6px 6px 2px;
+}
+.cta-button-group .cta-btn:not(:last-child) {
+  border-radius: 6px 2px 2px 6px;
+}
+.cta-button-group .cta-btn:not(:first-child):hover {
+  width: 100%;
+}
+/**
+ * ShareLinks
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#sharelinks
+ * Provided by macro openlibrary/macros/SocialShare.html and
+ * openlibrary/macros/databarWork.html
+ * Used in templates:
+ * - openlibrary/templates/type/work/view.html
+ * - openlibrary/templates/type/edition/view.html
+ */
+.shareLinks-list {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  word-break: keep-all;
+}
+.shareLinks-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.shareLinks-list li {
+  list-style-type: none;
+  line-height: 24px;
+  display: inline-block;
+  margin: 5px 0 0 !important;
+  padding: 0;
+  flex: 1;
+  cursor: pointer;
+}
+.shareLinks-list p {
+  margin: 0;
+}
+.shareLinks-list a {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  line-height: 24px;
+}
+.shareLinks-list img {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  height: 30px;
+}
+.shareLinks li:hover {
+  cursor: pointer;
+}
+.shareLinks .share-source {
+  font-size: 0.8em;
+  text-align: center;
+  color: hsl(0, 0%, 40%);
+}
+/**
+ * Book Preview Modal
+ */
+.book-preview .iframe-container {
+  border-top: 1px solid hsl(0, 0%, 93%);
+  border-bottom: 1px solid hsl(0, 0%, 93%);
+}
+.book-preview .learn-more {
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  /**
+ * Dropper
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#dropper
+ * Provided by macro macros/databarAuthor.html
+ * Used in templates:
+ * - openlibrary/templates/lists/widget.html
+ */
+  div.tools-override div.dropper {
+    margin: inherit;
+  }
+  div.editionCover {
+    margin-bottom: 1.5em;
+    padding-right: 0;
+  }
+  div.editionAbout {
+    margin-top: 2px;
+  }
+  div.editionTools {
+    float: right;
+    width: 250px;
+  }
+  .workDetails:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .workDetails {
+    display: flex;
+  }
+  div.editionCover {
+    width: 225px;
+    margin-right: 1.5em;
+    margin-bottom: 0;
+  }
+  div.editionAbout {
+    flex: 1;
+  }
+}
+.admin-bar {
+  padding: 5px;
+  background-color: hsl(0, 0%, 93%);
+}
+.admin-bar form {
+  display: inline-block;
+}
+.mobile-borrow-cta {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .mobile-borrow-cta {
+    display: none;
+  }
+}
+.print-disabled-download,
+.patron-metadata {
+  text-align: center;
+  padding: 7px 0 0;
+}
+.edition-omniline {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+  margin-bottom: 10px;
+  background: hsl(0, 0%, 98%);
+}
+.edition-omniline-item {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  font-size: 0.8em;
+}
+.edition-omniline-item div {
+  font-weight: bold;
+}
+.edition-omniline h4 {
+  padding-right: 5px;
+}
+.edition-omniline h4:last-child {
+  padding-right: 0;
+}
+@media only screen and (min-width: 768px) {
+  .edition-omniline {
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-x: auto;
+  }
+  .edition-omniline-item {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.tab-section {
+  padding: 10px;
+  border: 1px solid hsl(0, 0%, 87%);
+  border-radius: 5px;
+  clear: both;
+}
+.preview-languages {
+  font-size: 0.8em;
+  color: hsl(0, 0%, 40%);
+}
+.work-line {
+  font-style: oblique;
+  color: hsl(0, 0%, 40%);
+}
+.work-line a {
+  color: hsl(0, 0%, 40%);
+}
+.loadingIndicator {
+  display: flex;
+  justify-content: center;
+  background: hsl(0, 0%, 93%);
+}
+.list-heading {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: hsl(202, 96%, 28%);
+}

@@ -1,0 +1,314 @@
+/**
+ * CtaBtn
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#ctabtn
+ */
+.cta-btn,
+a.cta-btn {
+  font-size: 16px;
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  display: block;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 7px;
+  white-space: nowrap;
+  background-color: hsl(0, 0%, 40%);
+  line-height: 1.5em;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.cta-btn .btn-icon,
+a.cta-btn .btn-icon {
+  width: 40px;
+  flex-shrink: 0;
+}
+.cta-btn .btn-icon.read-aloud,
+a.cta-btn .btn-icon.read-aloud {
+  background-image: url(/static/images/icons/read%20aloud.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.cta-btn .btn-label,
+a.cta-btn .btn-label {
+  padding: 0 10px;
+}
+.cta-btn:link,
+a.cta-btn:link,
+.cta-btn:visited,
+a.cta-btn:visited {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+.cta-btn--available,
+a.cta-btn--available {
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--available:hover,
+a.cta-btn--available:hover {
+  background-color: hsl(202, 96%, 17%);
+}
+.cta-btn--external,
+a.cta-btn--external {
+  background-image: url(/static/images/icons/octicon-link-external-24.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 8px;
+}
+.cta-btn--unavailable,
+a.cta-btn--unavailable {
+  background-color: hsl(19, 95%, 40%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--unavailable:hover,
+a.cta-btn--unavailable:hover {
+  background-color: hsl(19, 95%, 20%);
+}
+.cta-btn--shell,
+a.cta-btn--shell,
+.cta-btn--shell:link,
+a.cta-btn--shell:link,
+.cta-btn--shell:visited,
+a.cta-btn--shell:visited {
+  background-color: hsl(0, 0%, 100%);
+  border: 2px solid hsl(202, 96%, 37%);
+  color: hsl(202, 96%, 37%);
+}
+.cta-btn--sponsor,
+a.cta-btn--sponsor {
+  border: 2px solid hsl(202, 96%, 28%);
+  background: hsl(202, 40%, 95%);
+}
+.cta-btn--vanilla,
+a.cta-btn--vanilla {
+  padding: 5px;
+  border: 2px solid hsl(0, 0%, 80%);
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  border-radius: 6px;
+}
+.cta-btn--sponsor:link,
+a.cta-btn--sponsor:link,
+.cta-btn--sponsor:visited,
+a.cta-btn--sponsor:visited {
+  color: hsl(202, 96%, 28%);
+}
+.cta-btn--sponsor:hover,
+a.cta-btn--sponsor:hover {
+  border: 2px solid hsl(202, 96%, 28%);
+  background-color: hsl(202, 96%, 28%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn__badge,
+a.cta-btn__badge {
+  background-color: hsl(19, 95%, 20%);
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 0.7em;
+}
+.cta-btn + form input.cta-btn,
+.cta-btn + .cta-btn {
+  margin-top: 5px;
+}
+.cta-btn--small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+.waitinglist-message {
+  white-space: nowrap;
+}
+.cta-button-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cta-button-group .cta-btn--w-icon {
+  display: flex;
+}
+.cta-button-group .cta-btn {
+  margin: 0;
+  padding: 8px 0;
+}
+.cta-button-group .cta-btn:first-child {
+  flex: 1;
+  padding: 8px;
+  overflow: hidden;
+}
+.cta-button-group .cta-btn:not(:first-child) {
+  margin-left: 1px;
+  width: 40px;
+  transition: width 0.2s;
+  overflow: hidden;
+  border-radius: 2px 6px 6px 2px;
+}
+.cta-button-group .cta-btn:not(:last-child) {
+  border-radius: 6px 2px 2px 6px;
+}
+.cta-button-group .cta-btn:not(:first-child):hover {
+  width: 100%;
+}
+a.cancel {
+  color: hsl(8, 78%, 49%);
+  padding-right: 21px;
+  background-image: url(/images/icons/icon_cancel.png);
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, sans-serif;
+  font-size: 1em;
+}
+a.borrowResults:link {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.borrowResults:visited {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.borrowResults:hover {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.borrowResults:active {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.coverLook {
+  display: block;
+}
+a.facetSubject:link,
+a.facetSubject:visited {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.facetSubject:hover,
+a.facetSubject:active {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.results:link {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.results:visited {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.results:hover {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.results:active {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.toggle {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%) !important;
+  background-color: hsl(81, 39%, 35%) !important;
+  padding: 3px;
+  border-radius: 3px;
+}
+a.toggle:hover {
+  background-color: hsl(202, 96%, 28%) !important;
+  color: hsl(0, 0%, 100%) !important;
+}
+button.plainText {
+  border: none;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+  color: hsl(8, 78%, 49%);
+  background-color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+button.plainText:hover {
+  color: hsl(113, 38%, 29%);
+}
+button.plain {
+  border: none;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+  color: hsl(0, 0%, 0%);
+  background-color: transparent !important;
+  cursor: pointer;
+}
+button.plain:hover {
+  color: hsl(113, 38%, 29%);
+}
+button.addAnother {
+  width: 32px;
+  height: 32px;
+  border: none;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: url(/images/icons/icon_add.png);
+  background-position: 0 0;
+  background-color: transparent;
+  display: none;
+}
+button.addAnother:hover {
+  background-position: -32px 0;
+}
+/**
+ * ButtonLink
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#buttonlink
+ */
+.linkButton {
+  border-radius: 5px;
+  background: hsl(0, 0%, 100%);
+  padding: 10px;
+  color: hsl(0, 0%, 20%);
+  display: inline-block;
+}
+a.linkButton {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: hsl(0, 0%, 40%);
+  border: 1px solid hsl(0, 0%, 60%);
+}
+a.ghost-btn {
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 60%);
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  color: hsl(0, 0%, 100%) !important;
+}
+.generic-button {
+  text-decoration: none;
+  padding: 13px 10px;
+}
+.generic-button-secondary {
+  text-decoration: underline;
+}
+.generic-button-primary {
+  text-decoration: none;
+  background: hsl(8, 78%, 49%);
+  color: hsl(0, 0%, 100%) !important;
+  padding: 13px 10px;
+  border-radius: 3px;
+  border: 1px solid hsl(8, 70%, 44%);
+}
+a.generic-button {
+  text-decoration: none;
+}
+/* This button should be used for now on */
+.btn {
+  text-align: center;
+  padding: 5px 10px;
+}
+.btn.primary {
+  border: none;
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%) !important;
+  border-radius: 5px;
+}
+a.btn {
+  text-decoration: none;
+}

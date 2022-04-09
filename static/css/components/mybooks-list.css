@@ -1,0 +1,418 @@
+/**
+ * MyBooksList
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#mybooks-list
+ * Used in:
+ * - openlibrary/templates/account/books.html
+ * - openlibrary/templates/stats/readinglog.html
+ *
+ * http://localhost:8080/account/books/currently-reading
+ * http://localhost:8080/stats/readinglog
+ */
+/**
+ * SearchResultItemCta
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#searchresultitemcta
+ *
+ * http://localhost:8080/account/books/want-to-read
+ */
+.searchResultItemCTA {
+  width: 100%;
+}
+.searchResultItemCTA-lending {
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  text-align: center;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+.searchResultItem > .searchResultItemCTA {
+  padding: 0;
+}
+.searchResultItemCTA .dropit {
+  margin-top: 5px;
+}
+@media only screen and (min-width: 768px) {
+  .searchResultItem .searchResultItemCTA {
+    width: 200px;
+    min-width: 200px;
+    padding: 0 5px;
+  }
+}
+/**
+ * Search Result Item
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#searchresultitem
+ */
+/* This button should be used for now on */
+.btn {
+  text-align: center;
+  padding: 5px 10px;
+}
+.btn.primary {
+  border: none;
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%) !important;
+  border-radius: 5px;
+}
+a.btn {
+  text-decoration: none;
+}
+/**
+ * CtaBtn
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#ctabtn
+ */
+.cta-btn,
+a.cta-btn {
+  font-size: 16px;
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  display: block;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 7px;
+  white-space: nowrap;
+  background-color: hsl(0, 0%, 40%);
+  line-height: 1.5em;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.cta-btn .btn-icon,
+a.cta-btn .btn-icon {
+  width: 40px;
+  flex-shrink: 0;
+}
+.cta-btn .btn-icon.read-aloud,
+a.cta-btn .btn-icon.read-aloud {
+  background-image: url(/static/images/icons/read%20aloud.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.cta-btn .btn-label,
+a.cta-btn .btn-label {
+  padding: 0 10px;
+}
+.cta-btn:link,
+a.cta-btn:link,
+.cta-btn:visited,
+a.cta-btn:visited {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+.cta-btn--available,
+a.cta-btn--available {
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--available:hover,
+a.cta-btn--available:hover {
+  background-color: hsl(202, 96%, 17%);
+}
+.cta-btn--external,
+a.cta-btn--external {
+  background-image: url(/static/images/icons/octicon-link-external-24.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 8px;
+}
+.cta-btn--unavailable,
+a.cta-btn--unavailable {
+  background-color: hsl(19, 95%, 40%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--unavailable:hover,
+a.cta-btn--unavailable:hover {
+  background-color: hsl(19, 95%, 20%);
+}
+.cta-btn--shell,
+a.cta-btn--shell,
+.cta-btn--shell:link,
+a.cta-btn--shell:link,
+.cta-btn--shell:visited,
+a.cta-btn--shell:visited {
+  background-color: hsl(0, 0%, 100%);
+  border: 2px solid hsl(202, 96%, 37%);
+  color: hsl(202, 96%, 37%);
+}
+.cta-btn--sponsor,
+a.cta-btn--sponsor {
+  border: 2px solid hsl(202, 96%, 28%);
+  background: hsl(202, 40%, 95%);
+}
+.cta-btn--vanilla,
+a.cta-btn--vanilla {
+  padding: 5px;
+  border: 2px solid hsl(0, 0%, 80%);
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  border-radius: 6px;
+}
+.cta-btn--sponsor:link,
+a.cta-btn--sponsor:link,
+.cta-btn--sponsor:visited,
+a.cta-btn--sponsor:visited {
+  color: hsl(202, 96%, 28%);
+}
+.cta-btn--sponsor:hover,
+a.cta-btn--sponsor:hover {
+  border: 2px solid hsl(202, 96%, 28%);
+  background-color: hsl(202, 96%, 28%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn__badge,
+a.cta-btn__badge {
+  background-color: hsl(19, 95%, 20%);
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 0.7em;
+}
+.cta-btn + form input.cta-btn,
+.cta-btn + .cta-btn {
+  margin-top: 5px;
+}
+.cta-btn--small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+.waitinglist-message {
+  white-space: nowrap;
+}
+.cta-button-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cta-button-group .cta-btn--w-icon {
+  display: flex;
+}
+.cta-button-group .cta-btn {
+  margin: 0;
+  padding: 8px 0;
+}
+.cta-button-group .cta-btn:first-child {
+  flex: 1;
+  padding: 8px;
+  overflow: hidden;
+}
+.cta-button-group .cta-btn:not(:first-child) {
+  margin-left: 1px;
+  width: 40px;
+  transition: width 0.2s;
+  overflow: hidden;
+  border-radius: 2px 6px 6px 2px;
+}
+.cta-button-group .cta-btn:not(:last-child) {
+  border-radius: 6px 2px 2px 6px;
+}
+.cta-button-group .cta-btn:not(:first-child):hover {
+  width: 100%;
+}
+.bookauthor {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+.searchResultItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  list-style-type: none;
+  line-height: 1.5em;
+  background-color: hsl(0, 0%, 98%);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 3px;
+  border-bottom: 1px solid hsl(48, 29%, 93%);
+  flex-wrap: wrap;
+  align-items: center;
+}
+.searchResultItem a[href] {
+  text-decoration: none;
+}
+.searchResultItem > div {
+  margin-top: 10px;
+  padding: 0 5px 0 15px;
+}
+.searchResultItem h3 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: hsl(0, 0%, 20%);
+  font-size: 1em;
+  font-weight: 700;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+.searchResultItem .details {
+  display: inline;
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+}
+.searchResultItem .resultTitle {
+  margin: 0 !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(0, 0%, 40%);
+}
+.searchResultItem span.resultPublisher {
+  font-size: 0.75em;
+  color: hsl(0, 0%, 40%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  display: block;
+}
+.searchResultItem span.resultType {
+  font-size: 0.6875em;
+}
+.searchResultItem .publishedYear {
+  display: block;
+}
+.searchResultItem .preview-covers {
+  display: block;
+  height: 45px;
+  overflow: hidden;
+}
+.searchResultItem .preview-covers img {
+  border-radius: 4px;
+  opacity: 0.7;
+}
+.searchResultItem .bookcover {
+  width: 100%;
+  margin: 10px 10px 0 5px;
+  text-align: center;
+  overflow: hidden;
+}
+.searchResultItem .bookcover img {
+  border-radius: 4px;
+  max-width: 100%;
+  max-height: 300px;
+  width: 175px;
+}
+.searchResultItem .imageLg {
+  text-align: center;
+  width: 100%;
+  margin: 10px 10px 0 5px;
+}
+.searchResultItem .imageLg img {
+  max-width: 100%;
+  max-height: 110px;
+}
+.preview-covers img:hover {
+  opacity: 1;
+}
+.listDelete {
+  white-space: nowrap;
+  max-width: 150px;
+  line-height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 5px;
+}
+.listDelete a span {
+  margin-right: 5px;
+  background-image: url(/images/back_list-trash.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 28px;
+  width: 21px;
+  display: inline-block;
+  position: relative;
+  top: 5px;
+}
+.listDelete a:hover span {
+  background-position: -21px 0;
+}
+@media only screen and (min-width: 768px) {
+  .list-books .searchResultItem {
+    flex-wrap: nowrap;
+  }
+  .list-books .searchResultItem .bookcover {
+    width: 175px;
+    text-align: right;
+  }
+  .list-books .searchResultItem .imageLg {
+    width: 175px;
+    text-align: center;
+  }
+  .list-results .searchResultItem {
+    flex-wrap: nowrap;
+  }
+  .list-results .searchResultItem .imageLg {
+    width: 175px;
+    text-align: right;
+  }
+}
+.mybooks-list {
+  overflow-wrap: break-word;
+}
+.mybooks-list ul {
+  margin: 0 !important;
+}
+.mybooks-list h2 {
+  padding: 5px 0;
+  margin: 0;
+  line-height: 1.5em;
+  margin-bottom: 5px;
+}
+.mybooks-list h2.subtitle {
+  font-weight: normal;
+}
+.mybooks-list h4.work-subtitle {
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: hsl(0, 0%, 40%);
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+}
+.mybooks-list .loadmore {
+  text-align: center;
+}
+.mybooks-list--clean ul {
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+}
+.mybooks-list--clean h3 {
+  display: inline;
+  padding-right: 10px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.mybooks-list--clean li {
+  width: 310px;
+  margin-right: 10px;
+}
+.mybooks-list--clean span.imageLg {
+  display: block;
+  float: left;
+  width: 34px;
+  height: auto;
+  margin-right: 0;
+  max-width: 34px;
+  text-align: left;
+}
+.mybooks-list--clean span.imageLg img {
+  width: 24px;
+  height: auto;
+}
+.mybooks-list--clean div.details {
+  display: block;
+  float: left;
+  width: 260px;
+}
+.mybooks-list--clean span.editions {
+  margin-top: 0;
+  font-size: 0.6875em;
+  color: hsl(0, 0%, 40%);
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+@media only screen and (min-width: 768px) {
+  .mybooks-list {
+    flex: 1;
+  }
+}

@@ -1,4 +1,5 @@
-@import (less) "less/font-families.less";
+@import (less) "../less/font-families.less";
+@import (less) "../less/colors.less";
 
 /* stylelint-disable selector-max-specificity */
 div#footer-content {
@@ -8,7 +9,6 @@ div#footer-content {
 }
 
 div#footer-links {
-  .display-flex();
   margin-left: 10px;
   line-height: 1.5em;
 }
@@ -23,13 +23,11 @@ div#footer-links {
 }
 
 footer {
-  .display-flex();
   width: 100%;
   bottom: 0;
   font-size: .8em;
   #footer-details {
     color: @dark-grey;
-    .display-flex();
     width: 100%;
   }
   h2 {

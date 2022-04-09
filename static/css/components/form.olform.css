@@ -1,0 +1,137 @@
+/**
+ * Open Library Form
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#olform
+ */
+.olform {
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, sans-serif;
+}
+.olform .formBack {
+  padding: 10px;
+  background-color: hsl(0, 0%, 93%);
+}
+.olform .label {
+  padding: 10px 0 2px;
+}
+.olform .label label {
+  font-size: 1em;
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+.olform .label span {
+  font-weight: normal;
+}
+.olform textarea {
+  width: 100%;
+}
+.olform input[type=number],
+.olform input[type=text] {
+  margin: 0 10px 5px 0;
+}
+.olform input[type=number],
+.olform input[type=text],
+.olform input[type=email],
+.olform input[type=password],
+.olform textarea {
+  font-size: 1em;
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, Arial, sans-serif;
+  padding: 3px;
+  max-width: 100%;
+}
+.olform input[type=number] {
+  width: 4em;
+}
+.olform input[type=submit] {
+  padding: 5px;
+}
+.olform .required {
+  padding: 8px;
+}
+.olform select {
+  width: 100%;
+  font-size: 1.125em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  padding: 3px;
+}
+.olform .minor input {
+  max-width: 300px;
+}
+.olform.books {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.olform.books .major input[type=text],
+.olform.books .major input[type=email],
+.olform.books .major input[type=password],
+.olform.books .major textarea {
+  font-size: 0.875em;
+  width: 100%;
+}
+.olform.books .input,
+.olform.books .label {
+  width: auto !important;
+}
+.olform.books .TitleAuthor {
+  margin-bottom: 20px;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.olform.books .TitleAuthor input#work-title {
+  font-size: 1.875em !important;
+  margin: 0;
+  width: 100%;
+}
+.olform.books .TitleAuthor input#author {
+  font-size: 1em !important;
+  width: 100%;
+}
+.olform .tip {
+  font-size: 11px;
+  color: hsl(0, 0%, 40%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif !important;
+}
+.olform__input--large {
+  height: 265px;
+}
+@media all {
+  .olform .formBackLeft {
+    float: left;
+    width: 670px;
+  }
+  .olform .formBackRight {
+    float: left;
+    width: 220px;
+  }
+  .olform .formBack:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+@media all {
+  /* stylelint-disable selector-max-specificity */
+  .olform input[type=text],
+  .olform input[type=email],
+  .olform input[type=password],
+  .olform textarea {
+    width: 475px;
+  }
+  .olform .input {
+    width: 100%;
+  }
+  .olform .input select {
+    width: 130px;
+  }
+  .olform .label {
+    width: 90%;
+  }
+  .olform table input {
+    width: 300px;
+  }
+  .olform.books .TitleAuthor input#work-title {
+    width: 900px !important;
+  }
+  .olform.books .TitleAuthor input#author {
+    width: 550px !important;
+  }
+  /* stylelint-enable selector-max-specificity */
+}

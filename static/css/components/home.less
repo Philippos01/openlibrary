@@ -1,5 +1,6 @@
 /* Homepage about section */
-@import (less) "less/font-families.less";
+@import (less) "../less/font-families.less";
+@import (less) "../less/colors.less";
 
 div.tutorial__item {
   background-color: @book-cover-carousel-cards;
@@ -8,7 +9,7 @@ div.tutorial__item {
   padding: 10px;
   min-width: 220px;
 
-  @media only screen and (min-width: @width-breakpoint-desktop) {
+  @media only screen  {
     min-width: 310px;
   }
   &:focus {
@@ -46,7 +47,6 @@ div.chartHome a:hover,
 }
 #home {
   &-stats-charts {
-    .display-flex();
     flex-wrap: wrap;
     .statschart {
       flex: 1;
@@ -91,7 +91,6 @@ div.chartHome a:hover,
     text-align: left;
   }
   &-about {
-    .display-flex();
     flex-wrap: wrap;
     font-size: 13px;
   }

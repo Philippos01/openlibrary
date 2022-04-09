@@ -1,0 +1,294 @@
+/* stylelint-disable no-descending-specificity */
+/**
+ * Dropper
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#dropper
+ * Provided by macro macros/databarAuthor.html
+ * Used in templates:
+ * - openlibrary/templates/lists/widget.html
+ */
+.dropit {
+  position: relative;
+  min-height: 50px;
+  z-index: 10;
+}
+.dropper.on {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.dropper.on .arrow {
+  width: 23px;
+  margin: 6px 5px;
+}
+.dropper.on .arrow.up {
+  background-position: -22px 0;
+}
+.dropper.on div.arrow-activated {
+  background-image: url(/images/icons/icon_dropit.png);
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  background-position: 0 0;
+  background-size: 45px;
+}
+.dropper.on div.arrow-unactivated {
+  background-image: url(/images/icons/icon_dropit2.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 45px;
+}
+.dropper .dropdown {
+  /* stylelint-disable selector-max-specificity */
+}
+.dropper .dropdown p.create a {
+  color: hsl(0, 0%, 20%);
+  text-decoration: none;
+}
+.dropper .dropdown .reading-lists .reading-list-title {
+  background: hsl(0, 0%, 100%);
+  padding: 5px 0 0 10px;
+  margin: 0;
+  font-size: 0.8em;
+}
+.dropper .dropdown .my-lists {
+  background: hsl(0, 0%, 100%);
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px 15px;
+  /* stylelint-enable selector-max-specificity */
+}
+.dropper .dropdown .my-lists p a {
+  display: block;
+}
+/* stylelint-disable selector-max-specificity */
+div#subjectLists div.dropit h3 {
+  font-weight: normal;
+  margin: 0;
+  padding: 5px;
+}
+div#subjectLists div.dropit p.listed {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  padding: 0 0 0 42px;
+  margin: 0 0 5px;
+}
+div#subjectLists div.dropper {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 230px;
+  z-index: 1001;
+}
+div#subjectLists div.dropper.on {
+  background-color: hsl(0, 0%, 93%);
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 4px;
+}
+div#subjectLists div.dropper h3 {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  min-height: 1.125em;
+  width: auto;
+}
+div#subjectLists div.dropper div.dropdown {
+  display: none;
+  padding-top: 10px;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+div#subjectLists div.dropper div.dropdown p {
+  font-size: 0.875em;
+  margin: 0 0 5px;
+  color: hsl(0, 0%, 40%);
+}
+div#subjectLists div.dropper div.dropdown p a {
+  font-size: 0.875em;
+}
+div#subjectLists div.dropper div.dropdown p span {
+  font-size: 0.8125em;
+}
+.widget-add div.dropper div.dropdown p.create {
+  border-top: 1px solid hsl(0, 0%, 93%);
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.widget-add.old-style-lists div.dropper {
+  margin: 0;
+  top: 0;
+  position: absolute;
+}
+div.Tools div.dropper {
+  z-index: 10000;
+}
+div.Tools div.dropper.on {
+  background-color: hsl(0, 0%, 93%);
+  box-shadow: 0 0 0 1px hsl(0, 0%, 60%);
+  border-radius: 4px;
+  width: 100%;
+}
+div.Tools div.dropper h3 {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  min-height: 1.125em;
+  width: auto;
+}
+div.Tools div.dropper div.dropdown {
+  border-top: 1px solid hsl(0, 0%, 87%);
+  display: none;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+div.Tools div.dropper div.dropdown p {
+  font-size: 0.875em;
+  padding-left: 0;
+  margin-bottom: 5px;
+  margin-top: 0;
+  color: hsl(0, 0%, 40%);
+}
+div.Tools div.dropper div.dropdown p span {
+  font-size: 0.8125em;
+}
+div.Tools div.dropper div.dropdown p a {
+  font-size: 0.875em;
+}
+div.Tools div.dropit p.listed {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  padding: 0 0 0 42px;
+  margin: 0 0 5px;
+}
+div.Tools .widget-add.old-style-lists .dropclick {
+  padding: 5px;
+  text-decoration: none;
+  /* stylelint-disable-next-line max-nesting-depth */
+}
+div.Tools .widget-add.old-style-lists .dropclick h3 {
+  font-size: 0.75em;
+  text-align: left;
+  padding: 0 10px;
+  min-width: 150px;
+}
+div#listsWork div.dropit p.listed {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  padding: 0 0 0 42px;
+  margin: 0 0 5px;
+}
+div#listsWork div.dropper {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 161px;
+  z-index: 1001;
+}
+div#listsWork div.dropper.on {
+  background-color: hsl(0, 0%, 93%);
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 4px;
+}
+div#listsWork div.dropper h3 {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  min-height: 1.125em;
+  width: auto;
+}
+div#listsWork div.dropper div.dropdown {
+  border-top: 1px solid hsl(0, 0%, 87%);
+  display: none;
+  padding-top: 10px;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+div#listsWork div.dropper div.dropdown p {
+  font-size: 0.875em;
+  padding-left: 0;
+  margin-bottom: 5px;
+  color: hsl(0, 0%, 40%);
+}
+div#listsWork div.dropper div.dropdown p a {
+  font-size: 0.875em;
+}
+div#listsWork div.dropper div.dropdown p span {
+  font-size: 0.8125em;
+}
+/* stylelint-enable selector-max-specificity */
+.log-work form {
+  flex: 1;
+}
+.log-work button[type=submit] {
+  background-color: inherit;
+  border: none;
+  border-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  cursor: pointer;
+  font-size: 1em;
+  width: 100%;
+  padding: 7px 0;
+  margin: 0;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.log-work button[type=submit].activated {
+  color: hsl(0, 0%, 20%);
+  background: hsl(0, 0%, 93%);
+  border: 2px solid hsl(0, 0%, 95%);
+  border-right: 1px solid hsl(0, 0%, 87%);
+}
+.log-work button[type=submit].unactivated {
+  color: hsl(0, 0%, 100%);
+  background: hsl(130, 61%, 33%);
+  border: 2px solid hsl(130, 61%, 33%);
+  border-right: 1px solid hsl(128, 44%, 59%);
+}
+.log-work button[type=submit] span.activated-check {
+  color: hsl(130, 61%, 33%);
+  margin-right: 2px;
+}
+.dropclick {
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.dropclick h3 {
+  flex: 1;
+}
+.dropclick .arrow {
+  width: 20px;
+  margin: 5px;
+  margin-top: 10px;
+}
+.dropclick-unactivated {
+  background-color: hsl(130, 61%, 33%);
+}
+.user-book-options div.tools-override {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.user-book-options div.tools-override div.dropit {
+  margin: 0;
+  position: relative;
+  width: auto;
+}
+div.tools-override div.dropper {
+  z-index: 10000;
+  top: unset;
+  left: -1px;
+  margin: auto;
+}
+a:hover > h3 {
+  text-decoration: underline;
+}
+a.dropclick.plain {
+  text-decoration: none;
+}
+@media only screen {
+  div.Tools div.dropper {
+    position: absolute;
+  }
+  div.tools-override div.dropper {
+    width: 180px;
+  }
+}

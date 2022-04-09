@@ -8,13 +8,14 @@
  *  - openlibrary/plugins/openlibrary/js/ol.js
  */
 
-@import (less) "less/z-index.less";
+@import (less) "../less/z-index.less";
+@import (less) "../less/colors.less";
+@import (less) "../less/font-families.less";
 
 .header-bar {
   max-width: 1060px;
   min-width: 300px;
   margin: 0 auto;
-  .display-flex();
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-flow: row wrap;
@@ -363,7 +364,6 @@
   }
 
   .navigation-component.mobile {
-    .display-flex();
   }
 
   .navigation-component {
@@ -446,7 +446,6 @@
         width: auto;
 
         .search-bar-input {
-          .display-flex();
         }
       }
 
@@ -517,7 +516,6 @@
           }
 
           a {
-            .display-flex();
             text-decoration: none;
             color: @dark-grey;
 
@@ -625,7 +623,6 @@ div.search-facet:focus-within {
 .hamburger-component,
 .account-component {
   summary {
-    .display-flex();
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -698,12 +695,10 @@ div.search-facet:focus-within {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 0%;
     flex: 1;
-    .display-flex();
   }
   .search-bar-input {
     min-width: 50px;
     width: 100%;
-    .display-flex();
 
     /* stylelint-disable selector-max-specificity */
     input[type=text] {
@@ -853,7 +848,6 @@ div.search-facet:focus-within {
         width: 207px;
       }
       .search-bar-input {
-        .display-flex();
 
         /* stylelint-disable selector-max-specificity */
         input[type=text] {
@@ -874,7 +868,7 @@ div.search-facet:focus-within {
   }
 }
 
-@media only screen and (max-width: @width-breakpoint-tablet) {
+@media only screen  {
   // stylelint-disable-next-line selector-max-specificity
   #header-bar {
     position: sticky;

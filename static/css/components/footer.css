@@ -1,0 +1,99 @@
+/* stylelint-disable selector-max-specificity */
+div#footer-content {
+  max-width: 1060px;
+  margin: 5px auto;
+  padding: 20px;
+}
+div#footer-links {
+  margin-left: 10px;
+  line-height: 1.5em;
+}
+#footer-content div {
+  flex: 1;
+  flex-wrap: wrap;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  min-width: 150px;
+}
+footer {
+  width: 100%;
+  bottom: 0;
+  font-size: 0.8em;
+}
+footer #footer-details {
+  color: hsl(0, 0%, 20%);
+  width: 100%;
+}
+footer h2 {
+  color: hsl(0, 0%, 20%);
+  font-size: 1em;
+  margin: 0;
+}
+footer hr {
+  border: 0;
+  border-top: 1px solid hsl(64, 9%, 71%);
+  margin: 20px 0;
+}
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+footer ul li {
+  font-size: 1em;
+  list-style-type: none;
+  white-space: nowrap;
+  margin: 5px 0;
+}
+#footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 20%);
+  border-radius: 3px;
+  font-size: 20px;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  line-height: 35px;
+  margin-top: 10px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+  text-indent: -999px;
+  overflow: hidden;
+  background-position: center center;
+  background-size: 18px auto;
+  background-repeat: no-repeat;
+}
+.footer-icons__github {
+  background-image: url(/static/images/github.svg);
+}
+.footer-icons__twitter {
+  background-image: url(/static/images/tweet.svg);
+}
+#footer-links ul li a {
+  color: hsl(210, 100%, 20%);
+}
+#footer-links div {
+  margin: 20px 0;
+  padding: 0;
+}
+img#archive-logo {
+  margin-right: 10px;
+  padding: 0;
+  height: 27.5px;
+  opacity: 0.7;
+}
+div#legal-details {
+  flex: 0.9;
+  margin-bottom: 8px;
+}
+div#version-details {
+  text-align: right;
+  flex: 0.1;
+  margin-top: 8px;
+}
+.version {
+  color: hsl(0, 0%, 20%);
+  border: 1px solid hsl(64, 9%, 71%);
+  border-radius: 3px;
+  padding: 8px 10px;
+}

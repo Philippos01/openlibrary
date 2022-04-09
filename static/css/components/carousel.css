@@ -1,0 +1,522 @@
+/**
+ * Carousel
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#carousel
+ */
+/**
+ * Read Options Panel
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#read-panel
+ */
+.waitinglist-message {
+  white-space: nowrap;
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+.read-options,
+.Tools .btn-notice {
+  line-height: 1.5em;
+  font-size: 1em;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 87%);
+  margin-top: 0;
+}
+.read-options .cta-btn,
+.Tools .btn-notice .cta-btn {
+  margin-bottom: 10px;
+}
+.read-options .waitinglist-message,
+.Tools .btn-notice .waitinglist-message {
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+.read-options .cta-section,
+.Tools .btn-notice .cta-section {
+  font-size: 0.78em;
+}
+.read-options summary,
+.Tools .btn-notice summary {
+  margin: 5px -5px 0;
+}
+.read-options .check-availability,
+.Tools .btn-notice .check-availability {
+  font-size: 14px;
+  border-top: 1px solid hsl(0, 0%, 93%);
+}
+.read-options .check-other-editions,
+.Tools .btn-notice .check-other-editions {
+  text-align: center;
+}
+.read-options-panel__print-disabled-download,
+.Tools .btn-notice-panel__print-disabled-download {
+  font-size: 11px;
+  text-align: center;
+}
+.read-options strong,
+.Tools .btn-notice strong {
+  font-size: 12.5px;
+  font-weight: bold;
+}
+.read-options .cta-section-title,
+.Tools .btn-notice .cta-section-title {
+  font-size: 12.5px;
+  display: block;
+  font-weight: bold;
+}
+.read-options ul,
+.Tools .btn-notice ul {
+  margin-left: 8px;
+}
+.read-options li,
+.Tools .btn-notice li {
+  list-style: disc;
+  margin: 5px 10px 0;
+}
+.read-options table,
+.Tools .btn-notice table {
+  width: 100%;
+}
+.read-options td,
+.Tools .btn-notice td {
+  text-align: left;
+  width: 49%;
+}
+.buy-options-table .more {
+  margin-left: 0;
+}
+.buy-options-table .more::marker {
+  content: "";
+}
+.cta-section-title.world-cat-link {
+  margin-top: 0;
+}
+.sponsorship-card {
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid hsla(202, 96%, 28%, 0.2);
+  background: hsla(202, 40%, 95%, 0.5);
+  font-size: 0.8em;
+  text-align: center;
+}
+.sponsorship-card q {
+  display: block;
+  font-style: oblique;
+  text-align: center;
+}
+.sponsorship-card hr {
+  background: hsla(202, 96%, 28%, 0.35);
+}
+.sponsorship-card a.learn-more {
+  font-size: 0.9em;
+}
+.Tools .booklinks li {
+  list-style: none;
+  font-size: 12px;
+}
+/**
+ * CtaBtn
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#ctabtn
+ */
+.cta-btn,
+a.cta-btn {
+  font-size: 16px;
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  display: block;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 7px;
+  white-space: nowrap;
+  background-color: hsl(0, 0%, 40%);
+  line-height: 1.5em;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.cta-btn .btn-icon,
+a.cta-btn .btn-icon {
+  width: 40px;
+  flex-shrink: 0;
+}
+.cta-btn .btn-icon.read-aloud,
+a.cta-btn .btn-icon.read-aloud {
+  background-image: url(/static/images/icons/read%20aloud.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.cta-btn .btn-label,
+a.cta-btn .btn-label {
+  padding: 0 10px;
+}
+.cta-btn:link,
+a.cta-btn:link,
+.cta-btn:visited,
+a.cta-btn:visited {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+.cta-btn--available,
+a.cta-btn--available {
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--available:hover,
+a.cta-btn--available:hover {
+  background-color: hsl(202, 96%, 17%);
+}
+.cta-btn--external,
+a.cta-btn--external {
+  background-image: url(/static/images/icons/octicon-link-external-24.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 8px;
+}
+.cta-btn--unavailable,
+a.cta-btn--unavailable {
+  background-color: hsl(19, 95%, 40%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--unavailable:hover,
+a.cta-btn--unavailable:hover {
+  background-color: hsl(19, 95%, 20%);
+}
+.cta-btn--shell,
+a.cta-btn--shell,
+.cta-btn--shell:link,
+a.cta-btn--shell:link,
+.cta-btn--shell:visited,
+a.cta-btn--shell:visited {
+  background-color: hsl(0, 0%, 100%);
+  border: 2px solid hsl(202, 96%, 37%);
+  color: hsl(202, 96%, 37%);
+}
+.cta-btn--sponsor,
+a.cta-btn--sponsor {
+  border: 2px solid hsl(202, 96%, 28%);
+  background: hsl(202, 40%, 95%);
+}
+.cta-btn--vanilla,
+a.cta-btn--vanilla {
+  padding: 5px;
+  border: 2px solid hsl(0, 0%, 80%);
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  border-radius: 6px;
+}
+.cta-btn--sponsor:link,
+a.cta-btn--sponsor:link,
+.cta-btn--sponsor:visited,
+a.cta-btn--sponsor:visited {
+  color: hsl(202, 96%, 28%);
+}
+.cta-btn--sponsor:hover,
+a.cta-btn--sponsor:hover {
+  border: 2px solid hsl(202, 96%, 28%);
+  background-color: hsl(202, 96%, 28%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn__badge,
+a.cta-btn__badge {
+  background-color: hsl(19, 95%, 20%);
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 0.7em;
+}
+.cta-btn + form input.cta-btn,
+.cta-btn + .cta-btn {
+  margin-top: 5px;
+}
+.cta-btn--small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+.waitinglist-message {
+  white-space: nowrap;
+}
+.cta-button-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cta-button-group .cta-btn--w-icon {
+  display: flex;
+}
+.cta-button-group .cta-btn {
+  margin: 0;
+  padding: 8px 0;
+}
+.cta-button-group .cta-btn:first-child {
+  flex: 1;
+  padding: 8px;
+  overflow: hidden;
+}
+.cta-button-group .cta-btn:not(:first-child) {
+  margin-left: 1px;
+  width: 40px;
+  transition: width 0.2s;
+  overflow: hidden;
+  border-radius: 2px 6px 6px 2px;
+}
+.cta-button-group .cta-btn:not(:last-child) {
+  border-radius: 6px 2px 2px 6px;
+}
+.cta-button-group .cta-btn:not(:first-child):hover {
+  width: 100%;
+}
+/**
+ * ShareLinks
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#sharelinks
+ * Provided by macro openlibrary/macros/SocialShare.html and
+ * openlibrary/macros/databarWork.html
+ * Used in templates:
+ * - openlibrary/templates/type/work/view.html
+ * - openlibrary/templates/type/edition/view.html
+ */
+.shareLinks-list {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  word-break: keep-all;
+}
+.shareLinks-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.shareLinks-list li {
+  list-style-type: none;
+  line-height: 24px;
+  display: inline-block;
+  margin: 5px 0 0 !important;
+  padding: 0;
+  flex: 1;
+  cursor: pointer;
+}
+.shareLinks-list p {
+  margin: 0;
+}
+.shareLinks-list a {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  line-height: 24px;
+}
+.shareLinks-list img {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  height: 30px;
+}
+.shareLinks li:hover {
+  cursor: pointer;
+}
+.shareLinks .share-source {
+  font-size: 0.8em;
+  text-align: center;
+  color: hsl(0, 0%, 40%);
+}
+/**
+ * Book Preview Modal
+ */
+.book-preview .iframe-container {
+  border-top: 1px solid hsl(0, 0%, 93%);
+  border-bottom: 1px solid hsl(0, 0%, 93%);
+}
+.book-preview .learn-more {
+  text-align: center;
+}
+.book .book-cta {
+  margin: 5px auto 0;
+  font-size: 0.9em;
+  padding: 5px 0;
+}
+.book .book-cta a {
+  display: block;
+}
+.book .book-cover {
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.book .book-cover img,
+.book .book-cover a {
+  display: block;
+}
+.book .book-cover a {
+  margin: auto;
+}
+.book img.bookcover {
+  margin: 0 auto;
+  box-shadow: 1px 2px 5px 0 hsl(48, 35%, 64%);
+  border-radius: 3px;
+  max-width: 100%;
+  max-height: 200px;
+}
+.home-h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: hsl(202, 96%, 28%);
+  margin-bottom: 0.5em;
+  margin-top: 1.75em;
+}
+.carousel-container {
+  margin: 0 -20px;
+  padding: 3px 15px;
+}
+.carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 15px;
+  overflow-x: scroll;
+  padding: 10px 20px;
+}
+.carousel a,
+.carousel a:link {
+  text-decoration: none;
+}
+.carousel__item {
+  padding: 2px;
+  float: left;
+  height: 100%;
+  margin: 0 10px;
+  min-height: 1px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.carousel__item:focus,
+.carousel__item.selected {
+  border: 5px solid hsl(32, 100%, 61%);
+  outline: 0;
+}
+.carousel--minimal img {
+  max-height: 100px;
+  width: auto;
+}
+.carousel > div {
+  min-width: 130px;
+}
+.carousel button {
+  border: 0;
+  position: absolute;
+  color: transparent;
+}
+.carousel .book {
+  /*h2*/
+}
+.carousel .book:last-child {
+  margin-right: 0;
+}
+.carousel .book .book-metadata {
+  width: 130px;
+  margin: 0 auto;
+}
+.carousel .book .book-title {
+  font-size: 0.8em;
+  margin: 5px 0;
+  color: hsl(0, 0%, 20%);
+  font-weight: normal;
+}
+.carousel .book .book-title a {
+  color: hsl(202, 96%, 28%);
+  text-decoration: none;
+}
+.carousel__item .slick-loading {
+  opacity: 0;
+}
+/**
+ * Carousel (decorated)
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#decorated-carousel
+ */
+.carousel-container-decorated {
+  background: hsl(47, 54%, 90%);
+  border-bottom: 1px solid hsl(50, 32%, 85%);
+  border-top: 1px solid hsl(51, 32%, 88%);
+}
+.carousel-section .SRPCover img {
+  box-shadow: 1px 2px 5px 0 hsl(48, 35%, 64%);
+}
+.client-js .carousel {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.carousel__item__blankcover {
+  position: relative;
+  padding: 33% 10px 10px;
+  text-align: center;
+  background: hsl(0, 0%, 87%);
+  font-size: 1em;
+  color: hsl(0, 0%, 0%);
+  height: 200px;
+}
+.carousel__item__blankcover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 10px;
+}
+.carousel__item__blankcover--title {
+  position: relative;
+  font-size: 0.9em;
+}
+.carousel__item__blankcover--authors {
+  position: relative;
+  color: hsl(0, 0%, 35%);
+  padding: 4px 4px 0;
+  font-size: 0.6875em;
+  font-style: oblique;
+}
+.slick-next::before {
+  content: "→" !important;
+}
+.slick-prev::before {
+  content: "←" !important;
+}
+.category-icon {
+  margin: 0 auto;
+  width: 30px;
+}
+a.category-nostyle {
+  text-decoration: none;
+  display: block;
+}
+img.category-img {
+  display: block;
+  margin-top: 5px;
+}
+p.category-count {
+  text-align: center;
+  font-size: 0.7em;
+  line-height: 1;
+  color: hsl(0, 0%, 40%);
+  padding: 0 0 1px;
+  margin: 0;
+  margin-top: 5px;
+  font-style: italic;
+}
+p.category-title {
+  font-size: 0.875em;
+  text-align: center;
+  line-height: 1;
+  margin: 0;
+  margin-top: 5px;
+}
+.carousel .category-item {
+  padding: 2px;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}

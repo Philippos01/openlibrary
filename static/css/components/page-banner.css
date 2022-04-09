@@ -1,0 +1,70 @@
+/**
+ * PageBanner
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#pagebanner
+ */
+/* This button should be used for now on */
+.btn {
+  text-align: center;
+  padding: 5px 10px;
+}
+.btn.primary {
+  border: none;
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%) !important;
+  border-radius: 5px;
+}
+a.btn {
+  text-decoration: none;
+}
+.page-banner {
+  display: block;
+  color: hsl(0, 0%, 100%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  background: hsl(0, 0%, 0%);
+  padding: 15px;
+  border-bottom: 1px solid hsl(48, 33%, 83%);
+  /* stylelint-disable selector-max-specificity */
+  /* FIXME: Is this actually used anywhere? I think this block can be removed. */
+  /* stylelint-enable selector-max-specificity */
+}
+.page-banner-black {
+  background-color: hsl(0, 0%, 20%);
+  padding: 5px;
+}
+.page-banner-black .cta {
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 33%);
+  font-weight: 500;
+  text-decoration: none;
+  background: hsl(0, 0%, 27%);
+  margin: 0 5px;
+}
+.page-banner .button {
+  border-radius: 5px;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: inline;
+  border: 1px solid hsl(204, 70%, 53%);
+  color: hsl(77, 28%, 53%);
+}
+.page-banner a.button {
+  text-decoration: none;
+  background: hsl(204, 70%, 53%);
+  color: hsl(0, 0%, 100%);
+}
+.page-banner a.button:hover {
+  background: hsl(202, 57%, 61%);
+  color: hsl(0, 0%, 100%);
+}
+.page-banner .btn {
+  display: block;
+  max-width: 200px;
+  margin: auto;
+}
+.page-banner-body {
+  font-size: 0.85em;
+  padding: 10px;
+  line-height: 25px;
+  text-align: center;
+}

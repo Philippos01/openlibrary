@@ -1,0 +1,48 @@
+/**
+ * EditToolbar component
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#edit-toolbar
+ */
+/* stylelint-disable selector-max-specificity */
+div#editTools,
+div#editHistory {
+  width: auto;
+}
+div.editButton {
+  width: auto;
+  display: inline-block;
+}
+div#editInfo {
+  float: right;
+  white-space: normal;
+  text-align: right;
+}
+div#editInfo > div {
+  font-size: 11px;
+  font-weight: normal;
+  color: hsl(40, 32%, 29%) !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+div#editInfo .smallest {
+  padding-top: 0.3rem;
+}
+div#editTools {
+  white-space: nowrap;
+  padding: 0 0 1rem;
+}
+/**
+ * ButtonLink
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#buttonlink
+ */
+.linkButton {
+  border-radius: 5px;
+  background: hsl(0, 0%, 100%);
+  padding: 10px;
+  color: hsl(0, 0%, 20%);
+  display: inline-block;
+}
+a.linkButton {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: hsl(0, 0%, 40%);
+  border: 1px solid hsl(0, 0%, 60%);
+}

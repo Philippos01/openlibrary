@@ -1,0 +1,14 @@
+/* This button should be used for now on */
+.btn {
+  text-align: center;
+  padding: 5px 10px;
+}
+.btn.primary {
+  border: none;
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%) !important;
+  border-radius: 5px;
+}
+a.btn {
+  text-decoration: none;
+}

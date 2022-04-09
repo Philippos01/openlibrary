@@ -1,0 +1,26 @@
+/**
+ * Dropper
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#dropper
+ * Provided by macro macros/databarAuthor.html
+ * Used in templates:
+ * - openlibrary/templates/lists/widget.html
+ */
+div.tools-override div.dropper {
+  margin: inherit;
+}
+div.editionCover {
+  margin-bottom: 1.5em;
+  padding-right: 0;
+}
+div.editionAbout {
+  margin-top: 2px;
+}
+div.editionTools {
+  float: right;
+  width: 250px;
+}
+.workDetails:after {
+  content: "";
+  clear: both;
+  display: block;
+}

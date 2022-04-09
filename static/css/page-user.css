@@ -1,0 +1,7609 @@
+@charset "utf-8";
+/**
+ * Stylesheet entry point for pages with body-user
+ * See:
+ * - openlibrary/templates/history_framepage.html
+ * - openlibrary/templates/history_framenav.html
+ * Runs on pages
+ * - /about/vision
+ * - /account
+ * - /account/books/want-to-read
+ * - /account/books/notes
+ * - /account/books/observations
+ * - /account/email/forgot-ia
+ * - /account/login
+ * - /account/loans
+ * - /account/privacy
+ * - /account/import
+ * - /advancedsearch
+ * - /authors/OL22098A/Lewis_Carroll
+ * - /authors/OL22098A/Lewis_Carroll/edit
+ * - /authors/OL22098A/Lewis_Carroll?m=history
+ * - /books/add
+ * - /books/OL24197475M/The_complete_works_of_Mark_Twain.
+ * - /books/OL13517105M/Alice_im_Spiegelland/edit
+ * - /borrow
+ * - /contact
+ * - /data
+ * - /help
+ * - /lists
+ * - /people/admin
+ * - /people/openlibrary9157/lists
+ * - /read
+ * - /recentchanges
+ * - /search/authors
+ * - /subjects
+ * - /works/OL53924W/The_complete_works_of_Mark_Twain
+ * - /works/OL1930026W/No_easy_walk?m=diff&b=5
+ */
+/**
+ * FlashMessage
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#flashmessage
+ */
+.flash-messages {
+  font-size: 1em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  clear: both;
+}
+.flash-messages span {
+  display: block;
+  background-color: hsl(58, 100%, 90%);
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+  padding: 15px 52px;
+  text-align: left;
+  background-image: url(/images/icons/icon_check.png);
+}
+.flash-messages .error span {
+  background-image: url(/images/icons/icon_alert.png);
+}
+.flash-messages .bookadded span {
+  background: hsl(58, 100%, 90%) url(/images/icons/icon_check.png) no-repeat 40px 40px;
+  padding: 40px 40px 40px 80px;
+  font-family: "Georgia", "Times New Roman", serif;
+  position: relative;
+}
+.flash-messages .bookadded span span {
+  display: inline;
+  padding: 0;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+.flash-messages .bookadded h3 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  margin: 0;
+  color: hsl(0, 0%, 0%);
+}
+.flash-messages .bookadded .brown {
+  font-size: 1.125em;
+  margin: 15px 0 30px;
+}
+.flash-messages .bookadded .list {
+  font-size: 1.5em;
+  margin: 0;
+}
+.flash-messages .bookadded h3 em {
+  font-style: italic;
+  font-weight: 700;
+  color: hsl(113, 38%, 29%);
+}
+.flash-messages .bookadded .red {
+  font-family: "Georgia", "Times New Roman", serif;
+}
+.flash-messages .bookadded .close {
+  position: absolute;
+  display: block;
+  top: 20px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+}
+body {
+  background-color: hsl(48, 33%, 83%);
+}
+/* stylelint-disable selector-max-specificity */
+div#headerNav {
+  background-color: hsl(48, 33%, 83%);
+}
+/* stylelint-enable selector-max-specificity */
+/* stylelint-disable selector-max-specificity */
+div#headerNav ul.links li {
+  border-top: 1px solid hsl(63, 26%, 84%);
+}
+/* stylelint-enable selector-max-specificity */
+/* stylelint-disable selector-max-specificity */
+div#headerLogo {
+  background-color: hsl(48, 33%, 83%);
+}
+/* stylelint-enable selector-max-specificity */
+/* stylelint-disable selector-max-specificity */
+div#background {
+  width: 100%;
+  background-color: hsl(48, 33%, 83%);
+}
+/* stylelint-enable selector-max-specificity */
+div.message {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 15px;
+  background: hsl(58, 100%, 90%);
+}
+div.message p {
+  font-family: "Lucida Grande", "Arial", sans-serif;
+}
+div.siteSearch {
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+}
+div.siteSearch.darker {
+  background-color: hsl(0, 0%, 95%);
+  padding-right: 22px;
+}
+/* stylelint-disable selector-max-specificity */
+div#revertLink,
+div#editHistory {
+  display: none;
+}
+/* stylelint-enable selector-max-specificity */
+/* stylelint-disable selector-max-specificity */
+div#headerPlace {
+  background-color: hsl(48, 33%, 83%);
+}
+div#subjectsPage {
+  columns: 2;
+}
+@media only screen and (min-width: 768px) {
+  div#subjectsPage {
+    columns: 4;
+  }
+}
+div#subjectsPage ul {
+  display: inline-block;
+}
+div.lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+.multi-input-autocomplete--author div {
+  display: flex;
+}
+.multi-input-autocomplete--author input.author.author-autocomplete {
+  flex: 1;
+}
+th.toggle-all {
+  background: hsl(202, 96%, 37%);
+}
+.div-class {
+  margin-top: 20px;
+  display: inline-block;
+  height: 360px;
+  overflow: auto;
+  width: 100%;
+}
+.import-table {
+  border: 2px;
+}
+.import-table th {
+  padding: 5px 10px;
+}
+.import-table td {
+  padding: 5px 10px;
+}
+.import-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: hsl(0, 0%, 100%);
+}
+.import-table tbody {
+  width: 100%;
+}
+.import-table tbody tr {
+  background-color: hsl(0, 0%, 100%);
+}
+.my-imports {
+  width: 100%;
+}
+.import-export {
+  display: flex;
+  flex-direction: column;
+}
+.import-export__readinglog {
+  padding: 0 10px;
+}
+#myProgress {
+  margin-top: 5px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: hsl(0, 0%, 93%);
+}
+#myBar {
+  width: 0%;
+  border-radius: 10px;
+  padding: 4px;
+  background-color: hsl(130, 61%, 33%);
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+}
+.import-buttons {
+  display: flex;
+}
+.import-table tbody tr:nth-child(odd) {
+  background-color: hsl(0, 0%, 93%);
+}
+.error-imported {
+  font-weight: bold;
+  color: hsl(8, 78%, 49%);
+}
+.success-imported {
+  color: hsl(130, 61%, 33%);
+  font-weight: bold;
+}
+tr.table-row.selected {
+  border: 2px solid hsl(130, 61%, 33%);
+}
+.olform--decoration {
+  margin: 20px 0;
+  border: 2px solid hsl(0, 0%, 93%);
+  padding: 20px;
+  border-radius: 5px;
+}
+/* stylelint-disable no-descending-specificity */
+/**
+ * This file exists for historic reasons and will be deleted
+ * at the first available opportunity.
+ * DO NOT ADD NEW CSS here
+ * Unless... you are removing an inline style and moving it into here.
+ *
+ * We are currently in the process of:
+ * - moving styles from this file into the components
+ * - removing dead code
+ * - removing redundant CSS in favor of common reusable styles
+ *
+ * DO NOT ADD NEW CSS HERE
+ *
+ * New components should be placed inside the components folder
+ * and imported directly in one of the entry points that are prefixed
+ * with `page-` or `js-`
+ */
+/**
+ * BorrowBookForm
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#borrowbookform
+ * Used in macros
+ * Used in templates:
+ * - openlibrary/templates/borrow.html
+ * Used in pages:
+ * - ?
+ */
+form#borrowbook {
+  margin: 40px auto 0;
+  text-align: left;
+}
+form#borrowbook label {
+  display: block;
+  float: left;
+  width: 170px;
+  height: 50px;
+  padding: 20px 0 0 50px;
+  margin-bottom: 25px;
+  background-color: hsl(49, 30%, 93%);
+  font-size: 0.6875em;
+  color: hsl(0, 0%, 40%);
+  cursor: pointer;
+  background-position: 20px 20px;
+  background-repeat: no-repeat;
+  background-image: url(/images/icons/icon_download-borrow.png);
+}
+form#borrowbook label strong {
+  display: block;
+  font-size: 1.25em;
+  color: hsl(198, 100%, 36%);
+  text-decoration: underline;
+}
+form#borrowbook label:hover {
+  background-color: hsl(45, 100%, 98%);
+}
+form#borrowbook label:hover strong {
+  color: hsl(81, 39%, 35%);
+}
+form#borrowbook fieldset {
+  display: block;
+  float: left;
+  border-top: 1px dotted hsl(0, 0%, 0%);
+  padding: 20px 0;
+}
+form#borrowbook fieldset table {
+  margin: 0 auto;
+}
+form#borrowbook fieldset table td {
+  text-align: center;
+  font-size: 0.8125em;
+}
+form#borrowbook fieldset table td.icon {
+  padding-right: 10px;
+}
+form#borrowbook fieldset.download {
+  width: 455px;
+}
+form#borrowbook fieldset.online {
+  width: 220px;
+  margin-right: 15px;
+}
+form#borrowbook fieldset.online table td {
+  color: hsl(40, 32%, 29%);
+}
+form#borrowbook fieldset.online label {
+  background-color: hsl(45, 100%, 98%);
+  background-image: url(/images/icons/icon_read-borrow.png);
+}
+form#borrowbook fieldset div {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+form#borrowbook legend {
+  padding: 0 10px;
+  font-size: 0.6875em;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  background-color: hsl(48, 33%, 83%);
+}
+form#borrowbook input {
+  display: none;
+}
+div#header {
+  width: 960px;
+}
+div#headerSearch {
+  width: 316px;
+  padding: 9px;
+  outline: none;
+}
+div#headerLogo {
+  position: relative;
+  float: left;
+  width: 220px;
+  height: 140px;
+  margin-top: 10px;
+}
+div#headerLogo h2 {
+  margin: 0;
+  padding: 0;
+}
+div#headerLogo span.title {
+  position: absolute;
+  top: -1000px;
+}
+div#headerLogo p.tagline {
+  position: absolute;
+  left: 0;
+  top: 118px;
+  width: 220px;
+  text-align: center;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.6875em;
+  color: hsl(0, 0%, 20%);
+  margin: 0;
+  padding: 0;
+}
+div#headerLogo p.tagline a {
+  color: hsl(0, 0%, 20%);
+  text-decoration: none;
+}
+div#headerNav {
+  position: relative;
+  float: left;
+  width: 370px;
+  height: 150px;
+}
+div#headerNav li.first {
+  margin-right: 279px !important;
+}
+div#headerNav li.second {
+  margin-right: 99px !important;
+}
+div#headerNav ul.links {
+  position: absolute;
+  left: 1px;
+  bottom: 0;
+  clear: left;
+  float: left;
+  width: 369px;
+}
+div#headerNav ul.links li {
+  display: block;
+  float: left;
+  width: 90px;
+  color: hsl(0, 0%, 0%);
+  margin-right: 10px;
+}
+div#headerNav ul.links li a,
+div#headerNav ul.links li span {
+  display: block;
+  width: 80px;
+  height: 22px;
+  padding: 10px 0 0 10px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.6875em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+div#headerNav ul.links li a:hover {
+  background-color: hsl(207, 83%, 33%);
+  color: hsl(0, 0%, 100%);
+}
+div#headerPlace {
+  float: left;
+  width: 370px;
+  height: 150px;
+}
+div#headerTools {
+  -webkit-box-ordinal-group: 5;
+  -ms-flex-order: 4;
+  order: 4;
+  width: 50px;
+}
+div#headerLogin {
+  text-align: right;
+  font-size: 0.6875em;
+  padding-top: 20px;
+  color: hsl(0, 0%, 40%);
+}
+#headerUserOpen {
+  display: none;
+}
+#headerLogin {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+#headerLogin #headerUser {
+  position: relative;
+}
+#headerLogin #userToggle {
+  text-decoration: none;
+  display: block;
+  line-height: 24px;
+  padding: 0 7px;
+  float: right;
+}
+#headerLogin #userToggle .label {
+  text-decoration: underline;
+}
+#headerLogin #userToggle .arrow {
+  text-decoration: none;
+  color: hsl(0, 0%, 40%);
+  font-size: 8px;
+}
+#headerLogin #headerUserOpen {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  padding: 0;
+  text-align: left;
+  z-index: 10000;
+  background-color: hsl(0, 0%, 95%);
+  display: none;
+  min-width: 70px;
+}
+#headerLogin #headerUserOpen a {
+  display: block;
+  white-space: nowrap;
+  line-height: 24px;
+  padding: 0 7px;
+}
+/**
+ * Wmd (Weapons of Mass destruction aka Wikitext markdown)
+ * This file relates to Wikitext markdown styling.
+ * It will be refactored at the earliest opportunity but for now
+ * lives inside the legacy stylesheet.
+ * DO NOT ADD NEW CSS here
+ * Unless... you are removing an inline style and moving it into here.
+ *
+ * We are currently in the process of:
+ * - moving styles from this file into the components
+ * - removing dead code
+ * - removing redundant CSS in favor of common reusable styles
+ *
+ * DO NOT ADD NEW CSS HERE
+ */
+.wmd-panel {
+  width: auto;
+}
+.wmd-editor {
+  background-color: hsl(108, 100%, 50%);
+}
+.wmd-input {
+  height: 500px;
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 27%);
+}
+.wmd-preview {
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 87%);
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  display: none;
+  overflow-wrap: anywhere;
+}
+.formElement .input .wmd-preview {
+  width: 100%;
+  min-height: 47px;
+  padding: 5px;
+  clear: both;
+}
+/* stylelint-disable no-descending-specificity */
+fieldset.major .wmd-preview,
+form#addAuthor.olform .wmd-preview,
+form.olform.books .formElement.librarian .input .wmd-preview,
+form.olform.books .formElement .input .wmd-preview {
+  min-height: 47px;
+  padding: 3px;
+}
+/* stylelint-enable no-descending-specificity */
+.wmd-output {
+  background-color: hsl(0, 0%, 100%);
+}
+.wmd-button-row {
+  position: relative;
+  margin-bottom: 5px !important;
+  margin-left: 0 !important;
+  margin-top: 10px;
+  padding: 0;
+  height: 20px;
+}
+.wmd-spacer {
+  width: 1px;
+  height: 20px;
+  margin-left: 14px;
+  position: absolute;
+  display: inline-block;
+  list-style: none;
+}
+.wmd-button {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  position: absolute;
+  background-image: url(/images/wmd-buttons.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  display: inline-block;
+  list-style: none;
+}
+/* sprite button slicing style information */
+.wmd-bold-button {
+  left: 0;
+  background-position: 0 0;
+}
+.wmd-italic-button {
+  left: 25px;
+  background-position: -20px 0;
+}
+.wmd-spacer1 {
+  left: 50px;
+}
+.wmd-link-button {
+  left: 75px;
+  background-position: -40px 0;
+}
+.wmd-quote-button {
+  left: 100px;
+  background-position: -60px 0;
+}
+.wmd-code-button {
+  left: 125px;
+  background-position: -80px 0;
+}
+.wmd-image-button {
+  left: 150px;
+  background-position: -100px 0;
+}
+.wmd-spacer2 {
+  left: 175px;
+}
+.wmd-olist-button {
+  left: 200px;
+  background-position: -120px 0;
+}
+.wmd-ulist-button {
+  left: 225px;
+  background-position: -140px 0;
+}
+.wmd-heading-button {
+  left: 250px;
+  background-position: -160px 0;
+}
+.wmd-hr-button {
+  left: 275px;
+  background-position: -180px 0;
+}
+.wmd-spacer3 {
+  left: 300px;
+}
+.wmd-undo-button {
+  left: 325px;
+  background-position: -200px 0;
+}
+.wmd-redo-button {
+  left: 350px;
+  background-position: -220px 0;
+}
+.wmd-help-button {
+  margin-right: 0;
+  right: 0;
+  background-position: -240px 0;
+}
+.wmd-prompt-background {
+  background-color: hsl(0, 0%, 0%);
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+/**
+ * Wmd (Weapons of Mass destruction aka Wikitext markdown) ButtonBar
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#wmdbuttonbar
+ */
+.wmd-button-bar {
+  overflow: hidden;
+}
+.wmd-button-bar li:nth-child(n+8) {
+  display: none;
+}
+.wmd-button-bar li:last-child {
+  display: inline-block;
+}
+.wmd-button-bar li:last-child a {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+@media all {
+  .wmd-button-bar {
+    overflow: auto;
+    width: 100%;
+    background-color: transparent;
+    /* stylelint-disable selector-max-specificity */
+    /* stylelint-enable selector-max-specificity */
+  }
+  .wmd-button-bar li:nth-child(n+8) {
+    display: inline-block;
+  }
+  .wmd-button-bar li:last-child {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: absolute;
+  }
+  .wmd-button-bar form.olform.books,
+  .wmd-button-bar fieldset.major {
+    width: 854px;
+  }
+  .wmd-button-bar form.olform.books .formElement.librarian .input {
+    width: 798px;
+  }
+  .wmd-button-bar form#addAuthor.olform {
+    width: 628px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  form.olform.books .formElement.librarian .input .wmd-preview {
+    width: 798px;
+  }
+  form#addAuthor.olform .wmd-preview {
+    width: 623px;
+  }
+}
+/**
+ * Read Options Panel
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#read-panel
+ */
+.waitinglist-message {
+  white-space: nowrap;
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+.read-options,
+.Tools .btn-notice {
+  line-height: 1.5em;
+  font-size: 1em;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 87%);
+  margin-top: 0;
+}
+.read-options .cta-btn,
+.Tools .btn-notice .cta-btn {
+  margin-bottom: 10px;
+}
+.read-options .waitinglist-message,
+.Tools .btn-notice .waitinglist-message {
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+.read-options .cta-section,
+.Tools .btn-notice .cta-section {
+  font-size: 0.78em;
+}
+.read-options summary,
+.Tools .btn-notice summary {
+  margin: 5px -5px 0;
+}
+.read-options .check-availability,
+.Tools .btn-notice .check-availability {
+  font-size: 14px;
+  border-top: 1px solid hsl(0, 0%, 93%);
+}
+.read-options .check-other-editions,
+.Tools .btn-notice .check-other-editions {
+  text-align: center;
+}
+.read-options-panel__print-disabled-download,
+.Tools .btn-notice-panel__print-disabled-download {
+  font-size: 11px;
+  text-align: center;
+}
+.read-options strong,
+.Tools .btn-notice strong {
+  font-size: 12.5px;
+  font-weight: bold;
+}
+.read-options .cta-section-title,
+.Tools .btn-notice .cta-section-title {
+  font-size: 12.5px;
+  display: block;
+  font-weight: bold;
+}
+.read-options ul,
+.Tools .btn-notice ul {
+  margin-left: 8px;
+}
+.read-options li,
+.Tools .btn-notice li {
+  list-style: disc;
+  margin: 5px 10px 0;
+}
+.read-options table,
+.Tools .btn-notice table {
+  width: 100%;
+}
+.read-options td,
+.Tools .btn-notice td {
+  text-align: left;
+  width: 49%;
+}
+.buy-options-table .more {
+  margin-left: 0;
+}
+.buy-options-table .more::marker {
+  content: "";
+}
+.cta-section-title.world-cat-link {
+  margin-top: 0;
+}
+.sponsorship-card {
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid hsla(202, 96%, 28%, 0.2);
+  background: hsla(202, 40%, 95%, 0.5);
+  font-size: 0.8em;
+  text-align: center;
+}
+.sponsorship-card q {
+  display: block;
+  font-style: oblique;
+  text-align: center;
+}
+.sponsorship-card hr {
+  background: hsla(202, 96%, 28%, 0.35);
+}
+.sponsorship-card a.learn-more {
+  font-size: 0.9em;
+}
+.Tools .booklinks li {
+  list-style: none;
+  font-size: 12px;
+}
+/**
+ * CtaBtn
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#ctabtn
+ */
+.cta-btn,
+a.cta-btn {
+  font-size: 16px;
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  display: block;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 7px;
+  white-space: nowrap;
+  background-color: hsl(0, 0%, 40%);
+  line-height: 1.5em;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.cta-btn .btn-icon,
+a.cta-btn .btn-icon {
+  width: 40px;
+  flex-shrink: 0;
+}
+.cta-btn .btn-icon.read-aloud,
+a.cta-btn .btn-icon.read-aloud {
+  background-image: url(/static/images/icons/read%20aloud.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.cta-btn .btn-label,
+a.cta-btn .btn-label {
+  padding: 0 10px;
+}
+.cta-btn:link,
+a.cta-btn:link,
+.cta-btn:visited,
+a.cta-btn:visited {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+.cta-btn--available,
+a.cta-btn--available {
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--available:hover,
+a.cta-btn--available:hover {
+  background-color: hsl(202, 96%, 17%);
+}
+.cta-btn--external,
+a.cta-btn--external {
+  background-image: url(/static/images/icons/octicon-link-external-24.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 8px;
+}
+.cta-btn--unavailable,
+a.cta-btn--unavailable {
+  background-color: hsl(19, 95%, 40%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn--unavailable:hover,
+a.cta-btn--unavailable:hover {
+  background-color: hsl(19, 95%, 20%);
+}
+.cta-btn--shell,
+a.cta-btn--shell,
+.cta-btn--shell:link,
+a.cta-btn--shell:link,
+.cta-btn--shell:visited,
+a.cta-btn--shell:visited {
+  background-color: hsl(0, 0%, 100%);
+  border: 2px solid hsl(202, 96%, 37%);
+  color: hsl(202, 96%, 37%);
+}
+.cta-btn--sponsor,
+a.cta-btn--sponsor {
+  border: 2px solid hsl(202, 96%, 28%);
+  background: hsl(202, 40%, 95%);
+}
+.cta-btn--vanilla,
+a.cta-btn--vanilla {
+  padding: 5px;
+  border: 2px solid hsl(0, 0%, 80%);
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  border-radius: 6px;
+}
+.cta-btn--sponsor:link,
+a.cta-btn--sponsor:link,
+.cta-btn--sponsor:visited,
+a.cta-btn--sponsor:visited {
+  color: hsl(202, 96%, 28%);
+}
+.cta-btn--sponsor:hover,
+a.cta-btn--sponsor:hover {
+  border: 2px solid hsl(202, 96%, 28%);
+  background-color: hsl(202, 96%, 28%);
+  color: hsl(0, 0%, 100%);
+}
+.cta-btn__badge,
+a.cta-btn__badge {
+  background-color: hsl(19, 95%, 20%);
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 0.7em;
+}
+.cta-btn + form input.cta-btn,
+.cta-btn + .cta-btn {
+  margin-top: 5px;
+}
+.cta-btn--small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+.waitinglist-message {
+  white-space: nowrap;
+}
+.cta-button-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cta-button-group .cta-btn--w-icon {
+  display: flex;
+}
+.cta-button-group .cta-btn {
+  margin: 0;
+  padding: 8px 0;
+}
+.cta-button-group .cta-btn:first-child {
+  flex: 1;
+  padding: 8px;
+  overflow: hidden;
+}
+.cta-button-group .cta-btn:not(:first-child) {
+  margin-left: 1px;
+  width: 40px;
+  transition: width 0.2s;
+  overflow: hidden;
+  border-radius: 2px 6px 6px 2px;
+}
+.cta-button-group .cta-btn:not(:last-child) {
+  border-radius: 6px 2px 2px 6px;
+}
+.cta-button-group .cta-btn:not(:first-child):hover {
+  width: 100%;
+}
+/**
+ * Book Preview Modal
+ */
+.book-preview .iframe-container {
+  border-top: 1px solid hsl(0, 0%, 93%);
+  border-bottom: 1px solid hsl(0, 0%, 93%);
+}
+.book-preview .learn-more {
+  text-align: center;
+}
+/**
+ * Diff
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#diff
+ */
+#legend {
+  float: left;
+  font-size: 11px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  line-height: 1em;
+  margin-top: 20px;
+}
+#legend dl,
+dd {
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+#legend dd {
+  padding: 5px;
+  border: 1px solid hsl(0, 0%, 93%);
+  margin-right: 5px;
+}
+#legend .mod {
+  background-color: hsl(32, 100%, 78%);
+}
+#legend .rem {
+  color: hsl(8, 78%, 49%);
+  text-decoration: line-through;
+}
+#legend .add {
+  background-color: hsl(78, 34%, 63%);
+}
+#legend .unmod {
+  background-color: hsl(0, 0%, 93%);
+}
+/* Diff comparison table */
+.diff .revisions {
+  clear: both;
+  margin-top: 20px;
+  padding: 0;
+  float: left;
+  width: 100%;
+}
+.diff .revisions th {
+  padding: 10px;
+  font-family: "News Gothic MT", "Trebuchet MS", Geneva, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+}
+.diff .revisions .heading {
+  text-transform: uppercase;
+}
+.diff .revisions td {
+  padding: 10px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  background: hsl(0, 0%, 93%);
+  vertical-align: top;
+  font-size: 0.875em;
+  border-right: 1px solid hsl(0, 0%, 100%);
+  border-bottom: 1px solid hsl(0, 0%, 100%);
+}
+.revisions table {
+  margin-top: 0;
+}
+td.r {
+  padding-left: 12px;
+  width: 50%;
+}
+/* .diff table tbody.mod td.l { background: @orange-three } */
+.diff table tbody.mod td.r {
+  background: hsl(32, 100%, 78%);
+}
+/* .diff table tbody.add td.l { background: @light-olive-2 } */
+.diff table tbody.add td.r {
+  background: hsl(78, 34%, 63%);
+}
+.diff table tbody.rem td.r {
+  color: hsl(8, 78%, 49%);
+  text-decoration: line-through;
+}
+td.l {
+  padding-left: 12px;
+  width: 50%;
+}
+.diff table tbody.rem td.l {
+  color: hsl(8, 78%, 49%);
+  text-decoration: line-through;
+}
+ins {
+  background: hsl(78, 34%, 63%);
+  text-decoration: none;
+}
+del {
+  color: hsl(8, 78%, 49%);
+  text-decoration: line-through;
+}
+.diff table tbody.mod del,
+.diff table tbody.mod ins {
+  background: hsl(300, 100%, 50%);
+}
+@font-face {
+  font-family: "Iconochive-Regular", sans-serif;
+  src: url(/static/fonts/Iconochive-Regular.eot?-ccsheb);
+  src: url(/static/fonts/Iconochive-Regular.eot?#iefix-ccsheb) format("embedded-opentype"), url(/static/fonts/Iconochive-Regular.woff?-ccsheb) format("woff"), url(/static/fonts/Iconochive-Regular.ttf?-ccsheb) format("truetype"), url(/static/fonts/Iconochive-Regular.svg?-ccsheb#Iconochive-Regular) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="iconochive-"],
+[class*=" iconochive-"] {
+  font-family: "Iconochive-Regular", sans-serif;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.iconochive-Uplevel:before {
+  content: "\21b5";
+}
+.iconochive-exit:before {
+  content: "\1f6a3";
+}
+.iconochive-beta:before {
+  content: "\3b2";
+}
+.iconochive-logo:before {
+  content: "\1f3db";
+}
+.iconochive-audio:before {
+  content: "\1f568";
+}
+.iconochive-movies:before {
+  content: "\1f39e";
+}
+.iconochive-software:before {
+  content: "\1f4be";
+}
+.iconochive-texts:before {
+  content: "\1f56e";
+}
+.iconochive-etree:before {
+  content: "\1f3a4";
+}
+.iconochive-image:before {
+  content: "\1f5bc";
+}
+.iconochive-web:before {
+  content: "\1f5d4";
+}
+.iconochive-collection:before {
+  content: "\2211";
+}
+.iconochive-folder:before {
+  content: "\1f4c2";
+}
+.iconochive-data:before {
+  content: "\1f5c3";
+}
+.iconochive-tv:before {
+  content: "\1f4fa";
+}
+.iconochive-article:before {
+  content: "\1f5cf";
+}
+.iconochive-question:before {
+  content: "\2370";
+}
+.iconochive-question-dark:before {
+  content: "\3f";
+}
+.iconochive-info:before {
+  content: "\69";
+}
+.iconochive-info-small:before {
+  content: "\24d8";
+}
+.iconochive-comment:before {
+  content: "\1f5e9";
+}
+.iconochive-comments:before {
+  content: "\1f5ea";
+}
+.iconochive-person:before {
+  content: "\1f464";
+}
+.iconochive-people:before {
+  content: "\1f465";
+}
+.iconochive-eye:before {
+  content: "\1f441";
+}
+.iconochive-rss:before {
+  content: "\221e";
+}
+.iconochive-time:before {
+  content: "\1f551";
+}
+.iconochive-quote:before {
+  content: "\275d";
+}
+.iconochive-disc:before {
+  content: "\1f4bf";
+}
+.iconochive-tv-commercial:before {
+  content: "\1f4b0";
+}
+.iconochive-search:before {
+  content: "\1f50d";
+}
+.iconochive-search-star:before {
+  content: "\273d";
+}
+.iconochive-tiles:before {
+  content: "\229e";
+}
+.iconochive-list:before {
+  content: "\21f6";
+}
+.iconochive-list-bulleted:before {
+  content: "\2317";
+}
+.iconochive-latest:before {
+  content: "\2208";
+}
+.iconochive-left:before {
+  content: "\2c2";
+}
+.iconochive-right:before {
+  content: "\2c3";
+}
+.iconochive-left-solid:before {
+  content: "\25c2";
+}
+.iconochive-right-solid:before {
+  content: "\25b8";
+}
+.iconochive-up-solid:before {
+  content: "\25b4";
+}
+.iconochive-down-solid:before {
+  content: "\25be";
+}
+.iconochive-dot:before {
+  content: "\23e4";
+}
+.iconochive-dots:before {
+  content: "\25a6";
+}
+.iconochive-columns:before {
+  content: "\25af";
+}
+.iconochive-sort:before {
+  content: "\21d5";
+}
+.iconochive-atoz:before {
+  content: "\1f524";
+}
+.iconochive-ztoa:before {
+  content: "\1f525";
+}
+.iconochive-upload:before {
+  content: "\1f4e4";
+}
+.iconochive-download:before {
+  content: "\1f4e5";
+}
+.iconochive-favorite:before {
+  content: "\2605";
+}
+.iconochive-heart:before {
+  content: "\2665";
+}
+.iconochive-play:before {
+  content: "\25b6";
+}
+.iconochive-play-framed:before {
+  content: "\1f3ac";
+}
+.iconochive-fullscreen:before {
+  content: "\26f6";
+}
+.iconochive-mute:before {
+  content: "\1f507";
+}
+.iconochive-unmute:before {
+  content: "\1f50a";
+}
+.iconochive-share:before {
+  content: "\1f381";
+}
+.iconochive-edit:before {
+  content: "\270e";
+}
+.iconochive-reedit:before {
+  content: "\2710";
+}
+.iconochive-gear:before {
+  content: "\2699";
+}
+.iconochive-remove-circle:before {
+  content: "\274e";
+}
+.iconochive-plus-circle:before {
+  content: "\1f5d6";
+}
+.iconochive-minus-circle:before {
+  content: "\1f5d5";
+}
+.iconochive-x:before {
+  content: "\1f5d9";
+}
+.iconochive-fork:before {
+  content: "\22d4";
+}
+.iconochive-trash:before {
+  content: "\1f5d1";
+}
+.iconochive-warning:before {
+  content: "\26a0";
+}
+.iconochive-flash:before {
+  content: "\1f5f2";
+}
+.iconochive-world:before {
+  content: "\1f5fa";
+}
+.iconochive-lock:before {
+  content: "\1f512";
+}
+.iconochive-unlock:before {
+  content: "\1f513";
+}
+.iconochive-twitter:before {
+  content: "\1f426";
+}
+.iconochive-facebook:before {
+  content: "\66";
+}
+.iconochive-googleplus:before {
+  content: "\67";
+}
+.iconochive-reddit:before {
+  content: "\1f47d";
+}
+.iconochive-tumblr:before {
+  content: "\54";
+}
+.iconochive-pinterest:before {
+  content: "\1d4df";
+}
+.iconochive-popcorn:before {
+  content: "\1f4a5";
+}
+.iconochive-email:before {
+  content: "\1f4e7";
+}
+.iconochive-embed:before {
+  content: "\1f517";
+}
+.iconochive-gamepad:before {
+  content: "\1f579";
+}
+.iconochive-Zoom_In:before {
+  content: "\2b";
+}
+.iconochive-Zoom_Out:before {
+  content: "\2d";
+}
+.iconochive-RSS:before {
+  content: "\1f4e8";
+}
+.iconochive-Light_Bulb:before {
+  content: "\1f4a1";
+}
+.iconochive-Add:before {
+  content: "\2295";
+}
+.iconochive-Tab_Activity:before {
+  content: "\2318";
+}
+.iconochive-Forward:before {
+  content: "\23e9";
+}
+.iconochive-Backward:before {
+  content: "\23ea";
+}
+.iconochive-No_Audio:before {
+  content: "\1f508";
+}
+.iconochive-Pause:before {
+  content: "\23f8";
+}
+.iconochive-No_Favorite:before {
+  content: "\2606";
+}
+.iconochive-Unike:before {
+  content: "\2661";
+}
+.iconochive-Song:before {
+  content: "\266b";
+}
+.iconochive-No_Flag:before {
+  content: "\2690";
+}
+.iconochive-Flag:before {
+  content: "\2691";
+}
+.iconochive-Done:before {
+  content: "\2713";
+}
+.iconochive-Check:before {
+  content: "\2714";
+}
+.iconochive-Refresh:before {
+  content: "\27f3";
+}
+.iconochive-Headphones:before {
+  content: "\1f3a7";
+}
+.iconochive-Chart:before {
+  content: "\1f4c8";
+}
+.iconochive-Bookmark:before {
+  content: "\1f4d1";
+}
+.iconochive-Documents:before {
+  content: "\1f4da";
+}
+.iconochive-Newspaper:before {
+  content: "\1f4f0";
+}
+.iconochive-Podcast:before {
+  content: "\1f4f6";
+}
+.iconochive-Radio:before {
+  content: "\1f4fb";
+}
+.iconochive-Cassette:before {
+  content: "\1f4fc";
+}
+.iconochive-Shuffle:before {
+  content: "\1f500";
+}
+.iconochive-Loop:before {
+  content: "\1f501";
+}
+.iconochive-Low_Audio:before {
+  content: "\1f509";
+}
+.iconochive-First:before {
+  content: "\1f396";
+}
+.iconochive-Invisible:before {
+  content: "\1f576";
+}
+.iconochive-Computer:before {
+  content: "\1f5b3";
+}
+/**
+ * Carousel
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#carousel
+ */
+.home-h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: hsl(202, 96%, 28%);
+  margin-bottom: 0.5em;
+  margin-top: 1.75em;
+}
+.carousel-container {
+  margin: 0 -20px;
+  padding: 3px 15px;
+}
+.carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 15px;
+  overflow-x: scroll;
+  padding: 10px 20px;
+}
+.carousel a,
+.carousel a:link {
+  text-decoration: none;
+}
+.carousel__item {
+  padding: 2px;
+  float: left;
+  height: 100%;
+  margin: 0 10px;
+  min-height: 1px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.carousel__item:focus,
+.carousel__item.selected {
+  border: 5px solid hsl(32, 100%, 61%);
+  outline: 0;
+}
+.carousel--minimal img {
+  max-height: 100px;
+  width: auto;
+}
+.carousel > div {
+  min-width: 130px;
+}
+.carousel button {
+  border: 0;
+  position: absolute;
+  color: transparent;
+}
+.carousel .book {
+  /*h2*/
+}
+.carousel .book:last-child {
+  margin-right: 0;
+}
+.carousel .book .book-metadata {
+  width: 130px;
+  margin: 0 auto;
+}
+.carousel .book .book-title {
+  font-size: 0.8em;
+  margin: 5px 0;
+  color: hsl(0, 0%, 20%);
+  font-weight: normal;
+}
+.carousel .book .book-title a {
+  color: hsl(202, 96%, 28%);
+  text-decoration: none;
+}
+.carousel__item .slick-loading {
+  opacity: 0;
+}
+/**
+ * Carousel (decorated)
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#decorated-carousel
+ */
+.carousel-container-decorated {
+  background: hsl(47, 54%, 90%);
+  border-bottom: 1px solid hsl(50, 32%, 85%);
+  border-top: 1px solid hsl(51, 32%, 88%);
+}
+.carousel-section .SRPCover img {
+  box-shadow: 1px 2px 5px 0 hsl(48, 35%, 64%);
+}
+.client-js .carousel {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.carousel__item__blankcover {
+  position: relative;
+  padding: 33% 10px 10px;
+  text-align: center;
+  background: hsl(0, 0%, 87%);
+  font-size: 1em;
+  color: hsl(0, 0%, 0%);
+  height: 200px;
+}
+.carousel__item__blankcover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 10px;
+}
+.carousel__item__blankcover--title {
+  position: relative;
+  font-size: 0.9em;
+}
+.carousel__item__blankcover--authors {
+  position: relative;
+  color: hsl(0, 0%, 35%);
+  padding: 4px 4px 0;
+  font-size: 0.6875em;
+  font-style: oblique;
+}
+.slick-next::before {
+  content: "→" !important;
+}
+.slick-prev::before {
+  content: "←" !important;
+}
+.category-icon {
+  margin: 0 auto;
+  width: 30px;
+}
+a.category-nostyle {
+  text-decoration: none;
+  display: block;
+}
+img.category-img {
+  display: block;
+  margin-top: 5px;
+}
+p.category-count {
+  text-align: center;
+  font-size: 0.7em;
+  line-height: 1;
+  color: hsl(0, 0%, 40%);
+  padding: 0 0 1px;
+  margin: 0;
+  margin-top: 5px;
+  font-style: italic;
+}
+p.category-title {
+  font-size: 0.875em;
+  text-align: center;
+  line-height: 1;
+  margin: 0;
+  margin-top: 5px;
+}
+.carousel .category-item {
+  padding: 2px;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+/**
+ * EditionsTable
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#editionstable
+ */
+/* stylelint-disable selector-max-specificity, no-descending-specificity */
+table#editions,
+.editions-table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+  clear: both;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+table#editions .cta-button-group,
+.editions-table .cta-button-group {
+  width: 185px;
+  margin: 0 auto;
+}
+table#editions thead,
+.editions-table thead {
+  border: 1px solid hsl(0, 0%, 80%);
+}
+table#editions thead tr,
+.editions-table thead tr {
+  background: linear-gradient(0deg, hsl(0, 0%, 93%), transparent);
+}
+table#editions th,
+.editions-table th {
+  font-family: "News Gothic MT", "Trebuchet MS", Geneva, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: normal;
+  text-align: left;
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+}
+table#editions td.book,
+.editions-table td.book {
+  vertical-align: top;
+  display: inline-flex;
+}
+table#editions div.cover,
+.editions-table div.cover {
+  text-align: center;
+  padding: 10px 10px 10px 0;
+  width: 70px;
+  overflow: hidden;
+}
+table#editions div.cover img,
+.editions-table div.cover img {
+  max-width: 70px;
+  max-height: 60px;
+}
+table#editions div.title,
+.editions-table div.title {
+  font-size: 1em;
+  padding: 10px 0;
+}
+table#editions div.links,
+.editions-table div.links {
+  font-size: 12px;
+  color: hsl(0, 0%, 20%);
+  line-height: 1.5em;
+}
+table#editions .btn-notice,
+.editions-table .btn-notice {
+  padding: 0;
+  background-color: none !important;
+}
+table#editions .links li,
+.editions-table .links li,
+table#editions .links ul,
+.editions-table .links ul {
+  list-style-type: none;
+}
+table#editions td.icon,
+.editions-table td.icon {
+  text-align: left;
+  vertical-align: top;
+  padding: 15px;
+}
+table#editions td.icon ul,
+.editions-table td.icon ul {
+  margin-bottom: 0;
+}
+table#editions .highlight,
+.editions-table .highlight {
+  box-shadow: inset 0 0 0 2px hsl(48, 33%, 83%);
+  background: #e9e5d4;
+}
+.lists table#editions h3 {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif !important;
+  font-size: 0.75em;
+  display: inline;
+}
+.lists table#editions th {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif !important;
+  background-color: transparent;
+  text-align: left;
+  font-weight: normal;
+  font-size: 0.6875em;
+  color: hsl(40, 32%, 29%);
+  padding: 0 0 10px;
+  border-left: none;
+  border-right: none;
+}
+.lists table#editions td {
+  color: hsl(0, 0%, 20%);
+  vertical-align: top;
+}
+.lists table#editions td.what {
+  min-width: 410px;
+}
+.lists table#editions td.when,
+.lists table#editions td.who,
+.lists table#editions td.que {
+  font-size: 0.75em;
+  padding: 10px 15px 10px 0;
+}
+.lists table#editions td .cover {
+  width: 40px;
+  padding-right: 10px;
+}
+.lists table#editions td .cover img {
+  max-height: 35px;
+  max-width: 40px;
+}
+@media all {
+  table#editions {
+    float: left;
+    width: 100%;
+  }
+  table#editions div.title {
+    float: left;
+    width: 350px;
+  }
+  table#editions div.cover {
+    float: left;
+  }
+}
+@media only screen {
+  table#editions {
+    width: 100%;
+  }
+  table#editions thead {
+    display: none;
+  }
+  table#editions tr {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid hsl(0, 0%, 87%);
+    padding-bottom: 10px;
+  }
+  table#editions hr {
+    visibility: hidden;
+  }
+  table#editions form {
+    padding: 10px;
+  }
+  table#editions ul.links ul,
+  table#editions li {
+    display: inline;
+  }
+  table#editions td.book {
+    width: 100%;
+    display: inline-flex;
+  }
+  table#editions div.title {
+    width: 100%;
+  }
+  table#editions .links a {
+    font-size: 120%;
+  }
+  table#editions .editions-table__links {
+    display: none;
+  }
+  table#editions td.icon {
+    width: 100%;
+    padding: 0;
+  }
+  table#editions td.icon.read {
+    order: 3;
+  }
+  table#editions td.icon.read .read {
+    display: flex;
+    flex-direction: column;
+  }
+  table#editions td.icon.read .read ul {
+    order: -1;
+    padding: 10px 0;
+  }
+  table#editions td.icon.locate {
+    padding: 0 10px;
+  }
+  table#editions td.icon.locate .links {
+    display: flex;
+  }
+  table#editions .cta-button-group {
+    width: unset;
+  }
+}
+tbody {
+  font-size: 0.9em;
+}
+tbody tr {
+  background: #f6f5ee;
+}
+.edition-adder {
+  text-align: right;
+}
+.editions-table__links {
+  text-align: center;
+}
+/* stylelint-disable no-descending-specificity */
+/**
+ * HeaderBar
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#headerbar
+ * Defined in:
+ *  - openlibrary/templates/lib/nav_head.html
+ *  - openlibrary/plugins/openlibrary/js/ol.js
+ */
+.header-bar {
+  max-width: 1060px;
+  min-width: 300px;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+.header-bar .account-component {
+  display: none;
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1em;
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+}
+.header-bar .account-component .down-arrow {
+  margin-top: 1px;
+}
+.header-bar .account-component .dropdown-menu li {
+  padding: 10px 20px 10px 10px;
+}
+.header-bar .account-component .account-dropdown-component {
+  position: absolute;
+  text-align: right;
+  padding-top: 5px;
+  right: 11px;
+}
+.header-bar .account-component .account-dropdown-component ul a li {
+  width: 150px;
+  text-decoration: none;
+  text-align: left;
+  padding: 5px;
+}
+.header-bar .auth-component {
+  display: none;
+  padding: 5px;
+  padding-right: 0;
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+}
+.header-bar .auth-component li {
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.header-bar .auth-component li button,
+.header-bar .auth-component li a {
+  color: hsl(0, 0%, 20%);
+}
+.header-bar .auth-component .hide-me {
+  display: none;
+}
+.header-bar .dropdown-menu {
+  text-align: left;
+  background-color: hsl(48, 29%, 93%);
+  border: 1px solid hsl(64, 9%, 71%);
+  border-radius: 3px;
+}
+.header-bar .dropdown-menu li {
+  border-bottom: 1px solid hsl(63, 26%, 84%);
+}
+.header-bar .dropdown-menu li:last-child {
+  border: none;
+}
+.header-bar .dropdown-menu li:hover {
+  background-color: hsl(0, 0%, 100%);
+}
+.header-bar .dropdown-menu li button,
+.header-bar .dropdown-menu li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 20%);
+  white-space: nowrap;
+  font-size: 0.9em;
+  padding: 10px;
+  display: block;
+}
+.header-bar .dropdown-menu li button {
+  cursor: pointer;
+  text-align: start;
+  width: 100%;
+}
+.header-bar .app-drawer {
+  position: fixed;
+  width: 300px;
+  max-width: 100vw;
+  right: 0;
+  top: 50px;
+  height: calc(100% - 50px);
+  z-index: 2;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font-family: Bahnschrift, sans-serif;
+  background-color: hsl(48, 29%, 93%);
+  box-shadow: -10px 0 10px -6px rgba(0, 0, 0, 0.25);
+}
+.header-bar .app-drawer ul {
+  border: none;
+}
+.header-bar .app-drawer .app-drawer__badge {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(202, 96%, 37%);
+  font-size: 0.9em;
+  padding: 2px 6px 1px;
+  border-radius: 4px;
+  float: right;
+  text-transform: uppercase;
+}
+.header-bar .app-drawer .subsection {
+  font-weight: bold;
+  border-bottom: 2px solid hsl(32.7, 14.7%, 70.6%);
+  padding: 16px 16px 3px;
+}
+.header-bar .app-drawer .subsection:hover {
+  background-color: transparent;
+}
+.header-bar .app-drawer li {
+  border-bottom: 1px solid hsla(33.6, 10%, 49.2%, 0.25);
+}
+.header-bar .app-drawer li:not(.subsection) {
+  margin: 0 8px;
+}
+.header-bar .app-drawer li a,
+.header-bar .app-drawer li button,
+.header-bar .app-drawer .login-links {
+  padding: 10px 8px;
+}
+.header-bar .app-drawer li button {
+  width: 100%;
+  font-family: Bahnschrift, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+.header-bar .app-drawer .subsection:first-child {
+  border-top: 1px solid hsl(64, 9%, 71%);
+}
+.header-bar .app-drawer .login-links {
+  display: flex;
+  border-bottom: none;
+  justify-content: space-evenly;
+  column-gap: 16px;
+}
+.header-bar .app-drawer .login-links:hover {
+  background-color: transparent;
+}
+.header-bar .app-drawer .login-links a {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 6px;
+  transition: 0.3s;
+}
+.header-bar .app-drawer .login-links .login-links__primary {
+  background: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%);
+}
+.header-bar .app-drawer .login-links .login-links__primary:hover {
+  background-color: hsl(202, 96%, 28%);
+}
+.header-bar .app-drawer .login-links .login-links__secondary {
+  color: hsl(202, 96%, 37%);
+  border: 2px solid hsl(202, 96%, 37%);
+}
+.header-bar .app-drawer .login-links .login-links__secondary:hover {
+  background-color: hsl(0, 0%, 100%);
+}
+.header-bar .hamburger-component {
+  -webkit-box-ordinal-group: 5;
+  -ms-flex-order: 4;
+  order: 4;
+  margin-right: 5px;
+  /*  Technical/design debt: For unknown historic reasons the hamburger button does not have an
+    arrow to the right of the icon, but the profile icon does. This is likely an accessibility
+    or UX problem.
+
+    There's an argument to be made that this should be visible for consistency with other dropdown
+    menus and to better meet user expectations which might expect the hamburger to load a menu
+    overlaying the screen as is consistent with other designs.
+
+    When OpenLibrary has a design lead, this should be understood and either reviewed or better
+    documented. */
+}
+.header-bar .hamburger-component details[open] .mask-menu {
+  visibility: visible;
+  opacity: 0.6;
+  animation: fadeIn 0.2s ease-in-out;
+}
+.header-bar .hamburger-component details[open] summary ~ * {
+  animation: sweep 0.2s ease-in-out;
+}
+.header-bar .hamburger-component details[open] .hamburger__icon {
+  background-color: hsla(37, 24%, 79%, 0.761);
+}
+.header-bar .hamburger-component .hamburger__icon {
+  width: 22px;
+  padding: 10px 12px;
+  border-radius: 3px;
+  box-sizing: content-box;
+}
+.header-bar .hamburger-component .hamburger__icon.logged {
+  padding-left: 26px;
+}
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+.header-bar .hamburger-component summary::marker {
+  content: "";
+}
+.header-bar .hamburger-component summary::-webkit-details-marker {
+  display: none;
+}
+.header-bar .hamburger-component label {
+  background: transparent;
+  border: none;
+}
+.header-bar .hamburger-component .down-arrow {
+  display: none;
+}
+.header-bar .mask-menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  bottom: 0;
+  background: linear-gradient(to right, transparent -30px, hsl(0, 0%, 0%));
+  z-index: 1;
+  visibility: hidden;
+}
+.header-bar .header-dropdown summary::before {
+  content: "" !important;
+}
+.header-bar .header-dropdown .header-dropdown__icon {
+  width: 40px;
+  height: 40px;
+}
+.header-bar .header-dropdown .account__icon {
+  border: 2px solid hsl(45, 7%, 79%);
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 28px;
+}
+.header-bar .header-dropdown button,
+.header-bar .header-dropdown a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  display: block;
+  border: 0;
+  background: none;
+}
+.header-bar .logo-component {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  z-index: -1;
+}
+.header-bar .logo-component .logo-icon {
+  position: relative;
+  top: -1px;
+  height: 32px;
+  width: auto;
+  margin-right: 5px;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+.header-bar .navigation-component {
+  display: none;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-box-ordinal-group: 6;
+  -ms-flex-order: 5;
+  order: 5;
+  z-index: -1;
+}
+.header-bar .navigation-component li {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding: 5px 0;
+  font-size: 1em;
+}
+.header-bar .navigation-component li button,
+.header-bar .navigation-component li a {
+  color: hsl(0, 0%, 20%);
+  text-decoration: none;
+  display: block;
+}
+.header-bar .navigation-component li button:visited,
+.header-bar .navigation-component li a:visited {
+  color: hsl(0, 0%, 20%);
+  text-decoration: none;
+}
+.header-bar .navigation-component li .dropdown-menu {
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  top: 4px;
+}
+.header-bar .navigation-component li .dropdown-menu li a {
+  color: hsl(0, 0%, 27%);
+}
+.header-bar .navigation-component li .navigation-dropdown-component {
+  position: relative;
+}
+.header-bar .search-component {
+  width: 45px;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  height: 47px;
+  margin-right: -5px;
+  text-align: right;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  /* stylelint-enable selector-max-specificity */
+}
+.header-bar .search-component.expanded {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-right: 15px;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+.header-bar .search-component.expanded .search-bar-component {
+  width: 95%;
+  background-color: hsl(0, 0%, 98%);
+  border: 1px solid hsl(64, 9%, 71%);
+}
+.header-bar .search-component.expanded .search-bar {
+  width: auto;
+}
+.header-bar .search-component.expanded .search-bar-input input[type=text] {
+  display: block;
+  width: 100%;
+}
+.header-bar .search-component.expanded .search-bar-submit {
+  margin-right: 5px;
+  cursor: pointer;
+}
+.header-bar .search-component.expanded .search-facet-selector {
+  display: block;
+}
+.header-bar .search-component.expanded .search-facet {
+  display: block;
+}
+.header-bar .search-component .search-bar {
+  width: 45px;
+}
+.header-bar .search-component .search-bar-submit {
+  background: url(/static/images/search-icon.svg) center no-repeat;
+  width: 45px;
+  height: 45px;
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+}
+.header-bar .search-component .search-bar-component {
+  display: inline-block;
+  border-radius: 0.3em;
+  position: relative;
+}
+.header-bar .search-component .search-bar-advanced-btn {
+  text-align: center;
+}
+.header-bar .search-component .search-bar-input input[type=text] {
+  max-width: 100%;
+}
+.header-bar .search-component .search-dropdown {
+  position: relative;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.header-bar .search-component .search-dropdown .search-results {
+  background: hsl(0, 0%, 100%);
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+.header-bar .search-component .search-dropdown .search-results li {
+  text-align: left;
+  padding: 7px;
+  border-top: 1px solid hsl(0, 0%, 87%);
+  font-size: 0.9rem;
+}
+.header-bar .search-component .search-dropdown .search-results li:hover {
+  background-color: hsl(0, 0%, 100%);
+}
+.header-bar .search-component .search-dropdown .search-results li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 20%);
+}
+.header-bar .search-component .search-dropdown .search-results li a img {
+  width: 40px;
+  min-width: 40px;
+  height: 60px;
+  min-height: 60px;
+  background-color: hsl(0, 0%, 93%);
+  margin-right: 10px;
+  object-fit: cover;
+}
+.header-bar .search-component .search-dropdown .search-results li a .book-desc {
+  font-weight: 300;
+  text-decoration: none;
+}
+.header-bar .search-component .search-dropdown .search-results li a .book-desc .book-title {
+  font-weight: 500;
+}
+.header-bar .search-component .search-dropdown .search-results li a .book-desc .book-author {
+  color: hsl(210, 100%, 20%);
+}
+.header-bar .search-component .search-facet-selector {
+  display: none;
+  margin-top: 3px;
+  padding: 13px 10px 0;
+  font-size: 14px;
+}
+.header-bar .search-component .search-facet {
+  display: none;
+  position: relative;
+  border-radius: 3px 0 0 3px;
+  background-color: hsla(48, 33%, 83%, 0.32);
+  border: none;
+  border-right: 1px solid hsl(0, 0%, 87%);
+  font-weight: 500;
+  color: hsl(0, 0%, 40%);
+}
+.header-bar .search-component .search-facet select {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  max-width: 100%;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.header-bar .search-component .search-facet-value {
+  display: block;
+  min-width: 20px;
+  padding-right: 10px;
+}
+.header-bar .search-component .search-facet-value::after {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+}
+div.search-facet:focus-within {
+  outline: 2px solid;
+}
+.account-component {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+}
+.account-component summary::marker {
+  content: "";
+}
+.account-component summary::-webkit-details-marker {
+  display: none;
+}
+.hamburger-component summary,
+.account-component summary {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+.hamburger-component summary .header-dropdown__icon,
+.account-component summary .header-dropdown__icon {
+  border: none;
+  margin-right: 5px;
+  border-radius: 3px;
+  box-sizing: content-box;
+}
+.navigation-component {
+  text-align: center;
+  position: relative;
+}
+.navigation-component summary::marker {
+  content: "";
+}
+.navigation-component summary::-webkit-details-marker {
+  display: none;
+}
+.navigation-component summary {
+  cursor: pointer;
+}
+.navigation-component .down-arrow {
+  position: relative;
+  top: -2px;
+}
+.logo-component {
+  margin-left: 5px;
+}
+.logo-component a {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none !important;
+}
+.logo-component .logo-org {
+  text-align: left;
+  font-weight: 300;
+  font-size: 0.9em;
+  color: hsl(0, 0%, 40%);
+  margin: 3px;
+  padding: 0;
+  line-height: 0;
+}
+.search-component .search-bar-advanced-btn {
+  margin: 10px;
+  border: 0 none;
+  width: 40px;
+  padding: 0;
+  cursor: pointer;
+  display: none;
+}
+.search-component .search-bar {
+  max-width: none;
+  min-width: none;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  border-radius: 0.3em;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 0%;
+  flex: 1;
+}
+.search-component .search-bar-input {
+  min-width: 50px;
+  width: 100%;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.search-component .search-bar-input input[type=text] {
+  min-width: 0;
+  margin: 3px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 5px 0 2px 3px;
+  font-size: 1em;
+  font-weight: 500;
+  border: 0 none;
+  outline: none;
+  background: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 40%);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  display: none;
+}
+.search-component .search-bar-input input[type=submit] {
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+@media only screen and (min-width: 25em) {
+  .header-bar .navigation-component .dropdown-menu {
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .header-bar {
+    margin: 0 auto;
+  }
+  .header-bar .account-component {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+  }
+  .header-bar .auth-component {
+    margin-right: 5px;
+    display: block;
+  }
+  .header-bar .logo-component {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border-right: none;
+    padding: 0 5px;
+  }
+  .header-bar .navigation-component .dropdown-menu {
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .header-bar .search-component {
+    margin-right: 0;
+  }
+  .header-bar .hamburger-component summary {
+    margin-left: 10px;
+  }
+}
+.client-js .search-facet select {
+  opacity: 0;
+  position: absolute;
+}
+@media only screen and (min-width: 35.5em) {
+  .header-bar .account-component {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+  .header-bar .logo-component {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+  }
+  .header-bar .navigation-component {
+    -webkit-box-ordinal-group: 7;
+    -ms-flex-order: 6;
+    order: 6;
+  }
+  .header-bar .navigation-component .dropdown-menu {
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .header-bar .search-bar-input input {
+    width: 100%;
+  }
+  .header-bar .search-component .search-bar {
+    width: auto;
+    max-width: 205px;
+  }
+  .header-bar .search-component .search-bar-advanced-btn {
+    display: block;
+  }
+  .header-bar .search-component .search-bar-component {
+    background-color: hsl(0, 0%, 98%);
+    border: 1px solid hsl(64, 9%, 71%);
+    width: 207px;
+  }
+  .header-bar .search-component .search-bar-input {
+    /* stylelint-disable selector-max-specificity */
+    /* stylelint-enable selector-max-specificity */
+  }
+  .header-bar .search-component .search-bar-input input[type=text] {
+    display: block;
+  }
+  .header-bar .search-component .search-bar-submit {
+    margin-right: 5px;
+  }
+  .header-bar .search-component .search-facet {
+    display: block;
+  }
+  .header-bar .search-component .search-facet-selector {
+    display: block;
+  }
+}
+@media only screen {
+  #header-bar {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to bottom, hsl(41.2, 47.1%, 93.3%), hsl(41.5, 48.1%, 89.4%));
+    padding: 3px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+  }
+  .header-bar .logo-component .logo-icon {
+    margin-top: 5px;
+    margin-left: 8px;
+  }
+  .header-bar .search-component {
+    height: 44px;
+  }
+  .header-bar .search-component .search-bar-submit {
+    height: 42px;
+  }
+  .header-bar .search-component .search-facet-selector {
+    margin-top: 1px;
+  }
+  .header-bar.mobile {
+    padding: 10px 0;
+  }
+}
+/**
+ * PageBanner
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#pagebanner
+ */
+.page-banner {
+  display: block;
+  color: hsl(0, 0%, 100%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  background: hsl(0, 0%, 0%);
+  padding: 15px;
+  border-bottom: 1px solid hsl(48, 33%, 83%);
+  /* stylelint-disable selector-max-specificity */
+  /* FIXME: Is this actually used anywhere? I think this block can be removed. */
+  /* stylelint-enable selector-max-specificity */
+}
+.page-banner-black {
+  background-color: hsl(0, 0%, 20%);
+  padding: 5px;
+}
+.page-banner-black .cta {
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 33%);
+  font-weight: 500;
+  text-decoration: none;
+  background: hsl(0, 0%, 27%);
+  margin: 0 5px;
+}
+.page-banner .button {
+  border-radius: 5px;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: inline;
+  border: 1px solid hsl(204, 70%, 53%);
+  color: hsl(77, 28%, 53%);
+}
+.page-banner a.button {
+  text-decoration: none;
+  background: hsl(204, 70%, 53%);
+  color: hsl(0, 0%, 100%);
+}
+.page-banner a.button:hover {
+  background: hsl(202, 57%, 61%);
+  color: hsl(0, 0%, 100%);
+}
+.page-banner .btn {
+  display: block;
+  max-width: 200px;
+  margin: auto;
+}
+.page-banner-body {
+  font-size: 0.85em;
+  padding: 10px;
+  line-height: 25px;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .header-bar {
+    padding-top: 5px;
+  }
+  .header-bar .logo-component .logo-icon {
+    height: 47px;
+    width: 189px;
+  }
+  .header-bar .auth-component .hide-me {
+    display: inline;
+  }
+  .header-bar .account-component {
+    display: block;
+  }
+  .header-bar .navigation-component .dropdown-menu {
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .header-bar .hamburger-component {
+    display: none;
+  }
+  .header-bar .search-component {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  .header-bar .search-component .search-bar-component {
+    width: 300px;
+  }
+  .header-bar .search-component .search-justify-right {
+    min-width: 210px;
+  }
+  .header-bar .search-component .search-bar {
+    width: auto;
+    max-width: 310px;
+  }
+  .header-bar.mobile {
+    display: none;
+  }
+  .page-banner .btn {
+    display: inline;
+  }
+}
+@media all and (min-width: 960px) {
+  .header-bar {
+    margin: 20px auto;
+    padding-top: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  .header-bar .account-component {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+    padding-right: 0;
+  }
+  .header-bar .auth-component {
+    -webkit-box-ordinal-group: 7;
+    -ms-flex-order: 6;
+    order: 6;
+  }
+  .header-bar .logo-component {
+    /* border-right: 1px solid @dark-beige; */
+    padding-right: 15px;
+  }
+  .header-bar .navigation-component {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  .header-bar .navigation-component .dropdown-menu {
+    border-radius: 3px;
+    border: 1px solid hsl(64, 9%, 71%);
+  }
+  .header-bar .navigation-component li .dropdown-menu {
+    width: auto;
+    white-space: nowrap;
+  }
+  .header-bar .search-component .search-bar-component {
+    width: 100%;
+  }
+  .header-bar .search-component .search-bar {
+    max-width: 100%;
+  }
+}
+/**
+ * MyBooks
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#mybooks
+ *
+ * http://localhost:8080/account/books/want-to-read
+ */
+.mybooks {
+  display: flex;
+  flex-direction: row;
+  border-top: 0;
+  margin-top: 0;
+  font-size: 0.9em;
+}
+@media only screen and (max-width: 768px) {
+  .mybooks {
+    flex-direction: column;
+  }
+}
+/**
+ * MyBooksList
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#mybooks-list
+ * Used in:
+ * - openlibrary/templates/account/books.html
+ * - openlibrary/templates/stats/readinglog.html
+ *
+ * http://localhost:8080/account/books/currently-reading
+ * http://localhost:8080/stats/readinglog
+ */
+.mybooks-list {
+  overflow-wrap: break-word;
+}
+.mybooks-list ul {
+  margin: 0 !important;
+}
+.mybooks-list h2 {
+  padding: 5px 0;
+  margin: 0;
+  line-height: 1.5em;
+  margin-bottom: 5px;
+}
+.mybooks-list h2.subtitle {
+  font-weight: normal;
+}
+.mybooks-list h4.work-subtitle {
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: hsl(0, 0%, 40%);
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+}
+.mybooks-list .loadmore {
+  text-align: center;
+}
+.mybooks-list--clean ul {
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+}
+.mybooks-list--clean h3 {
+  display: inline;
+  padding-right: 10px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.mybooks-list--clean li {
+  width: 310px;
+  margin-right: 10px;
+}
+.mybooks-list--clean span.imageLg {
+  display: block;
+  float: left;
+  width: 34px;
+  height: auto;
+  margin-right: 0;
+  max-width: 34px;
+  text-align: left;
+}
+.mybooks-list--clean span.imageLg img {
+  width: 24px;
+  height: auto;
+}
+.mybooks-list--clean div.details {
+  display: block;
+  float: left;
+  width: 260px;
+}
+.mybooks-list--clean span.editions {
+  margin-top: 0;
+  font-size: 0.6875em;
+  color: hsl(0, 0%, 40%);
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+@media only screen and (min-width: 768px) {
+  .mybooks-list {
+    flex: 1;
+  }
+}
+/**
+ * MyBooksMenu
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#mybooksmenu
+ *
+ * http://localhost:8080/account/books/want-to-read
+ */
+.mybooks-menu {
+  max-width: none !important;
+  /** fix in media query */
+  width: 250px;
+  flex-shrink: 0;
+  border-right: 1px solid hsl(0, 0%, 93%);
+  border-bottom: none;
+  border-radius: 7px 0 0 7px;
+  background: hsl(0, 0%, 98%);
+  box-shadow: inset -4px 0 10px hsl(0, 0%, 93%);
+  padding: 0;
+  padding-top: 13px;
+  position: sticky;
+  height: 100vh;
+  top: 0;
+  overflow-y: auto;
+  /*all uls */
+}
+.mybooks-menu .external-link {
+  text-decoration: underline;
+}
+.mybooks-menu a {
+  text-decoration: none;
+  color: hsl(202, 96%, 28%);
+}
+.mybooks-menu .sidebar-section {
+  padding: 0 0 10px;
+  border-bottom: 1px solid hsl(0, 0%, 93%);
+}
+.mybooks-menu .sidebar-section .list-overflow {
+  max-height: unset;
+  overflow: auto;
+}
+.mybooks-menu ul:last-child {
+  border-bottom: none;
+}
+.mybooks-menu ul li {
+  list-style: none;
+}
+.mybooks-menu ul li a.selected {
+  background-color: hsl(211, 37%, 89%);
+  border-radius: 4px;
+  padding: 5px 11px;
+  margin: 2px 4px;
+  font-weight: bold;
+}
+.mybooks-menu ul li a {
+  display: block;
+}
+.mybooks-menu ul li:not(.section-header) a {
+  display: block;
+  padding: 4px 15px;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+@media (pointer: coarse) {
+  .mybooks-menu ul li:not(.section-header) a {
+    padding: 8px 15px;
+  }
+}
+.mybooks-menu ul li:not(.section-header) a.selected {
+  padding: 4px 11px;
+}
+.mybooks-menu ul li.section-header {
+  padding: 4px 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: hsl(0, 0%, 40%);
+  background: hsla(0, 0%, 78%, 0.23);
+  border: 1px solid hsl(0, 0%, 87%);
+  border-left: 0;
+  border-right: 0;
+  margin-bottom: 5px;
+}
+.mybooks-menu .section-header.section-header-split {
+  padding: 0;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.mybooks-menu .section-header.section-header-split > :first-child {
+  padding: 4px 15px;
+  display: inline-block;
+}
+.mybooks-menu .section-header.section-header-split > a {
+  padding: 4px 15px;
+}
+.mybooks-menu hr {
+  height: 0;
+  margin: 4px 14px;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+}
+.mybooks-menu .li-count {
+  float: right;
+  font-size: 0.9em;
+  margin-top: 1px;
+  color: hsl(211, 28%, 41%);
+  margin-left: 4px;
+}
+@media only screen and (max-width: 768px) {
+  .mybooks-menu {
+    width: 100%;
+    position: relative;
+    max-height: 42vh;
+  }
+}
+.mybooks-details {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 75%;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.mybooks-details header {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.mybooks-details header > * {
+  padding-left: 0;
+}
+.mybooks-details .details-content {
+  padding: 8px;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.mybooks-details .details-content > div#contentBody {
+  padding: 0 !important;
+  margin-left: 8px;
+}
+.mybooks-details h1 {
+  margin-left: 0;
+}
+.mybooks-details .details-title {
+  display: inline;
+}
+.mybooks-details > div:not([class]):not([id]) {
+  margin-left: 8px;
+}
+@media only screen and (max-width: 768px) {
+  .mybooks-details header {
+    flex-direction: column-reverse;
+  }
+  .mybooks-details {
+    width: 100%;
+  }
+  .carousel-container {
+    margin: 0 -18px;
+  }
+}
+/**
+ * ReadingLogStats
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#readinglog-stats
+ * Defined in:
+ * - openlibrary/templates/stats/readinglog.html
+ */
+table.readinglog-stats {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+}
+table.readinglog-stats th {
+  font-weight: bold;
+}
+table.readinglog-stats tr:nth-child(even) {
+  background-color: hsl(0, 0%, 93%);
+}
+/**
+ * ShareLinks
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#sharelinks
+ * Provided by macro openlibrary/macros/SocialShare.html and
+ * openlibrary/macros/databarWork.html
+ * Used in templates:
+ * - openlibrary/templates/type/work/view.html
+ * - openlibrary/templates/type/edition/view.html
+ */
+.shareLinks-list {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  word-break: keep-all;
+}
+.shareLinks-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.shareLinks-list li {
+  list-style-type: none;
+  line-height: 24px;
+  display: inline-block;
+  margin: 5px 0 0 !important;
+  padding: 0;
+  flex: 1;
+  cursor: pointer;
+}
+.shareLinks-list p {
+  margin: 0;
+}
+.shareLinks-list a {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  line-height: 24px;
+}
+.shareLinks-list img {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  height: 30px;
+}
+.shareLinks li:hover {
+  cursor: pointer;
+}
+.shareLinks .share-source {
+  font-size: 0.8em;
+  text-align: center;
+  color: hsl(0, 0%, 40%);
+}
+.subNav {
+  margin-top: 10px;
+}
+.subNav ul {
+  list-style-type: none;
+}
+.subNav ul li {
+  display: inline;
+}
+.book .book-cta {
+  margin: 5px auto 0;
+  font-size: 0.9em;
+  padding: 5px 0;
+}
+.book .book-cta a {
+  display: block;
+}
+.book .book-cover {
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.book .book-cover img,
+.book .book-cover a {
+  display: block;
+}
+.book .book-cover a {
+  margin: auto;
+}
+.book img.bookcover {
+  margin: 0 auto;
+  box-shadow: 1px 2px 5px 0 hsl(48, 35%, 64%);
+  border-radius: 3px;
+  max-width: 100%;
+  max-height: 200px;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table#toc-table {
+  width: 100%;
+  font-size: 0.8125em;
+}
+table#toc-table td {
+  padding: 5px 15px 5px 0;
+}
+table.navEdition {
+  margin-bottom: 5px;
+}
+table.navEdition td.nowrap {
+  white-space: nowrap;
+}
+table.navEdition td {
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+}
+table.meta {
+  margin-top: 10px;
+}
+table.meta td {
+  padding: 0 15px 10px 0;
+  vertical-align: top;
+}
+table.meta td.title {
+  width: 120px;
+}
+table.meta td.descrip {
+  width: 65px;
+}
+table.code pre {
+  white-space: pre !important;
+}
+table#pageHistory {
+  width: 100%;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  margin: 10px 0 20px;
+}
+table#pageHistory td.number {
+  text-align: right;
+}
+table#pageHistory th,
+table.changeHistory th {
+  border-bottom: 1px solid hsl(0, 0%, 91%);
+  color: hsl(40, 32%, 29%);
+  text-transform: uppercase !important;
+  font-size: 0.6875em;
+  padding: 10px;
+}
+table#pageHistory td,
+table.changeHistory td {
+  border-bottom: 1px solid hsl(0, 0%, 91%);
+  padding: 10px;
+  font-size: 0.75em;
+  color: hsl(0, 0%, 40%);
+}
+table.changeHistory {
+  width: 100%;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  margin: 0;
+}
+table.changeHistory td.time {
+  white-space: nowrap;
+}
+table.changeHistory td.comment {
+  width: 33%;
+}
+table.changeHistory .comment__cover {
+  vertical-align: middle;
+  height: 72px;
+  margin-left: 10px;
+}
+table.help {
+  margin: 20px 0;
+  border-top: 1px solid hsl(0, 0%, 91%);
+}
+table.help th {
+  font-size: 0.75em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  color: hsl(0, 0%, 40%);
+  border-bottom: 1px solid hsl(0, 0%, 91%);
+  padding: 5px;
+  vertical-align: top;
+  background-color: hsl(0, 0%, 93%);
+}
+table.help td {
+  font-size: 0.75em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  color: hsl(0, 0%, 40%);
+  border-bottom: 1px solid hsl(0, 0%, 91%);
+  padding: 5px;
+  vertical-align: top;
+}
+fieldset,
+img {
+  border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+li span.snippet {
+  display: block;
+  margin: 10px 0;
+  background-color: hsl(0, 0%, 93%);
+  font-size: 0.8em;
+  padding: 20px;
+  font-style: italic;
+}
+li.edition-cover img {
+  max-height: 140px;
+  max-width: 90px;
+  cursor: pointer;
+  border: 5px solid hsl(0, 0%, 100%);
+}
+li.edition-cover img:hover {
+  cursor: pointer;
+  border: 5px solid hsl(202, 96%, 28%);
+}
+caption,
+th {
+  text-align: left;
+}
+q:before,
+q:after {
+  content: "";
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+/*SET FONT SIZES AS em, DIVIDING YOUR PIXEL SIZE by 16 (i.e. 12px = 12/16 or 0.75em)*/
+/* DEFINE SOME DEFAULTS */
+b,
+strong {
+  font-weight: 700;
+}
+i,
+em {
+  font-style: italic;
+}
+#contentBody ol,
+#contentMeta ol,
+.floaterBody ol,
+#contentBody ul,
+#contentMeta ul,
+.floaterBody ul {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+#contentBody ul,
+#contentBody ol {
+  margin-bottom: 20px;
+}
+#contentBody li,
+#contentBody blockquote {
+  line-height: 1.5em;
+}
+#contentBody input[type=submit] {
+  font-size: 1.125em;
+}
+#contentBody.map {
+  width: 958px !important;
+  padding: 0 !important;
+  position: relative;
+}
+#contentBody .tabs ul,
+#contentMeta .tabs ul {
+  margin-left: 0;
+}
+#content ol li,
+#contentBody ol li,
+#contentMeta ol li,
+.floaterBody ol li {
+  list-style: decimal;
+  color: hsl(0, 0%, 20%);
+  line-height: 1.5em;
+}
+#content ul li,
+#contentBody ul li,
+#contentMeta ul li,
+.floaterBody ul li {
+  list-style: disc;
+  color: hsl(0, 0%, 20%);
+  line-height: 1.5em;
+}
+pre,
+code {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 0.875em;
+  font-weight: normal;
+  white-space: pre-wrap;
+}
+blockquote,
+q {
+  quotes: "" "";
+}
+blockquote:before,
+q:before,
+blockquote:after,
+q:after {
+  content: "";
+}
+/* SITE DEFAULTS */
+/**
+* This file provides a sensible and minimal
+* set of default styles for all entry points
+*
+* These styles are loaded as render blocking CSS on every page.
+*/
+/* RESET EVERYTHING */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin: 20px 0;
+}
+button {
+  outline: none;
+}
+body,
+p,
+li {
+  color: hsl(0, 0%, 20%);
+}
+body {
+  font-size: 100%;
+  line-height: normal;
+  background-color: hsl(48, 33%, 83%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+fieldset {
+  width: 100%;
+}
+p {
+  font-size: 0.875em;
+  line-height: 1.5em;
+}
+hr {
+  height: 1px;
+  border: none;
+  background: hsla(48, 33%, 83%, 0.66);
+}
+li {
+  list-style: none;
+  color: hsl(0, 0%, 20%);
+}
+a:link {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a:hover {
+  color: hsl(210, 100%, 20%);
+  text-decoration: underline;
+}
+a:visited {
+  color: hsl(210, 100%, 20%);
+  text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(0, 0%, 40%);
+  font-weight: 600;
+}
+div.head {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+div.head span {
+  font-size: 12px;
+}
+#contentBody li {
+  line-height: 1.5em;
+}
+#contentBody ol li {
+  list-style: decimal;
+  list-style-position: inside;
+}
+@media only screen and (max-width: 768px) {
+  tr,
+  tbody,
+  table {
+    overflow: auto;
+    display: block;
+  }
+  td {
+    display: inline-block;
+  }
+}
+a.nostyle {
+  color: inherit;
+}
+a.cancel {
+  color: hsl(8, 78%, 49%);
+  padding-right: 21px;
+  background-image: url(/images/icons/icon_cancel.png);
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, sans-serif;
+  font-size: 1em;
+}
+a.borrowResults:link {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.borrowResults:visited {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.borrowResults:hover {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.borrowResults:active {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.coverLook {
+  display: block;
+}
+a.facetSubject:link,
+a.facetSubject:visited {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.facetSubject:hover,
+a.facetSubject:active {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.results:link {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.results:visited {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+a.results:hover {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.results:active {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+a.toggle {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%) !important;
+  background-color: hsl(81, 39%, 35%) !important;
+  padding: 3px;
+  border-radius: 3px;
+}
+a.toggle:hover {
+  background-color: hsl(202, 96%, 28%) !important;
+  color: hsl(0, 0%, 100%) !important;
+}
+button.plainText {
+  border: none;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+  color: hsl(8, 78%, 49%);
+  background-color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+button.plainText:hover {
+  color: hsl(113, 38%, 29%);
+}
+button.plain {
+  border: none;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+  color: hsl(0, 0%, 0%);
+  background-color: transparent !important;
+  cursor: pointer;
+}
+button.plain:hover {
+  color: hsl(113, 38%, 29%);
+}
+button.addAnother {
+  width: 32px;
+  height: 32px;
+  border: none;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: url(/images/icons/icon_add.png);
+  background-position: 0 0;
+  background-color: transparent;
+  display: none;
+}
+button.addAnother:hover {
+  background-position: -32px 0;
+}
+/**
+ * ButtonLink
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#buttonlink
+ */
+.linkButton {
+  border-radius: 5px;
+  background: hsl(0, 0%, 100%);
+  padding: 10px;
+  color: hsl(0, 0%, 20%);
+  display: inline-block;
+}
+a.linkButton {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: hsl(0, 0%, 40%);
+  border: 1px solid hsl(0, 0%, 60%);
+}
+a.ghost-btn {
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 60%);
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  color: hsl(0, 0%, 100%) !important;
+}
+.generic-button {
+  text-decoration: none;
+  padding: 13px 10px;
+}
+.generic-button-secondary {
+  text-decoration: underline;
+}
+.generic-button-primary {
+  text-decoration: none;
+  background: hsl(8, 78%, 49%);
+  color: hsl(0, 0%, 100%) !important;
+  padding: 13px 10px;
+  border-radius: 3px;
+  border: 1px solid hsl(8, 70%, 44%);
+}
+a.generic-button {
+  text-decoration: none;
+}
+/* This button should be used for now on */
+.btn {
+  text-align: center;
+  padding: 5px 10px;
+}
+.btn.primary {
+  border: none;
+  background-color: hsl(202, 96%, 37%);
+  color: hsl(0, 0%, 100%) !important;
+  border-radius: 5px;
+}
+a.btn {
+  text-decoration: none;
+}
+/**
+ * Definition Lists
+ */
+dd,
+dt {
+  float: left;
+}
+dt,
+.list-header {
+  clear: both;
+}
+.list-header {
+  float: left;
+  margin-bottom: 10px;
+}
+dl {
+  margin: 10px 0;
+}
+dl:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+dl dt {
+  padding: 0 15px 10px 0;
+  width: 120px;
+}
+dd {
+  max-width: 270px;
+}
+dd + dd {
+  padding-left: 8px;
+}
+.hidden {
+  display: none !important;
+}
+.inline {
+  display: inline;
+}
+.inline + span {
+  font-size: 11px;
+}
+#offline-info {
+  text-align: center;
+  padding: 10px 5px;
+  display: none;
+  background-color: hsl(0, 0%, 40%);
+  color: hsl(0, 0%, 100%);
+}
+.hidden--nojs {
+  display: none;
+}
+.client-js .hidden--nojs {
+  display: block;
+}
+.clearfix {
+  width: 100%;
+  clear: both;
+  padding: 5px;
+}
+.shift {
+  position: absolute !important;
+  left: -10000px !important;
+}
+.read-more-button,
+.read-less-button {
+  color: hsl(202, 96%, 28%);
+}
+a.hoverlink {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+.small {
+  font-size: 12px !important;
+  font-weight: normal !important;
+}
+.smaller {
+  font-size: 11px;
+  font-weight: normal;
+}
+.smallest {
+  font-size: 10px;
+  font-weight: normal;
+}
+.reduce {
+  font-size: 50% !important;
+}
+.clear {
+  clear: both;
+}
+.large {
+  font-size: 14px !important;
+}
+.larger {
+  font-size: 16px !important;
+}
+.largest {
+  font-size: 18px !important;
+}
+button.larger {
+  font-size: 18px !important;
+}
+.average {
+  font-size: 13px;
+}
+.invisible {
+  visibility: hidden;
+}
+.relative {
+  position: relative;
+}
+.desktop-only {
+  display: none;
+}
+.adminOnly {
+  background-color: hsl(32, 100%, 61%) !important;
+  padding: 4px;
+  border-radius: 4px;
+}
+.editFormHead {
+  display: flex;
+  padding-bottom: 0;
+}
+.editFormTitle {
+  flex: 1;
+  margin: 0;
+}
+.editFormBookTitle {
+  color: hsl(0, 0%, 0%);
+  margin: 0;
+}
+.editFormBookAuthors {
+  margin-top: 0;
+}
+.valid {
+  padding: 5px 0 0 29px !important;
+}
+.noborder {
+  border: none;
+}
+.valid,
+.darkgreen,
+.pos {
+  color: hsl(113, 38%, 29%) !important;
+}
+.black {
+  color: hsl(0, 0%, 0%) !important;
+}
+.highlight {
+  background-color: hsl(58, 100%, 90%);
+}
+.orange {
+  color: hsl(32, 100%, 61%) !important;
+}
+.brown {
+  color: hsl(40, 32%, 29%) !important;
+}
+.teal {
+  color: hsl(184, 100%, 21%) !important;
+}
+.lightgreen {
+  color: hsl(81, 39%, 35%) !important;
+}
+.lightgrey,
+.lightgray {
+  color: hsl(0, 0%, 80%) !important;
+}
+.blue {
+  color: hsl(202, 96%, 28%) !important;
+}
+.invalid,
+.attn,
+.neg,
+.red {
+  color: hsl(8, 78%, 49%) !important;
+}
+.yellow {
+  color: hsl(58, 100%, 90%) !important;
+}
+.lighter,
+.gray,
+.grey {
+  color: hsl(0, 0%, 40%) !important;
+}
+.darkgray,
+.darkgrey {
+  color: hsl(0, 0%, 20%) !important;
+}
+.plain {
+  text-decoration: none !important;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+.center {
+  text-align: center;
+}
+.adjust {
+  position: relative;
+  right: 4px;
+}
+.uppercase {
+  text-transform: uppercase !important;
+}
+.lowercase {
+  text-transform: lowercase !important;
+}
+.capitalize {
+  text-transform: capitalize !important;
+}
+.underline {
+  text-decoration: underline !important;
+}
+.bold {
+  font-weight: bold !important;
+}
+.headline,
+.sansserif {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif !important;
+}
+.arial {
+  font-family: "Arial", "Helvetica", sans-serif !important;
+}
+.nowrap {
+  white-space: nowrap !important;
+}
+.wrap {
+  white-space: normal !important;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.ui-helper-hidden {
+  display: none;
+}
+.ui-helper-hidden-accessible {
+  position: absolute;
+  left: -99999999px;
+}
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+.ui-helper-clearfix {
+  display: block;
+}
+.ui-helper-clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.pagination {
+  font-size: 0.75em;
+  margin: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.pagination a {
+  display: block;
+  text-decoration: none;
+  padding: 7px;
+  margin-right: 10px;
+}
+.pagination a:hover {
+  background: hsl(202, 96%, 28%);
+  color: hsl(0, 0%, 100%);
+  display: block;
+  float: left;
+  text-decoration: none;
+  padding: 7px;
+  margin-right: 10px;
+}
+.pagination span.ellipsis {
+  display: block;
+  float: left;
+  color: hsl(0, 0%, 0%);
+  padding: 8px;
+  margin-right: 10px;
+}
+.pagination span.this {
+  display: block;
+  float: left;
+  color: hsl(0, 0%, 0%);
+  padding: 7px;
+  border: 1px solid hsl(0, 0%, 87%);
+  margin-right: 10px;
+  background-color: hsl(0, 0%, 93%);
+}
+.breadcrumbs {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(40, 32%, 29%);
+  font-size: 11px;
+  padding-bottom: 10px;
+}
+.fixthis {
+  background-color: hsl(358, 100%, 74%) !important;
+}
+/* TYPOGRAPHY */
+/**
+ * WidgetBox
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#widgetbox
+ */
+.widget-box .head > div {
+  color: hsl(81, 39%, 35%) !important;
+  font-size: 10px;
+}
+.widget-box ul,
+.widget-box .unordered {
+  margin-top: 10px;
+  line-height: 150%;
+}
+.widget-box ul > *,
+.widget-box .unordered > * {
+  font-size: 13px;
+}
+@media only screen and (min-width: 768px) {
+  .widget-box {
+    float: left;
+    width: 282px;
+  }
+}
+div.unordered {
+  margin-top: 10px;
+  line-height: 150%;
+}
+div.superNav {
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(0, 0%, 40%);
+  margin-bottom: 5px;
+}
+h1 {
+  font-size: 1.875em;
+}
+h1.title {
+  font-size: 1.25em;
+}
+h1 span.subtitle {
+  font-size: 0.65em;
+  font-weight: normal;
+}
+h1.publisher {
+  color: hsl(40, 32%, 29%);
+  font-size: 1.375em;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
+  font-weight: normal !important;
+  margin: 0;
+}
+h1.work-title {
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin: 10px 0 0;
+  color: hsl(0, 0%, 20%);
+  font-size: 2em;
+}
+h1 span.count {
+  font-size: 14px !important;
+}
+h2 {
+  font-size: 1.375em;
+}
+h2.author {
+  color: hsl(40, 32%, 29%);
+  font-size: 1.125em;
+  font-weight: normal;
+}
+h2.authorEdition {
+  color: hsl(40, 32%, 29%);
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+h2.edition-byline {
+  font-size: 1em;
+  font-weight: normal;
+  color: hsl(0, 0%, 20%);
+  margin: 10px 0 20px;
+}
+h2.publisher {
+  background-color: hsl(0, 0%, 93%);
+}
+h2.work-subtitle {
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin: 0;
+  color: hsl(0, 0%, 40%);
+  font-size: 1.3em;
+  font-weight: normal;
+  font-style: italic;
+}
+h2.edition-title {
+  margin: 7px 0 0;
+  color: hsl(0, 0%, 40%);
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+h2 a {
+  color: hsl(202, 96%, 28%);
+  text-decoration: none;
+}
+h2 a:hover {
+  color: hsl(113, 38%, 29%);
+  text-decoration: underline;
+}
+h1.edition,
+h2.edition {
+  color: hsl(0, 0%, 0%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  font-size: 1.125em;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+h3 {
+  font-size: 1em;
+}
+h3.Question {
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 1.2em;
+  font-weight: normal;
+  color: hsl(40, 32%, 29%);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dotted hsl(0, 0%, 87%);
+}
+h4 {
+  font-size: 0.8125em;
+}
+h4.publisher,
+h4.observer-count {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+h4.facetHead {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.6875em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  text-transform: uppercase;
+  margin: 0 0 5px;
+  padding: 0;
+}
+h4.facetHead span.merge {
+  font-family: "Lucida Grande", "Arial", "Helvetica", sans-serif;
+  font-size: 11px;
+  font-weight: normal !important;
+  text-transform: none !important;
+  padding-left: 22px;
+  background: url(/images/icons/icon_merge-sm.png) no-repeat 0 0;
+  min-height: 16px;
+}
+h5 {
+  font-size: 0.875em;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
+  font-weight: normal !important;
+}
+h6 {
+  font-size: 0.6875em;
+}
+.head h2 a {
+  color: inherit !important;
+  text-decoration: none;
+}
+.head h2 a:hover {
+  text-decoration: underline;
+}
+div.head h1,
+div.head h2,
+div.head h3,
+div.head h4,
+div.head h5,
+div.head h6 {
+  margin: 0;
+  padding: 0;
+}
+div.head.rel {
+  position: relative;
+}
+dt,
+span.title,
+h6.title {
+  font-size: 12px;
+  font-weight: normal !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  color: hsl(0, 0%, 40%);
+  margin: 0;
+  padding: 0;
+}
+.titleSmall {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+.heading span.count {
+  font-size: 14px !important;
+}
+span.link {
+  font-size: 12px;
+  color: hsl(0, 0%, 80%);
+  font-weight: normal !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  white-space: nowrap;
+}
+span.tools {
+  font-size: 12px;
+  color: hsl(0, 0%, 20%);
+  font-weight: normal !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+span.tools span.label {
+  background-color: hsl(32, 100%, 61%);
+  color: hsl(0, 0%, 100%);
+  font-weight: normal !important;
+  padding: 3px;
+  border-radius: 3px;
+}
+span.tools span.list {
+  padding: 3px;
+}
+span.tag {
+  font-size: 13px;
+  color: hsl(0, 0%, 20%);
+}
+span.count {
+  font-size: 12px !important;
+  font-weight: normal !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(40, 32%, 29%);
+  padding: 5px 5px 0;
+}
+span.merge {
+  padding: 2px 0;
+}
+span.resultTitle {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(0, 0%, 40%);
+}
+span.resultTitle span.resultType {
+  font-size: 0.75em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  color: hsl(40, 32%, 29%);
+}
+span.resultTitle .bookauthor,
+span.resultTitle .resultPublisher {
+  font-size: 0.75em;
+  color: hsl(0, 0%, 40%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  font-weight: normal;
+}
+span.resultTitle span.details {
+  display: block;
+  float: left;
+}
+span#showpass {
+  display: block;
+  margin-top: 5px;
+}
+span#masker {
+  display: block;
+  float: left;
+  margin-top: 5px;
+  clear: both;
+}
+p.instruct {
+  font-size: 0.875em;
+  margin-bottom: 0;
+}
+p.alert {
+  font-size: 0.875em;
+  color: hsl(40, 32%, 29%);
+  background-color: hsl(58, 100%, 90%);
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+  margin: 10px auto 0;
+  padding: 15px 52px;
+}
+p.info {
+  background-image: url(/images/icons/icon_info.png);
+}
+p.thanks {
+  background-image: url(/images/icons/icon_check.png);
+}
+.print-disabled-download {
+  display: flex;
+  font-size: 10px;
+  align-items: center;
+}
+.print-disabled-download a {
+  flex: 1;
+}
+input[type=text],
+select,
+textarea {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  color: hsl(0, 0%, 27%);
+  font-size: 0.875em;
+}
+input[type=text] {
+  margin: 0 10px 5px 0;
+}
+input.repeat-add {
+  font-size: 1.125em;
+}
+input.invalid {
+  border: 1px solid hsl(8, 78%, 49%);
+  color: hsl(0, 0%, 20%);
+}
+input.highlight {
+  background-color: hsl(58, 100%, 90%);
+}
+.format {
+  font-size: 0.75em;
+  margin-top: 5px;
+}
+.search-results-stats {
+  margin: 0;
+  margin-bottom: 10px;
+  color: hsl(0, 0%, 40%);
+  font-size: 0.9em;
+}
+.fulltext-excerpt {
+  padding: 10px;
+  border-bottom: 1px solid hsl(0, 0%, 93%);
+  font-size: 0.8em;
+  overflow: hidden;
+}
+.fulltext-excerpt:last-child {
+  border-bottom: none;
+}
+.advanced-search {
+  font-size: 12px;
+  float: right;
+}
+/* Search v2 */
+.serp-ctx {
+  line-height: 1.5em;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+.serp-ctx .show-similar {
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+.serp-extras {
+  border: 1px solid hsl(0, 0%, 87%);
+  background-color: hsl(0, 0%, 100%);
+  padding: 0 10px 10px;
+  margin-top: 10px;
+}
+/* LAYOUT */
+#test-body-mobile {
+  box-sizing: border-box;
+  max-width: 1060px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border: 1px solid hsl(64, 9%, 71%);
+  z-index: 1;
+  position: relative;
+}
+body.full-width #test-body-mobile {
+  max-width: initial;
+  border: 0;
+  border-radius: 0;
+}
+* {
+  box-sizing: border-box;
+}
+@media all and (min-width: 960px) {
+  .contentQuarter {
+    float: left;
+    width: 240px;
+  }
+}
+#contentHead {
+  padding: 10px;
+}
+#contentHead h1 {
+  margin: 0;
+}
+div.contentBody,
+div#contentBody {
+  padding: 0 20px 20px;
+}
+div.contentBody img,
+div#contentBody img {
+  max-width: 100%;
+}
+.section,
+section {
+  margin-bottom: 20px;
+}
+div#placement {
+  width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+div#position {
+  width: 960px;
+}
+div#content {
+  clear: both;
+  position: relative;
+  width: 958px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border: 1px solid hsl(64, 9%, 71%);
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+div#content div.contentLists {
+  float: left;
+  position: relative;
+  left: -20px;
+}
+div#content div#contentLists {
+  float: left;
+  position: relative;
+  border-top: 1px solid hsl(0, 0%, 87%);
+  background: hsl(0, 0%, 100%) url(/images/back_results.png) repeat-x;
+}
+div#contentHead {
+  max-width: 1018px;
+  padding: 20px;
+}
+div#contentHead h1 {
+  margin: 0;
+}
+/* WIDGETS */
+div.note {
+  font-size: 1em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  background-color: hsl(58, 100%, 90%);
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid hsl(57, 60%, 72%);
+}
+div#noLogin {
+  margin-top: 10px;
+  background: hsl(58, 100%, 90%) url(/images/icons/icon_info.png) no-repeat 10px 50%;
+  padding: 10px 10px 10px 44px;
+}
+div#preMerge {
+  min-height: 32px;
+  padding: 10px 10px 10px 52px;
+  background: transparent url(/images/icons/icon_merge.png) no-repeat 10px 10px;
+}
+div#postMerge {
+  min-height: 32px;
+  padding: 10px 10px 10px 52px;
+  background: transparent url(/images/icons/icon_check.png) no-repeat 10px 10px;
+}
+div#errorMerge {
+  min-height: 32px;
+  padding: 10px 10px 10px 52px;
+  background: transparent url(/images/icons/icon_alert.png) no-repeat 10px 10px;
+}
+/* FORMS */
+div.formElement {
+  padding-bottom: 8px;
+}
+div.formElement.bottom {
+  padding-bottom: 0;
+}
+div.formElement label,
+div.formElement select#date1,
+div.formElement select#date2 {
+  font-size: 0.75em;
+}
+div.formElement .input label {
+  font-size: 1em;
+}
+div.formElement .footnote,
+div.formElement p.tip {
+  border-top: 1px solid hsl(0, 0%, 60%);
+  padding: 5px;
+}
+div.formElement blockquote {
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 0.875em;
+  margin: 1em 40px;
+}
+fieldset {
+  position: relative;
+  padding: 0 0 20px;
+  margin: 0 0 10px;
+}
+fieldset.minor {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+fieldset.major legend {
+  padding: 5px 0;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(184, 100%, 21%);
+  font-weight: 600;
+  font-size: 1.375em;
+}
+fieldset.minor legend {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(184, 100%, 21%);
+  font-weight: 600;
+  font-size: 1.125em;
+}
+fieldset.home {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+fieldset.home legend {
+  display: none;
+}
+/* ACCOUNT FORMS */
+/**
+ * Page heading search box
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#pageheadingsearchbox
+ */
+.page-heading-search-box {
+  padding: 20px;
+  max-width: 918px;
+}
+.page-heading-search-box form {
+  margin-top: 15px;
+}
+.page-heading-search-box button {
+  font-size: 18px;
+}
+/**
+ * Open Library Form
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#olform
+ */
+.olform {
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, sans-serif;
+}
+.olform .formBack {
+  padding: 10px;
+  background-color: hsl(0, 0%, 93%);
+}
+.olform .label {
+  padding: 10px 0 2px;
+}
+.olform .label label {
+  font-size: 1em;
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+.olform .label span {
+  font-weight: normal;
+}
+.olform textarea {
+  width: 100%;
+}
+.olform input[type=number],
+.olform input[type=text] {
+  margin: 0 10px 5px 0;
+}
+.olform input[type=number],
+.olform input[type=text],
+.olform input[type=email],
+.olform input[type=password],
+.olform textarea {
+  font-size: 1em;
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, Arial, sans-serif;
+  padding: 3px;
+  max-width: 100%;
+}
+.olform input[type=number] {
+  width: 4em;
+}
+.olform input[type=submit] {
+  padding: 5px;
+}
+.olform .required {
+  padding: 8px;
+}
+.olform select {
+  width: 100%;
+  font-size: 1.125em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  padding: 3px;
+}
+.olform .minor input {
+  max-width: 300px;
+}
+.olform.books {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.olform.books .major input[type=text],
+.olform.books .major input[type=email],
+.olform.books .major input[type=password],
+.olform.books .major textarea {
+  font-size: 0.875em;
+  width: 100%;
+}
+.olform.books .input,
+.olform.books .label {
+  width: auto !important;
+}
+.olform.books .TitleAuthor {
+  margin-bottom: 20px;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.olform.books .TitleAuthor input#work-title {
+  font-size: 1.875em !important;
+  margin: 0;
+  width: 100%;
+}
+.olform.books .TitleAuthor input#author {
+  font-size: 1em !important;
+  width: 100%;
+}
+.olform .tip {
+  font-size: 11px;
+  color: hsl(0, 0%, 40%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif !important;
+}
+.olform__input--large {
+  height: 265px;
+}
+@media all {
+  .olform .formBackLeft {
+    float: left;
+    width: 670px;
+  }
+  .olform .formBackRight {
+    float: left;
+    width: 220px;
+  }
+  .olform .formBack:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+@media all {
+  /* stylelint-disable selector-max-specificity */
+  .olform input[type=text],
+  .olform input[type=email],
+  .olform input[type=password],
+  .olform textarea {
+    width: 475px;
+  }
+  .olform .input {
+    width: 100%;
+  }
+  .olform .input select {
+    width: 130px;
+  }
+  .olform .label {
+    width: 90%;
+  }
+  .olform table input {
+    width: 300px;
+  }
+  .olform.books .TitleAuthor input#work-title {
+    width: 900px !important;
+  }
+  .olform.books .TitleAuthor input#author {
+    width: 550px !important;
+  }
+  /* stylelint-enable selector-max-specificity */
+}
+form#notifications input[type=radio] {
+  margin: 0 10px 0 20px;
+}
+div.invalid,
+div.valid {
+  float: left;
+  font-size: 1em !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  padding-top: 5px;
+}
+/* SEARCH FORMS */
+div#formScroll {
+  display: block;
+  position: relative;
+  width: 1px;
+  height: 1px;
+  left: 900px;
+  top: -410px;
+}
+div#scrollBtm {
+  width: 1px;
+  height: 1px;
+}
+div.siteSearch {
+  overflow: visible;
+  border-radius: 5px;
+  width: 300px;
+}
+div.siteSearch.darker {
+  -webkit-box-shadow: 1px 1px 10px hsl(0, 0%, 20%);
+  box-shadow: 1px 1px 10px hsl(0, 0%, 20%);
+}
+div.siteSearch input[type=submit] {
+  padding: 11px;
+  font-size: 0.9em;
+  background: hsl(202, 96%, 28%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border: none;
+}
+div.siteSearch input[type=text] {
+  margin: 0;
+  width: 215px;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 60%);
+}
+div.searchFilter .searchOpener {
+  right: 0;
+  margin-top: 5px;
+  font-size: 0.6875em;
+}
+div.searchFilter .searchCheckboxes {
+  margin-top: 5px;
+  font-size: 0.6875em;
+}
+.searchCheckboxes ul li label {
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+}
+.searchCheckboxes > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.searchCheckboxes > ul > li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 4px 0 0;
+  padding: 0;
+}
+#qtop input {
+  border-radius: 5px;
+  padding: 7px;
+  border: none;
+}
+input.query {
+  width: 205px;
+}
+div#topOptions {
+  padding-top: 30px;
+}
+#topOptions .searchPlus {
+  padding: 8px 0;
+}
+div#bottomOptions {
+  margin-top: 20px;
+  padding-top: 15px;
+}
+#bottomOptions .searchPlus {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+div.searchOptions {
+  display: none;
+  width: 300px;
+}
+div.searchOptions .formElement {
+  padding: 0 2px 8px 0;
+}
+div.searchOptions label {
+  margin-bottom: 2px;
+}
+.siteSearch .formElement {
+  font-family: "Lucida Grande", "Trebuchet MS", Geneva, Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+}
+.searchPlus {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+  color: hsl(0, 0%, 20%);
+  padding: 15px 0;
+}
+/* DIALOGS */
+div.cclicense {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  font-size: 0.75em;
+  min-height: 20px;
+  padding: 3px 0 0 30px;
+  color: hsl(40, 32%, 29%);
+  margin-bottom: 12px;
+  background: url(/images/logo_CC0-20px.png) 0 0 no-repeat;
+}
+/* TOOLS ACCORDION */
+/**
+ * EditToolbar component
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#edit-toolbar
+ */
+/* stylelint-disable selector-max-specificity */
+div#editTools,
+div#editHistory {
+  width: auto;
+}
+div.editButton {
+  width: auto;
+  display: inline-block;
+}
+div#editInfo {
+  float: right;
+  white-space: normal;
+  text-align: right;
+}
+div#editInfo > div {
+  font-size: 11px;
+  font-weight: normal;
+  color: hsl(40, 32%, 29%) !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+div#editInfo .smallest {
+  padding-top: 0.3rem;
+}
+div#editTools {
+  white-space: nowrap;
+  padding: 0 0 1rem;
+}
+div.editButton button,
+div#editHistory button,
+div.revert.notice button {
+  font-size: 1.125em;
+}
+div#revertNotice {
+  width: 958px;
+  height: 45px;
+  text-align: center;
+  padding-top: 15px;
+  background-color: hsl(113, 38%, 29%);
+}
+/* MESSAGING */
+div.alert,
+div.verify {
+  font: 1.25em "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+div.alert span,
+div.verify span {
+  margin: 0 auto;
+  min-height: 25px;
+  padding: 5px 0 5px 32px;
+}
+div.alert span {
+  background: url(/images/icons/icon_alert.png) no-repeat;
+}
+div.verify span {
+  background: url(/images/icons/icon_check.png) no-repeat;
+}
+.defaultstyling {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+.defaultstyling .padtop {
+  margin-top: 10px;
+}
+hr.forgot-padding {
+  margin: 30px 0 15px;
+}
+.forgot-email {
+  font-size: 0.8em;
+}
+.forgot-email-form {
+  padding: 10px 0;
+}
+.forgot-email-form .form-row {
+  margin-bottom: 10px;
+}
+.forgot-email-form label {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(0, 0%, 20%);
+  font-weight: 600;
+}
+/* FOOTER */
+/* stylelint-disable selector-max-specificity */
+div#footer-content {
+  max-width: 1060px;
+  margin: 5px auto;
+  padding: 20px;
+}
+div#footer-links {
+  margin-left: 10px;
+  line-height: 1.5em;
+}
+#footer-content div {
+  flex: 1;
+  flex-wrap: wrap;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  min-width: 150px;
+}
+footer {
+  width: 100%;
+  bottom: 0;
+  font-size: 0.8em;
+}
+footer #footer-details {
+  color: hsl(0, 0%, 20%);
+  width: 100%;
+}
+footer h2 {
+  color: hsl(0, 0%, 20%);
+  font-size: 1em;
+  margin: 0;
+}
+footer hr {
+  border: 0;
+  border-top: 1px solid hsl(64, 9%, 71%);
+  margin: 20px 0;
+}
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+footer ul li {
+  font-size: 1em;
+  list-style-type: none;
+  white-space: nowrap;
+  margin: 5px 0;
+}
+#footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 20%);
+  border-radius: 3px;
+  font-size: 20px;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  line-height: 35px;
+  margin-top: 10px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+  text-indent: -999px;
+  overflow: hidden;
+  background-position: center center;
+  background-size: 18px auto;
+  background-repeat: no-repeat;
+}
+.footer-icons__github {
+  background-image: url(/static/images/github.svg);
+}
+.footer-icons__twitter {
+  background-image: url(/static/images/tweet.svg);
+}
+#footer-links ul li a {
+  color: hsl(210, 100%, 20%);
+}
+#footer-links div {
+  margin: 20px 0;
+  padding: 0;
+}
+img#archive-logo {
+  margin-right: 10px;
+  padding: 0;
+  height: 27.5px;
+  opacity: 0.7;
+}
+div#legal-details {
+  flex: 0.9;
+  margin-bottom: 8px;
+}
+div#version-details {
+  text-align: right;
+  flex: 0.1;
+  margin-top: 8px;
+}
+.version {
+  color: hsl(0, 0%, 20%);
+  border: 1px solid hsl(64, 9%, 71%);
+  border-radius: 3px;
+  padding: 8px 10px;
+}
+/* LANGUAGE DROPDOWN */
+.translate-icon {
+  width: 1.5em;
+  vertical-align: middle;
+}
+.language-component {
+  cursor: pointer;
+}
+.language-component summary::marker {
+  content: "";
+}
+.language-component summary:after {
+  content: " ▼";
+  zoom: 70%;
+  vertical-align: middle;
+}
+.language-dropdown-component .dropdown-menu {
+  width: 150px;
+  text-align: left;
+  background-color: hsl(48, 29%, 93%);
+  border: 1px solid hsl(64, 9%, 71%);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.language-dropdown-component .dropdown-menu li {
+  border-bottom: 1px solid hsl(63, 26%, 84%);
+}
+.language-dropdown-component .dropdown-menu li:last-child {
+  border: none;
+}
+.language-dropdown-component .dropdown-menu li:hover {
+  background-color: hsl(0, 0%, 100%);
+}
+.language-dropdown-component .dropdown-menu li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 20%);
+  white-space: nowrap;
+  font-size: 0.9em;
+  display: block;
+}
+.iaBar .language-component {
+  position: relative;
+  display: block;
+}
+.iaBar .language-component .language-dropdown-component {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  z-index: 999;
+}
+.iaBar .language-component .language-dropdown-component li {
+  padding: 8px 12px;
+}
+/* CONTENT */
+div.contentWide,
+div#contentMeta {
+  padding: 10px 20px 20px;
+}
+/**
+ * Link Box
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#linkbox
+ */
+.contentQuarter div,
+.link-box div {
+  padding-right: 19px;
+}
+.link-box h6 {
+  color: hsl(0, 0%, 40%);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  display: inline;
+}
+.link-box > div {
+  font-size: 0.75em;
+}
+.link-box > div,
+div.subjects > div {
+  white-space: normal;
+  word-break: normal;
+  word-wrap: break-word;
+}
+.contentQuarter {
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+.contentTwothird {
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+.contentTwothird p {
+  margin-top: 0;
+}
+.contentOnethird {
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+.contentHalf {
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+.contentThreeQuarter {
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+.contentSpacer {
+  width: 19px;
+  height: 2px;
+}
+div.spacer {
+  float: left;
+  width: 30px;
+  min-height: 10px;
+}
+#contentHead {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+#contentHead h1 {
+  margin: 0;
+  padding: 0;
+}
+#contentHead #listTools ul {
+  margin: 15px 0 0 !important;
+}
+div.editThis {
+  margin-left: 20px;
+}
+/* HOME PAGE */
+/* NEW HOME PAGE */
+/* HOME PAGE CAROUSEL SKIN */
+/* Homepage about section */
+div.tutorial__item {
+  background-color: hsl(47, 54%, 98%);
+  border: 1px solid hsl(0, 0%, 87%);
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 220px;
+}
+@media only screen {
+  div.tutorial__item {
+    min-width: 310px;
+  }
+}
+div.tutorial__item:focus {
+  border: 1px solid hsl(202, 97%, 28%);
+}
+div.tutorial__item p {
+  margin: 0.4% 4%;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: normal;
+}
+div.tutorial__item p.small {
+  color: hsl(330, 3%, 62%);
+  font-size: 0.8rem;
+}
+div.tutorial__item a {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+div.tutorial__item img {
+  position: relative;
+  margin: 5px;
+  float: left;
+  height: 5rem;
+  opacity: 80%;
+}
+/* stylelint-disable selector-max-specificity */
+div.chartHome a:hover,
+#home-stats-charts .statschart:hover a {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+#home-stats-charts {
+  flex-wrap: wrap;
+}
+#home-stats-charts .statschart {
+  flex: 1;
+  height: 110px;
+  text-align: center;
+  padding: 1px;
+  /* stylelint-disable no-descending-specificity */
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable no-descending-specificity */
+  /* stylelint-enable max-nesting-depth */
+}
+#home-stats-charts .statschart .chartShow {
+  width: 145px;
+  height: 60px;
+  margin: 0 5px;
+  border-bottom: 1px solid hsl(0, 0%, 40%);
+  cursor: pointer;
+}
+#home-stats-charts .statschart a {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+#home-stats-charts .statschart a span {
+  display: block;
+}
+#home-stats-charts .statschart a .ticks {
+  margin-top: 2px;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.125em;
+  font-weight: 700;
+  padding-top: 5px;
+}
+#home-stats-charts .statschart a .label {
+  font-family: "Lucida Grande", "Arial", "Helvetica", sans-serif;
+  font-size: 0.625em;
+  text-transform: uppercase;
+}
+#home-resource {
+  font-size: 13px;
+  text-align: left;
+}
+#home-about {
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+#home-about-mission {
+  flex: 2;
+  min-width: 300px;
+  max-width: 439px;
+  min-height: 100px;
+  margin-bottom: 20px;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+#home-about-mission-tldr {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5em;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: hsl(0, 0%, 20%);
+  font-weight: normal;
+}
+/* stylelint-enable selector-max-specificity */
+.card__text {
+  margin: 5px;
+}
+.home-resource-section {
+  flex: 1;
+  font-size: 13px;
+  min-width: 150px;
+  min-height: 100px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+.home-resource-section li {
+  margin: 1em 0;
+}
+.home-resource-section .collapse {
+  margin: 0;
+}
+/* SEARCH RESULTS */
+div#searchResults,
+div#searchResults ul {
+  flex: 1;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+div#searchResults .SRPCover {
+  margin: 0 15px 20px 0;
+  vertical-align: middle;
+  width: 130px;
+  height: 200px;
+}
+div#searchResults .SRPCover img {
+  height: 20px;
+}
+div#searchResults .SRPCoverBlank {
+  position: relative;
+  width: 130px;
+  height: 200px;
+  padding: 10px;
+  margin: 0 15px 20px 0;
+  text-align: center;
+  float: left;
+  background: hsl(0, 0%, 87%);
+  cursor: pointer;
+  display: none;
+}
+div#searchResults .SRPCoverBlank .innerBorder {
+  float: left;
+  width: 130px;
+  height: 200px;
+  border: 1px solid hsl(0, 0%, 100%);
+}
+div#searchResults .SRPCoverBlank a {
+  text-decoration: none;
+}
+div#searchResults.work,
+div#searchResults.work ul,
+div#searchResults.work li {
+  width: 700px !important;
+}
+div#searchResults.narrow,
+div#searchResults.narrow ul,
+div#searchResults.narrow li {
+  width: 610px !important;
+}
+div#searchResults.wide,
+div#searchResults.wide ul,
+div#searchResults.wide li {
+  width: 920px !important;
+}
+div#searchResults.add,
+div#searchResults.add ul,
+div#searchResults.add li {
+  width: 860px !important;
+  margin: 0 30px !important;
+}
+div#searchResults.narrow .resultTitle {
+  max-width: 480px !important;
+}
+div#searchResults.wide .resultTitle {
+  max-width: 780px;
+}
+div#searchResults.add .resultTitle {
+  max-width: 720px;
+}
+div#searchResults.work .resultTitle {
+  max-width: 570px !important;
+}
+.mode-options {
+  font-size: 0.7em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+.mode-options input {
+  margin-left: 15px;
+  margin-right: 4px;
+  position: relative;
+}
+.print-disabled-only {
+  background-color: hsl(283, 97%, 61%);
+}
+.waitlist-msg {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.7em;
+  margin-bottom: -1.5em;
+  color: hsl(0, 0%, 40%);
+  padding: 0.2em;
+}
+.authorList {
+  margin-top: 30px;
+}
+.authorList li {
+  margin-bottom: 1.5em;
+  max-width: 800px;
+  font-size: 1em;
+  color: hsl(0, 0%, 40%);
+}
+.subjectList ul {
+  margin-top: 30px;
+}
+/* SEARCH FACETS */
+/**
+ * Search Results Container
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#searchresultcontainer
+ */
+/**
+ * Search Result Item
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#searchresultitem
+ */
+.bookauthor {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+.searchResultItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  list-style-type: none;
+  line-height: 1.5em;
+  background-color: hsl(0, 0%, 98%);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 3px;
+  border-bottom: 1px solid hsl(48, 29%, 93%);
+  flex-wrap: wrap;
+  align-items: center;
+}
+.searchResultItem a[href] {
+  text-decoration: none;
+}
+.searchResultItem > div {
+  margin-top: 10px;
+  padding: 0 5px 0 15px;
+}
+.searchResultItem h3 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: hsl(0, 0%, 20%);
+  font-size: 1em;
+  font-weight: 700;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+.searchResultItem .details {
+  display: inline;
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+}
+.searchResultItem .resultTitle {
+  margin: 0 !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(0, 0%, 40%);
+}
+.searchResultItem span.resultPublisher {
+  font-size: 0.75em;
+  color: hsl(0, 0%, 40%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  display: block;
+}
+.searchResultItem span.resultType {
+  font-size: 0.6875em;
+}
+.searchResultItem .publishedYear {
+  display: block;
+}
+.searchResultItem .preview-covers {
+  display: block;
+  height: 45px;
+  overflow: hidden;
+}
+.searchResultItem .preview-covers img {
+  border-radius: 4px;
+  opacity: 0.7;
+}
+.searchResultItem .bookcover {
+  width: 100%;
+  margin: 10px 10px 0 5px;
+  text-align: center;
+  overflow: hidden;
+}
+.searchResultItem .bookcover img {
+  border-radius: 4px;
+  max-width: 100%;
+  max-height: 300px;
+  width: 175px;
+}
+.searchResultItem .imageLg {
+  text-align: center;
+  width: 100%;
+  margin: 10px 10px 0 5px;
+}
+.searchResultItem .imageLg img {
+  max-width: 100%;
+  max-height: 110px;
+}
+.preview-covers img:hover {
+  opacity: 1;
+}
+.listDelete {
+  white-space: nowrap;
+  max-width: 150px;
+  line-height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 5px;
+}
+.listDelete a span {
+  margin-right: 5px;
+  background-image: url(/images/back_list-trash.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 28px;
+  width: 21px;
+  display: inline-block;
+  position: relative;
+  top: 5px;
+}
+.listDelete a:hover span {
+  background-position: -21px 0;
+}
+@media only screen and (min-width: 768px) {
+  .list-books .searchResultItem {
+    flex-wrap: nowrap;
+  }
+  .list-books .searchResultItem .bookcover {
+    width: 175px;
+    text-align: right;
+  }
+  .list-books .searchResultItem .imageLg {
+    width: 175px;
+    text-align: center;
+  }
+  .list-results .searchResultItem {
+    flex-wrap: nowrap;
+  }
+  .list-results .searchResultItem .imageLg {
+    width: 175px;
+    text-align: right;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .resultsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+}
+div#searchFacets {
+  width: 220px;
+  padding: 0 15px;
+}
+div.facet {
+  margin-bottom: 20px;
+}
+div.facetEntry {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  margin-bottom: 5px;
+}
+div.facetEntry a {
+  text-decoration: none !important;
+}
+div.facetMoreLess {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  margin-bottom: 5px;
+}
+div.facetMoreLess a {
+  text-decoration: none !important;
+}
+/* RESULTS */
+div.list {
+  float: left;
+  width: 207px;
+  padding-top: 10px;
+}
+div.list .cover {
+  float: left;
+  width: 42px;
+  padding-right: 10px;
+}
+div.list img {
+  width: 42px;
+}
+div.list .copy {
+  float: left;
+  width: 155px;
+}
+div.list h5 {
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: normal;
+  color: hsl(0, 0%, 20%);
+  margin-bottom: 5px;
+}
+div.list h5 span {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  font-size: 80%;
+}
+div.list .tags {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  font-size: 0.6875em;
+  color: hsl(0, 0%, 40%);
+  margin-bottom: 5px;
+}
+div.list .owner {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  font-size: 0.6875em;
+  color: hsl(0, 0%, 40%);
+  text-align: right;
+}
+/* BOOKS */
+/* stylelint-disable no-descending-specificity */
+.workDetails {
+  padding: 20px 0;
+}
+.workDetails .book-description {
+  text-align: justify;
+}
+.editionCover {
+  min-height: 10px;
+  padding-right: 1.5em;
+}
+.editionCover .cover-animation {
+  transition: transform 0.8s, opacity 0.8s;
+}
+.editionCover .cover-animation:hover {
+  transform: perspective(465px) rotateX(0deg) rotateY(-10deg);
+  opacity: 0.8;
+}
+/**
+ * Cover
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#cover
+ */
+div.editionAbout {
+  margin-bottom: 20px;
+}
+div.editionAbout p {
+  margin: 1em 0;
+  font-size: 13px;
+}
+div.editionAbout p:first-child {
+  margin: 0;
+}
+div.editionAbout p.featured-count {
+  margin-bottom: 10px;
+}
+.work-title {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.work-subtitle {
+  margin-top: 0;
+}
+.work-description pre {
+  overflow: auto;
+}
+.workFooter ul.listLists {
+  display: flex;
+}
+.workFooter ul.listLists li {
+  width: 33%;
+  border: 0;
+}
+.book-description {
+  font-size: 0.9em;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.checkboxes label {
+  display: inline-block;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+.checkboxes input {
+  vertical-align: middle;
+}
+.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.clamp:hover {
+  cursor: pointer;
+}
+.clamp::before {
+  content: attr(data-before);
+}
+.restricted-view {
+  display: block;
+  z-index: 1;
+}
+.restricted-height {
+  overflow: hidden;
+  height: 57px;
+}
+.section,
+.section h6 {
+  font-size: 0.8em;
+}
+h3.edition-header {
+  font-size: 14px;
+  margin: 0;
+}
+h2.edition-byline {
+  margin: 7px 2px 20px;
+}
+.first-published-date {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8em;
+}
+.edition-overview {
+  background: hsl(0, 0%, 80%);
+  padding: 10px;
+  margin: 10px 0;
+}
+.edition-overview .edition-title {
+  margin-bottom: 0;
+  color: hsl(0, 0%, 20%);
+}
+.edition-overview .edition-subtitle {
+  margin-top: 5px;
+  font-size: 1.4em;
+  font-weight: normal;
+  color: hsl(0, 0%, 40%);
+}
+.work-menu {
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+  padding-bottom: 5px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.work-menu.sticky {
+  position: sticky;
+  top: 50px;
+  display: block;
+  background: hsl(0, 0%, 100%);
+  z-index: 3;
+  padding-top: 10px;
+}
+@media only screen and (min-width: 768px) {
+  .work-menu.sticky {
+    top: 0;
+  }
+}
+.work-menu li {
+  display: inline;
+  padding: 0 15px;
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+.work-menu li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 40%);
+}
+.work-menu li.selected {
+  border-bottom: 2px solid hsl(202, 96%, 28%);
+}
+.work-menu li:hover {
+  border-bottom: 2px solid hsl(202, 96%, 28%);
+}
+.work-menu li.selected a {
+  color: hsl(202, 96%, 28%);
+}
+a.section-anchor {
+  height: 20px;
+  display: block;
+}
+.book-overview {
+  padding-bottom: 10px;
+}
+.book-overview > div {
+  margin: 10px 0;
+}
+.meta dt,
+.meta dd {
+  font-size: 12px;
+}
+.book-subtitle {
+  margin-bottom: 0;
+}
+/**
+ * ReaderStats
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#readerstats
+ */
+.readers-stats {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.9em;
+}
+.readers-stats li {
+  list-style-type: none;
+  display: inline-block;
+}
+.readers-stats li:not(:last-child):after {
+  content: "·";
+  margin: 0 4px;
+}
+.readers-stats__star {
+  color: hsl(50, 100%, 50%);
+  font-size: 1.5em;
+}
+.readers-stats__star--half {
+  margin: 0 0 0 -5px;
+  font-size: 1.5em;
+  background: linear-gradient(90deg, hsl(50, 100%, 50%) 50%, hsl(0, 0%, 80%) 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+div.editionTools {
+  min-height: 10px;
+  font-size: 100%;
+}
+div.editionTools p {
+  color: hsl(0, 0%, 40%);
+}
+@media only screen and (min-width: 960px) {
+  .workDetails {
+    display: flex;
+  }
+  div.editionCover {
+    width: 225px;
+    margin-right: 1.5em;
+    margin-bottom: 0;
+  }
+  div.editionAbout {
+    flex: 1;
+  }
+}
+.admin-bar {
+  padding: 5px;
+  background-color: hsl(0, 0%, 93%);
+}
+.admin-bar form {
+  display: inline-block;
+}
+.mobile-borrow-cta {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .mobile-borrow-cta {
+    display: none;
+  }
+}
+.print-disabled-download,
+.patron-metadata {
+  text-align: center;
+  padding: 7px 0 0;
+}
+.edition-omniline {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+  margin-bottom: 10px;
+  background: hsl(0, 0%, 98%);
+}
+.edition-omniline-item {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  font-size: 0.8em;
+}
+.edition-omniline-item div {
+  font-weight: bold;
+}
+.edition-omniline h4 {
+  padding-right: 5px;
+}
+.edition-omniline h4:last-child {
+  padding-right: 0;
+}
+@media only screen and (min-width: 768px) {
+  .edition-omniline {
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-x: auto;
+  }
+  .edition-omniline-item {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.tab-section {
+  padding: 10px;
+  border: 1px solid hsl(0, 0%, 87%);
+  border-radius: 5px;
+  clear: both;
+}
+.preview-languages {
+  font-size: 0.8em;
+  color: hsl(0, 0%, 40%);
+}
+.work-line {
+  font-style: oblique;
+  color: hsl(0, 0%, 40%);
+}
+.work-line a {
+  color: hsl(0, 0%, 40%);
+}
+.loadingIndicator {
+  display: flex;
+  justify-content: center;
+  background: hsl(0, 0%, 93%);
+}
+.list-heading {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: hsl(202, 96%, 28%);
+}
+/**
+ * NavEdition
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#navedition
+ */
+div.navEdition {
+  font-size: 0.9em;
+  margin-top: 5px;
+  color: hsl(0, 0%, 33%);
+}
+span.booktitle {
+  color: hsl(0, 0%, 20%);
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: bold;
+}
+div.work {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+div.work span.work,
+div.work span.author {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(40, 32%, 29%);
+  font-size: 1.125em;
+}
+div.work span.work {
+  font-weight: 700;
+}
+div.work span.editions {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(40, 32%, 29%);
+  font-size: 1.125em;
+}
+div.workHelp {
+  padding-top: 10px;
+  font-size: 0.8em;
+  margin-bottom: 20px;
+}
+.workCover .illustration img {
+  max-width: 270px !important;
+}
+.workCover .illustration .SRPCoverBlank {
+  margin: 0 auto;
+}
+.right.illustration {
+  margin: 0 0 30px 30px;
+}
+.left.illustration {
+  margin: 0 30px 30px 0;
+}
+.illustration {
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+.illustration img {
+  width: 180px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 0 hsl(48, 35%, 64%);
+}
+.illustration .SRPCoverBlank {
+  position: relative;
+  width: 148px;
+  height: 225px;
+  min-width: 175px;
+  min-height: 250px;
+  padding: 15px;
+  text-align: center;
+  background: hsl(0, 0%, 87%);
+  font-size: 1em;
+  display: none;
+}
+.illustration .SRPCoverBlank .innerBorder {
+  border: 2px solid hsl(0, 0%, 100%);
+  width: 144px;
+  height: 221px;
+  margin: 0 auto;
+}
+.illustration .SRPCoverBlank.author {
+  position: relative;
+  width: 131px;
+  height: 180px;
+  text-align: center;
+  background: transparent url(/images/icons/avatar_author-lg.png) 15px 15px no-repeat;
+  font-size: 1em;
+  margin: 0 auto;
+  display: none;
+}
+.illustration .BookTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 108px;
+  margin-left: -54px;
+  height: 100px;
+  margin-top: -50px;
+  color: hsl(0, 0%, 20%);
+  overflow-wrap: break-word;
+}
+.illustration .author .BookTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 108px;
+  margin-left: -54px;
+  height: 80px;
+  margin-top: -40px;
+  color: hsl(0, 0%, 0%);
+  display: none;
+}
+.illustration .Author {
+  color: hsl(0, 0%, 40%);
+  font-style: italic;
+  padding: 4px 4px 0;
+  font-size: 11px;
+}
+.illustration .edition {
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  margin: 10px auto;
+}
+.editionCover .SRPCoverBlank {
+  width: auto;
+  height: auto;
+}
+div.books {
+  float: left;
+  padding-top: 20px;
+  width: 915px;
+}
+div.books .coverMagic {
+  float: left;
+  min-width: 84px;
+  min-height: 115px;
+  text-align: center;
+  margin: 0 5px 20px 0;
+  max-width: 100%;
+}
+div.books .SRPCover {
+  float: left;
+  height: 115px;
+  vertical-align: middle;
+}
+div.books .SRPCover img {
+  height: 115px;
+}
+div.books .SRPCoverBlank {
+  position: relative;
+  width: 74px;
+  height: 105px;
+  padding: 5px;
+  text-align: center;
+  float: left;
+  font-size: 0.6875em;
+  cursor: pointer;
+  display: none;
+  background-color: hsl(0, 0%, 87%);
+}
+div.books .SRPCoverBlank .innerBorder {
+  border: 1px solid hsl(0, 0%, 100%);
+  width: 72px;
+  height: 103px;
+}
+div.books .BookTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 62px;
+  margin-left: -31px;
+  height: 93px;
+  margin-top: -46px;
+  color: hsl(0, 0%, 20%);
+}
+div.books .Author {
+  color: hsl(0, 0%, 40%);
+  font-style: italic;
+  padding: 4px 4px 0;
+  font-size: 0.6875em;
+}
+td.toc-label {
+  white-space: pre-wrap;
+}
+td.toc-pagenum {
+  text-align: right;
+}
+tr.toc-level-2 td.toc-label {
+  padding-left: 15px !important;
+}
+tr.toc-level-3 td.toc-label {
+  padding-left: 30px !important;
+}
+#tabsAddbook {
+  margin-bottom: 5px;
+}
+input.addweb,
+select#select-id {
+  max-width: 300px;
+}
+.links .print-disabled-download {
+  white-space: nowrap;
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 5px;
+}
+.links ul li.read-option a {
+  display: block;
+  text-align: center;
+}
+div.excerpt {
+  width: 100%;
+}
+div.excerpt .text {
+  padding: 15px;
+  font-size: 0.875em;
+  line-height: 1.25em;
+  font-style: italic;
+}
+div.excerpt .attribution {
+  padding-left: 15px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.6875em;
+}
+.identifiers td {
+  color: hsl(0, 0%, 20%);
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+  padding: 5px;
+}
+.identifiers.authors td {
+  background-color: hsl(0, 0%, 100%);
+}
+ul.booklinks li {
+  font-size: 12px;
+  list-style-type: disc;
+  margin: 0 0 10px 20px;
+}
+ul.booklinks li span {
+  display: block;
+}
+ul.booklinks li div.linkRemove {
+  float: right;
+  padding: 0 10px 10px 15px;
+}
+ul.wide li span.resultTitle {
+  width: 813px;
+  max-width: 813px;
+}
+ul.wide li span.resultTitle .subjects {
+  font-size: 0.8em;
+}
+ul.clean {
+  border-top: none !important;
+}
+ul.clean li {
+  border-bottom: none !important;
+}
+ul.clean li span.resultTitle {
+  width: 236px;
+  max-width: 236px;
+}
+#external-links ul li {
+  list-style-type: none;
+}
+.section .sansserif {
+  font-size: 0.75em;
+}
+.section p {
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+/**
+ * PageHistory
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#page-history
+ */
+/* HISTORY */
+#pageHistory {
+  margin-top: 30px;
+}
+.pageHistory__list {
+  font-size: 0.8em;
+}
+.pageHistory__tools {
+  font-size: 0.7em;
+  float: right;
+  padding-top: 8px;
+}
+.pageHistory__list li:first-child:after {
+  content: " · ";
+}
+table.history {
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px solid hsl(0, 0%, 91%);
+}
+table.history tr {
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+table.history tr:last-child {
+  background: hsl(0, 0%, 93%);
+}
+table.history td {
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  color: hsl(0, 0%, 40%);
+  border-bottom: 1px solid hsl(0, 0%, 91%);
+}
+table.history td.timestamp {
+  padding: 10px;
+  white-space: nowrap;
+}
+table.history td.detail {
+  padding: 10px;
+  width: 100%;
+}
+.BookTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 105px;
+  margin-left: -52px;
+  height: 100px;
+  margin-top: -50px;
+  vertical-align: middle;
+  color: hsl(0, 0%, 20%);
+  font-size: 0.875em;
+  line-height: normal;
+}
+.Author {
+  color: hsl(0, 0%, 40%);
+  font-style: italic;
+  padding: 4px 4px 0;
+  font-size: 11px;
+}
+span.actions {
+  display: block;
+  float: left;
+  white-space: nowrap;
+  max-width: 55px;
+  overflow: visible;
+}
+span.actions a {
+  display: block;
+  float: left;
+  min-width: 35px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  font-size: 10px;
+  margin-left: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+span.actions a span.image {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  padding: 0;
+  background-image: url(/images/icons/icons_sprite-sm.png);
+  background-repeat: no-repeat;
+}
+span.actions a span.label {
+  display: block;
+  background-image: url();
+}
+span.actions span.list {
+  background-position: 0 0 !important;
+}
+span.actions span.list:hover {
+  background-position: -24px 0 !important;
+}
+span.actions span.read {
+  background-position: -72px 0 !important;
+}
+span.actions span.read:hover {
+  background-position: -96px 0 !important;
+}
+span.actions span.download {
+  background-position: -144px 0 !important;
+}
+span.actions span.download:hover {
+  background-position: -168px 0 !important;
+}
+span.actions span.buy {
+  background-position: -216px 0 !important;
+}
+span.actions span.buy:hover {
+  background-position: -240px 0 !important;
+}
+span.actions span.borrow {
+  background-position: -288px 0 !important;
+}
+span.actions span.borrow:hover {
+  background-position: -312px 0 !important;
+}
+span.actions span.daisy {
+  background-position: -384px 0 !important;
+}
+span.actions span.daisy:hover {
+  background-position: -408px 0 !important;
+}
+span.actions a span.checked-out {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+ul.list-books > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+ul.list-books .resultTitle {
+  display: block;
+  margin: 0 !important;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(0, 0%, 40%);
+}
+ul.list-books .resultTitle .bookauthor,
+ul.list-books span.resultPublisher {
+  font-size: 0.75em;
+  color: hsl(0, 0%, 40%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+}
+ul.list-books span.resultPublisher {
+  display: block;
+}
+ul.list-books span.resultType {
+  font-size: 0.6875em;
+}
+div.wide ul.list-books span.resultTitle {
+  max-width: 850px;
+}
+div.narrow ul.list-books span.resultTitle {
+  max-width: 500px !important;
+}
+div.popAlert {
+  display: none;
+  width: 550px;
+  padding: 8px 16px;
+  margin-bottom: 15px;
+  background: url(/images/icons/icon_alert.png) no-repeat;
+  font-size: 1.25em;
+  color: hsl(8, 78%, 49%);
+  text-align: center;
+}
+div.popNotify {
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  margin: 10px 20px;
+}
+div.addfield {
+  margin: 10px 20px;
+}
+#wikicode textarea {
+  width: 400px;
+  height: 200px;
+  padding: 10px;
+  margin: 10px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+  overflow: auto;
+  outline: none;
+  white-space: pre-line;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+#wikicode p {
+  margin: 10px 10px 0;
+  padding: 0;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+}
+/* TABS */
+/* Skin */
+/**
+ * ChartStats
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#chartstats
+ * Not related to Chart component in any way.
+ */
+@media all and (min-width: 960px) {
+  div.chartHolder {
+    position: relative;
+    width: 439px;
+    height: 61px;
+    overflow: hidden;
+    background-color: hsl(0, 0%, 93%);
+  }
+  div.chartDisplay {
+    width: 430px;
+    height: 50px;
+    padding: 10px 3px 0;
+    border-bottom: 1px solid hsl(0, 0%, 0%);
+    background-color: hsl(0, 0%, 93%);
+  }
+}
+/* PAGE HISTORY */
+@media screen and (max-width: 960px) {
+  .historyPager {
+    text-align: center;
+    margin: 20px 0;
+    width: 848px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .historyPager {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+  }
+}
+/* CHARTING */
+/**
+ * Chart component
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#chart
+*/
+.chart {
+  position: relative;
+  height: 160px;
+  width: 100%;
+  padding: 0 8px 20px 20px;
+  margin-top: 0;
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  background-color: transparent;
+  background-image: url(/images/ajax-loader-bar.gif);
+  background-repeat: no-repeat;
+  background-position: 340px 60px;
+  box-sizing: border-box;
+}
+.chartYaxis {
+  position: absolute;
+  left: -65px;
+  top: 60px;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  font-size: 10px;
+  color: hsl(81, 39%, 35%);
+  text-transform: uppercase;
+}
+.chartXaxis {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  color: hsl(81, 39%, 35%);
+  text-transform: uppercase;
+}
+.chartZoom {
+  white-space: nowrap;
+}
+.chart .thisChart {
+  height: 140px;
+  width: 100%;
+  overflow-y: hidden;
+}
+@media all and (min-width: 960px) {
+  .chart {
+    float: left;
+    max-width: 998px;
+  }
+  .chartYaxis {
+    width: 140px;
+  }
+  .chart .thisChart {
+    max-width: 998px;
+  }
+}
+/* MERGING */
+div.mergeThis {
+  float: right;
+  margin: 20px 20px 0 30px;
+  padding-left: 47px;
+  background: url(/images/icons/icon_merge.png) no-repeat 0 0;
+}
+/**
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#merge-form
+ */
+div.merge {
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, sans-serif;
+  width: 100%;
+  float: left;
+  margin-bottom: 15px;
+}
+div.merge .entry {
+  width: 100%;
+  padding: 10px 0;
+  float: left;
+  clear: right;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+}
+div.merge .header {
+  width: 100%;
+  padding: 0 !important;
+  float: left;
+  clear: right;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+}
+div.merge .header div {
+  padding: 5px;
+}
+div.merge .master {
+  background-color: hsl(58, 100%, 90%) !important;
+  position: sticky;
+  top: 0;
+}
+div.merge .mergeSelection,
+div.merge .mouseoverHighlight {
+  background-color: hsl(58, 92%, 95%);
+}
+div.merge .data {
+  padding: 0 5px;
+}
+div.merge .input {
+  width: 37px;
+  float: left;
+  text-align: center;
+  padding: 3px 5px 0;
+}
+div.merge .record ul {
+  margin-top: 5px;
+  margin-bottom: 0 !important;
+}
+div.merge .record li {
+  color: hsl(0, 0%, 40%) !important;
+  font-size: 0.75em;
+}
+div.merge .record label {
+  display: block;
+}
+div.merge .metaDate {
+  color: hsl(40, 32%, 29%);
+  font-size: 0.8125em;
+  padding-left: 10px;
+}
+div.merge .metaSubject {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  display: block;
+}
+div.merge .name {
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+div.merge .name a:link,
+div.merge .name a:visited {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+div.merge .name a:hover,
+div.merge .name a:active {
+  color: hsl(202, 96%, 28%);
+  text-decoration: underline;
+}
+div.merge .count {
+  font-size: 0.8125em;
+  text-align: right;
+}
+@media all and (min-width: 960px) {
+  div.merge .record {
+    float: left;
+    width: 710px;
+  }
+  div.merge label {
+    width: 710px;
+  }
+  div.merge .count {
+    width: 86px;
+    float: left;
+  }
+}
+#mergeHead {
+  background-color: hsl(0, 0%, 93%);
+  padding: 15px;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+#mergeHead #recordMaster {
+  margin-bottom: 15px;
+}
+/* BORROWING */
+div.preSubmit,
+div.postSubmit {
+  text-align: center;
+}
+/* LISTS */
+#listTools ul {
+  font-size: 0.75em;
+  color: hsl(0, 0%, 40%);
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  margin: 0 0 20px !important;
+}
+#listTools li {
+  list-style-type: none !important;
+  padding-bottom: 20px;
+}
+#listTools li span.icon {
+  display: block;
+  float: left;
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+  background-image: url(/images/icons/icons_lists.png);
+  background-repeat: no-repeat;
+}
+#listTools li span.subscribe {
+  background-position: 0 0;
+}
+#listTools li span.export {
+  background-position: -28px 0;
+}
+#listTools li span.alert {
+  background-position: -56px 0;
+}
+/**
+ * ListLists component
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#listslists
+ */
+ul.listLists {
+  margin: 0;
+  padding: 0;
+}
+ul.listLists span {
+  display: block;
+  color: hsl(0, 0%, 40%);
+}
+ul.listLists li {
+  list-style: none !important;
+  border-radius: 3px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  background-color: hsl(0, 0%, 100%);
+  border-bottom: 1px solid hsl(0, 0%, 93%);
+}
+ul.listLists li .image {
+  width: 42px;
+  min-height: 35px;
+  padding: 0 10px;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+ul.listLists li .image img {
+  width: 32px;
+  max-width: 100%;
+}
+ul.listLists li .data {
+  padding: 3px 0;
+}
+ul.listLists li .label {
+  line-height: 1.125em;
+  font-size: 12px;
+}
+ul.listLists li .meta,
+ul.listLists li .owner {
+  font-size: 0.6875em;
+  line-height: 1.125em;
+  margin: 5px 0;
+}
+.heart-adjust {
+  position: relative;
+  top: -3px;
+  left: 4px;
+}
+div#subjectLists ul.listLists {
+  padding: 0;
+}
+div#subjectLists ul.listLists li {
+  list-style-type: none;
+  display: block;
+  float: left;
+  width: 282px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  padding-bottom: 10px;
+  padding-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+div#subjectLists ul.listLists li .image {
+  display: block;
+  float: left;
+  width: 34px;
+  min-height: 35px;
+}
+div#subjectLists ul.listLists li .image img {
+  width: 24px;
+}
+div#subjectLists ul.listLists li .data {
+  display: block;
+  float: left;
+  width: 248px;
+}
+div#subjectLists p {
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  padding-left: 42px;
+  margin-bottom: 5px !important;
+}
+/* SEARCH INSIDE */
+.snipHL {
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  background-color: hsl(240, 100%, 50%);
+  position: absolute;
+}
+/* LIBRARIES */
+.editionCover {
+  box-sizing: unset;
+}
+.editionCover .illustration {
+  margin-bottom: 5px;
+}
+#read.panel {
+  margin-bottom: 10px;
+}
+.decorations button {
+  cursor: pointer;
+  text-align: center;
+  background: inherit;
+  border: none;
+  padding: 0;
+  color: hsl(202, 96%, 28%);
+  border-bottom: 1px solid hsl(202, 96%, 28%);
+  margin-bottom: 15px;
+}
+/* My books ... */
+.list-books .book {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.reading-log-lite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.reading-log-lite select {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 20%);
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 4px;
+  height: 2.5em;
+  width: 100%;
+}
+.reading-log-lite button {
+  border-radius: 4px;
+  color: hsl(0, 0%, 100%);
+  background: hsl(130, 46%, 45%);
+  border: 2px solid hsl(130, 43%, 45%);
+  border-right: 1px solid hsl(128, 44%, 59%);
+  height: 2.5em;
+  padding: 0 10px;
+}
+.account-settings-menu {
+  margin-bottom: 15px;
+}
+/* stylelint-disable no-descending-specificity */
+/**
+ * Ratings form
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#ratingsform
+ */
+.star-messaging {
+  color: hsl(0, 0%, 60%);
+  background: none;
+  display: block;
+  border: 0;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.review {
+  display: flex;
+}
+.review .review-btn {
+  border-left: 1px solid hsl(0, 0%, 87%);
+  width: 35px;
+  height: 35px;
+}
+.stars {
+  background: url(/static/images/stars.png) repeat-x 0 0;
+  width: 150px;
+  cursor: pointer;
+  margin: 0 auto 10px;
+}
+.stars input[type="submit"] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.stars .star-5.star-selected ~ span {
+  width: 100%;
+}
+.stars .star-4.star-selected ~ span {
+  width: 80%;
+}
+.stars .star-3.star-selected ~ span {
+  width: 60%;
+}
+.stars .star-2.star-selected ~ span {
+  width: 40%;
+}
+.stars .star-1.star-selected ~ span {
+  width: 20%;
+}
+.stars .star-0.star-selected ~ span {
+  width: 0%;
+}
+.stars label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  text-indent: -999em;
+  float: left;
+  position: relative;
+  z-index: 3;
+  background: transparent;
+  cursor: pointer;
+}
+.stars label:hover ~ span {
+  background-position: 0 -60px;
+}
+.stars label.star-5:hover ~ span {
+  width: 100%;
+}
+.stars label.star-4:hover ~ span {
+  width: 80%;
+}
+.stars label.star-3:hover ~ span {
+  width: 60%;
+}
+.stars label.star-2:hover ~ span {
+  width: 40%;
+}
+.stars label.star-1:hover ~ span {
+  width: 20%;
+}
+.stars span {
+  display: block;
+  width: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30px;
+  background: url(/static/images/stars.png) repeat-x 0 -60px;
+}
+.searchInsideForm input[type=text] {
+  margin: 0;
+  padding: 5px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 100px;
+}
+.searchInsideForm input[type=submit] {
+  padding: 5px;
+}
+/**
+ * SearchResultItemCta
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#searchresultitemcta
+ *
+ * http://localhost:8080/account/books/want-to-read
+ */
+.searchResultItemCTA {
+  width: 100%;
+}
+.searchResultItemCTA-lending {
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  text-align: center;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+.searchResultItem > .searchResultItemCTA {
+  padding: 0;
+}
+.searchResultItemCTA .dropit {
+  margin-top: 5px;
+}
+@media only screen and (min-width: 768px) {
+  .searchResultItem .searchResultItemCTA {
+    width: 200px;
+    min-width: 200px;
+    padding: 0 5px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  span.count {
+    white-space: nowrap;
+  }
+  div.editionCover {
+    margin-bottom: 1.5em;
+    padding-right: 0;
+  }
+  div.editionAbout {
+    margin-top: 2px;
+  }
+  div.editionTools {
+    float: right;
+    width: 250px;
+  }
+  .workDetails:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  /**
+ * Dropper
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#dropper
+ * Provided by macro macros/databarAuthor.html
+ * Used in templates:
+ * - openlibrary/templates/lists/widget.html
+ */
+  div.tools-override div.dropper {
+    margin: inherit;
+  }
+  /**
+ * EditToolbar component
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#edit-toolbar
+ */
+  /* stylelint-disable selector-max-specificity */
+  div#editTools,
+  div.editButton,
+  div#editHistory {
+    padding: 3px 1px 0 20px;
+    float: right;
+  }
+  div#editInfo {
+    margin-top: 3px;
+    float: right;
+  }
+  div#editTools {
+    display: flex;
+    margin-top: 1px;
+    max-width: 280px;
+  }
+}
+@media all and (min-width: 960px) {
+  /** These styles are used on the page for editing a book.
+  They may be used in another places as well */
+  fieldset.minor {
+    width: 400px;
+  }
+  table.identifiers {
+    width: 395px;
+  }
+  /**
+  * Used on following pages:
+  * - /search/subjects
+  * To be deleted in https://github.com/internetarchive/openlibrary/issues/1821
+  */
+  div.contentWide,
+  div#contentMeta {
+    float: left;
+    clear: both;
+    width: 918px;
+    padding: 10px 20px 20px;
+  }
+  .desktop-only {
+    display: inherit;
+  }
+  table.meta td.title,
+  table.meta td.object,
+  table.meta td.descrip,
+  table.meta td.tag {
+    white-space: nowrap;
+  }
+  div.workCover {
+    float: right;
+    width: 270px;
+    min-height: 10px;
+  }
+  div.workAbout {
+    float: left;
+    clear: left;
+    width: 610px;
+    padding-right: 38px;
+  }
+  .contentTwothird {
+    float: left;
+    width: 675px;
+    padding-right: 38px;
+  }
+  .contentOnethird {
+    float: left;
+    width: 305px;
+  }
+  .contentHalf {
+    float: left;
+    max-width: 439px;
+  }
+  .contentThreeQuarter {
+    float: left;
+    max-width: 684px;
+  }
+  .contentSpacer {
+    float: left;
+  }
+}
+/**
+ * These styles only apply to the borrowTable on pages where
+ * the id `admin` or `user` is present on the body element.
+ * They should be reviewed and cleaned up as necessary.
+ */
+/* stylelint-disable selector-max-specificity */
+.borrow-table {
+  margin: 30px 0 25px;
+}
+.borrow-table table {
+  width: 100%;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+}
+.borrow-table table th {
+  border-bottom: 1px solid hsl(48, 15%, 74%);
+  vertical-align: bottom;
+  padding-bottom: 10px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(40, 32%, 29%);
+  font-weight: 600;
+  font-size: 0.6875em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+}
+.borrow-table table th.titles {
+  text-align: left;
+}
+.borrow-table table th.xtitles {
+  text-align: left !important;
+}
+.borrow-table tr.row-available {
+  background: hsl(58, 66%, 81%) !important;
+}
+.borrow-table tr.row-available .status-value {
+  color: hsl(113, 38%, 29%);
+}
+.borrow-table td.status,
+.borrow-table th.status {
+  padding: 15px;
+  text-align: center;
+}
+.borrow-table td.serial {
+  padding: 15px 0;
+  text-align: right;
+  width: 20px;
+}
+.borrow-table .current-loan tbody tr {
+  background: hsl(97, 51%, 77%) !important;
+}
+.borrow-table .checkedout-elsewhere {
+  padding: 15px;
+  background: hsl(23, 51%, 77%) !important;
+  border: 1px solid hsl(23, 100%, 50%);
+}
+.borrow-table .available {
+  padding: 15px;
+  background: hsl(97, 51%, 77%) !important;
+  border: 1px solid hsl(97, 40%, 70%);
+}
+.borrow-table .section {
+  margin: 25px 0;
+}
+.borrow-table .section h3 {
+  margin: 1em 0 0.5em;
+}
+.borrow-table div#alert0 {
+  background-color: hsl(58, 66%, 81%) !important;
+  border: 1px solid hsl(23, 100%, 50%);
+}
+.borrow-table ul.inner {
+  margin-bottom: 0 !important;
+}
+/* Common styling */
+.my-observations,
+.my-notes {
+  flex: 1;
+  padding: 10px;
+}
+.list-container {
+  margin-top: 1em;
+}
+.main-list-item {
+  border-bottom: 1px solid hsl(49, 30%, 93%);
+  margin-bottom: 1em;
+  background-color: hsl(0, 0%, 98%);
+}
+.work-section {
+  display: flex;
+  padding: 1em;
+}
+.work-section .imageLg {
+  padding-right: 1em;
+}
+.no-content {
+  padding: 1em;
+  text-align: center;
+}
+.pager .pagination {
+  justify-content: center;
+}
+/* Notes view */
+.notes-list .notes-list-item {
+  border-top: 2px solid hsl(0, 0%, 93%);
+}
+.book-info {
+  padding: 1em;
+}
+.book-note {
+  padding: 1em;
+}
+.book-note textarea {
+  width: 100%;
+  resize: none;
+  padding: 0.25em;
+  font-size: 16px;
+}
+.book-note .notes-view-modal-link {
+  margin-top: 1em;
+  text-align: center;
+}
+.note-page-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.note-page-buttons button {
+  font-size: 1.2em;
+  width: unset;
+}
+.note-page-buttons .delete-note-button {
+  border-color: hsl(8, 78%, 49%);
+  color: hsl(8, 78%, 49%);
+}
+.note-page-buttons .update-note-link-button {
+  margin-left: auto;
+  margin-top: 5px;
+  font-size: 1.2em;
+  padding: 7px;
+}
+/* Observations view */
+.observations-header {
+  color: hsl(0, 0%, 20%);
+  padding: 1em 1em 0;
+  text-decoration: underline;
+}
+.observations-list {
+  padding: 0 1em;
+}
+.observations-modal-link {
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+.observation-category {
+  font-weight: bold;
+}
+.observation-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+.observation-buttons .delete-observations-button {
+  background-color: hsl(8, 78%, 49%);
+  width: unset;
+  font-size: 1.2em;
+}
+.observation-buttons .delete-observations-button:hover {
+  background-color: hsl(8, 78%, 29%);
+}
+.throbber-li .throbber {
+  position: relative;
+  top: unset;
+  left: unset;
+  height: unset;
+  margin: 1em auto;
+}
+.throbber-li .throbber h3 {
+  padding-top: 1.5em;
+  margin-top: unset;
+}
+@media screen and (max-width: 768px) {
+  .observation-buttons {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .observation-buttons .delete-observations-button {
+    margin-top: 1em;
+  }
+  .update-note-link-button {
+    line-height: 1.5em;
+  }
+}
+/* stylelint-disable no-descending-specificity */
+/**
+ * Tools
+ * These styles appears to predominately be about layout.
+ * They are used on works and authors pages.
+ * The file should be refactored and its layout rules generalised.
+ * Many of these styles may be needed in existing components.
+ * It will be refactored at the earliest opportunity but for now
+ * lives inside the legacy stylesheet.
+ * DO NOT ADD NEW CSS here
+ * Unless... you are removing an inline style and moving it into here.
+ *
+ * We are currently in the process of:
+ * - moving styles from this file into the components
+ * - removing dead code
+ * - removing redundant CSS in favor of common reusable styles
+ *
+ * DO NOT ADD NEW CSS HERE
+ */
+.Tools {
+  position: relative;
+}
+.Tools .btn-notice a.worldcat-link {
+  text-decoration: underline;
+}
+.Tools .btn-notice span.worldcat-attribution {
+  font-size: 0.8em;
+  display: block;
+}
+.Tools .btn-notice input {
+  display: block;
+  width: 100%;
+}
+.Tools .btn-notice p {
+  padding-left: 0 !important;
+  font-size: 1em;
+}
+.Tools .btn-notice p a.wait-btn,
+.Tools .btn-notice p a.borrow-btn {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  color: hsl(0, 0%, 100%);
+}
+.Tools .btn-notice p.primary-cta {
+  text-align: center;
+}
+.Tools .btn-notice p.primary-cta a {
+  display: block;
+}
+.Tools .check-availability {
+  padding: 10px;
+  border-top: 1px solid hsl(0, 0%, 93%);
+  border-radius: 3px;
+}
+.Tools .check-availability p {
+  padding-top: 7px;
+}
+.Tools .check-availability p.check-other-editions {
+  text-align: center;
+}
+.Tools .check-availability p.check-other-editions a {
+  font-size: 1em;
+  text-decoration: underline;
+}
+.Tools .check-availability a {
+  font-size: 1.3em;
+  color: hsl(210, 100%, 20%);
+}
+.Tools .cta-section {
+  padding: 5px 5px 0;
+  margin: 0;
+}
+.Tools .cta-section ul li {
+  padding-left: 0;
+}
+.Tools div.panel .cta-section p {
+  margin: 0;
+}
+.Tools .hidetool {
+  display: none;
+}
+.Tools span.owner {
+  font-size: 10px;
+}
+.Tools.borrow {
+  position: relative;
+}
+.Tools.borrow div.icon.list {
+  background-image: none;
+}
+.Tools.borrow .lists-widget-head {
+  display: none;
+}
+.Tools ul.book-locate-options ul {
+  margin-left: 17px;
+}
+.Tools ul.book-locate-options li {
+  padding-left: 0;
+  margin: 5px 10px 0;
+}
+.Tools ul.ebook-download-options li {
+  padding-left: 0;
+  margin: 5px 10px 0;
+}
+.Tools li {
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  padding-left: 42px;
+  margin-bottom: 5px;
+}
+.Tools table {
+  width: 250px;
+}
+.Tools table td {
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+.Tools table td.price {
+  padding: 3px 0 0;
+}
+.Tools table td.vendor {
+  padding: 3px 10px 0 42px;
+}
+.Tools h3 {
+  font-size: 100%;
+  min-height: 32px;
+  width: 250px;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif !important;
+  font-weight: normal;
+  outline: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  zoom: 1;
+}
+.Tools h3 span.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  float: left;
+  background-image: url(/images/icons/icons_sprite.png);
+  background-repeat: no-repeat;
+}
+.Tools h3 span.icon.read {
+  background-position: -96px 0;
+}
+.Tools h3 span.icon.readinact {
+  background-position: -160px 0;
+}
+.Tools h3 span.icon.download {
+  background-position: -192px 0;
+}
+.Tools h3 span.icon.downloadinact {
+  background-position: -256px 0;
+}
+.Tools h3 span.icon.buy {
+  background-position: -288px 0;
+}
+.Tools h3 span.icon.buyinact {
+  background-position: -352px 0;
+}
+.Tools h3 span.icon.borrow {
+  background-position: -384px 0;
+}
+.Tools h3 span.icon.borrowinact {
+  background-position: -448px 0;
+}
+.Tools h3 span.icon.browse {
+  background-position: -512px 0;
+}
+.Tools h3 span.head {
+  padding-left: 10px;
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+}
+.Tools h3 span.subhead {
+  padding-left: 10px;
+  font-size: 0.6875em;
+  color: hsl(0, 0%, 80%);
+}
+.Tools h3.closed span.head {
+  color: hsl(0, 0%, 40%);
+}
+.Tools h4 {
+  font-size: 1em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  color: hsl(184, 100%, 21%);
+  font-weight: 600;
+  margin: 0 0 10px;
+  padding: 0;
+  zoom: 1;
+}
+.Tools .panel {
+  margin-bottom: 10px;
+}
+.Tools .panel ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+.Tools .panel ul.booklinks li {
+  list-style: none;
+  padding-left: 20px;
+  font-size: 0.7em;
+}
+.Tools .panel li {
+  list-style-type: none;
+  font-size: 0.75em;
+  margin-top: 0;
+  color: hsl(0, 0%, 40%);
+}
+.Tools .panel p {
+  font-size: 0.75em;
+  margin-top: 0;
+  color: hsl(0, 0%, 40%);
+}
+.Tools div.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background-image: url(/images/icons/icons_sprite.png);
+  background-repeat: no-repeat;
+}
+.Tools div.icon.list {
+  background-position: 0 0;
+}
+.Tools div.icon.listed {
+  background-position: -32px 0;
+}
+.Tools p {
+  font-size: 0.6875em;
+  font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+  padding-left: 42px;
+  margin-bottom: 5px;
+}
+.Tools #readBooks p {
+  font-size: 0.75em !important;
+}
+.Tools .widget-add.old-style-lists div.edition-page-lists-dropdown {
+  margin: 0;
+  left: 0;
+  width: 157px;
+  top: 0;
+  padding: 0 10px;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.Tools .widget-add.old-style-lists div.edition-page-lists-dropdown .arrow-unactivated {
+  background-position: 6px -7px;
+}
+.Tools .widget-add.old-style-lists div.edition-page-lists-dropdown .arrow.up {
+  background-position: -22px -7px;
+}
+.user-book-options .Tools {
+  margin: 0 auto;
+}
+div.tools-override {
+  min-height: 45px;
+  margin: 0 auto;
+  padding: 0;
+}
+div.tools-override .Tools .btn-notice {
+  margin: auto;
+  font-size: 0.9em;
+}
+div.tools-override .listLists {
+  margin: 0;
+  clear: both;
+}
+div.tools-override .listLists li {
+  padding-left: 0;
+}
+@media only screen and (min-width: 768px) {
+  .Tools .btn-notice {
+    margin-left: 35px;
+  }
+  .workDetails .btn-notice {
+    margin-left: 0 !important;
+  }
+  div.tools-override {
+    width: 180px;
+  }
+  div.tools-override.editionTools {
+    float: left;
+  }
+  div.tools-override .Tools .btn-notice {
+    width: 180px;
+    margin-left: 45px;
+  }
+}
+/* stylelint-disable no-descending-specificity */
+/**
+ * Dropper
+ * https://github.com/internetarchive/openlibrary/wiki/Design-Pattern-Library#dropper
+ * Provided by macro macros/databarAuthor.html
+ * Used in templates:
+ * - openlibrary/templates/lists/widget.html
+ */
+.dropit {
+  position: relative;
+  min-height: 50px;
+  z-index: 10;
+}
+.dropper.on {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.dropper.on .arrow {
+  width: 23px;
+  margin: 6px 5px;
+}
+.dropper.on .arrow.up {
+  background-position: -22px 0;
+}
+.dropper.on div.arrow-activated {
+  background-image: url(/images/icons/icon_dropit.png);
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  background-position: 0 0;
+  background-size: 45px;
+}
+.dropper.on div.arrow-unactivated {
+  background-image: url(/images/icons/icon_dropit2.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 45px;
+}
+.dropper .dropdown {
+  /* stylelint-disable selector-max-specificity */
+}
+.dropper .dropdown p.create a {
+  color: hsl(0, 0%, 20%);
+  text-decoration: none;
+}
+.dropper .dropdown .reading-lists .reading-list-title {
+  background: hsl(0, 0%, 100%);
+  padding: 5px 0 0 10px;
+  margin: 0;
+  font-size: 0.8em;
+}
+.dropper .dropdown .my-lists {
+  background: hsl(0, 0%, 100%);
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px 15px;
+  /* stylelint-enable selector-max-specificity */
+}
+.dropper .dropdown .my-lists p a {
+  display: block;
+}
+/* stylelint-disable selector-max-specificity */
+div#subjectLists div.dropit h3 {
+  font-weight: normal;
+  margin: 0;
+  padding: 5px;
+}
+div#subjectLists div.dropit p.listed {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  padding: 0 0 0 42px;
+  margin: 0 0 5px;
+}
+div#subjectLists div.dropper {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 230px;
+  z-index: 1001;
+}
+div#subjectLists div.dropper.on {
+  background-color: hsl(0, 0%, 93%);
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 4px;
+}
+div#subjectLists div.dropper h3 {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  min-height: 1.125em;
+  width: auto;
+}
+div#subjectLists div.dropper div.dropdown {
+  display: none;
+  padding-top: 10px;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+div#subjectLists div.dropper div.dropdown p {
+  font-size: 0.875em;
+  margin: 0 0 5px;
+  color: hsl(0, 0%, 40%);
+}
+div#subjectLists div.dropper div.dropdown p a {
+  font-size: 0.875em;
+}
+div#subjectLists div.dropper div.dropdown p span {
+  font-size: 0.8125em;
+}
+.widget-add div.dropper div.dropdown p.create {
+  border-top: 1px solid hsl(0, 0%, 93%);
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.widget-add.old-style-lists div.dropper {
+  margin: 0;
+  top: 0;
+  position: absolute;
+}
+div.Tools div.dropper {
+  z-index: 10000;
+}
+div.Tools div.dropper.on {
+  background-color: hsl(0, 0%, 93%);
+  box-shadow: 0 0 0 1px hsl(0, 0%, 60%);
+  border-radius: 4px;
+  width: 100%;
+}
+div.Tools div.dropper h3 {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  min-height: 1.125em;
+  width: auto;
+}
+div.Tools div.dropper div.dropdown {
+  border-top: 1px solid hsl(0, 0%, 87%);
+  display: none;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+div.Tools div.dropper div.dropdown p {
+  font-size: 0.875em;
+  padding-left: 0;
+  margin-bottom: 5px;
+  margin-top: 0;
+  color: hsl(0, 0%, 40%);
+}
+div.Tools div.dropper div.dropdown p span {
+  font-size: 0.8125em;
+}
+div.Tools div.dropper div.dropdown p a {
+  font-size: 0.875em;
+}
+div.Tools div.dropit p.listed {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  padding: 0 0 0 42px;
+  margin: 0 0 5px;
+}
+div.Tools .widget-add.old-style-lists .dropclick {
+  padding: 5px;
+  text-decoration: none;
+  /* stylelint-disable-next-line max-nesting-depth */
+}
+div.Tools .widget-add.old-style-lists .dropclick h3 {
+  font-size: 0.75em;
+  text-align: left;
+  padding: 0 10px;
+  min-width: 150px;
+}
+div#listsWork div.dropit p.listed {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125em;
+  padding: 0 0 0 42px;
+  margin: 0 0 5px;
+}
+div#listsWork div.dropper {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 161px;
+  z-index: 1001;
+}
+div#listsWork div.dropper.on {
+  background-color: hsl(0, 0%, 93%);
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 4px;
+}
+div#listsWork div.dropper h3 {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  min-height: 1.125em;
+  width: auto;
+}
+div#listsWork div.dropper div.dropdown {
+  border-top: 1px solid hsl(0, 0%, 87%);
+  display: none;
+  padding-top: 10px;
+  /* stylelint-disable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
+}
+div#listsWork div.dropper div.dropdown p {
+  font-size: 0.875em;
+  padding-left: 0;
+  margin-bottom: 5px;
+  color: hsl(0, 0%, 40%);
+}
+div#listsWork div.dropper div.dropdown p a {
+  font-size: 0.875em;
+}
+div#listsWork div.dropper div.dropdown p span {
+  font-size: 0.8125em;
+}
+/* stylelint-enable selector-max-specificity */
+.log-work form {
+  flex: 1;
+}
+.log-work button[type=submit] {
+  background-color: inherit;
+  border: none;
+  border-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  cursor: pointer;
+  font-size: 1em;
+  width: 100%;
+  padding: 7px 0;
+  margin: 0;
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.log-work button[type=submit].activated {
+  color: hsl(0, 0%, 20%);
+  background: hsl(0, 0%, 93%);
+  border: 2px solid hsl(0, 0%, 95%);
+  border-right: 1px solid hsl(0, 0%, 87%);
+}
+.log-work button[type=submit].unactivated {
+  color: hsl(0, 0%, 100%);
+  background: hsl(130, 61%, 33%);
+  border: 2px solid hsl(130, 61%, 33%);
+  border-right: 1px solid hsl(128, 44%, 59%);
+}
+.log-work button[type=submit] span.activated-check {
+  color: hsl(130, 61%, 33%);
+  margin-right: 2px;
+}
+.dropclick {
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.dropclick h3 {
+  flex: 1;
+}
+.dropclick .arrow {
+  width: 20px;
+  margin: 5px;
+  margin-top: 10px;
+}
+.dropclick-unactivated {
+  background-color: hsl(130, 61%, 33%);
+}
+.user-book-options div.tools-override {
+  /* stylelint-disable selector-max-specificity */
+  /* stylelint-enable selector-max-specificity */
+}
+.user-book-options div.tools-override div.dropit {
+  margin: 0;
+  position: relative;
+  width: auto;
+}
+div.tools-override div.dropper {
+  z-index: 10000;
+  top: unset;
+  left: -1px;
+  margin: auto;
+}
+a:hover > h3 {
+  text-decoration: underline;
+}
+a.dropclick.plain {
+  text-decoration: none;
+}
+@media only screen {
+  div.Tools div.dropper {
+    position: absolute;
+  }
+  div.tools-override div.dropper {
+    width: 180px;
+  }
+}
