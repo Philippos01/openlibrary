@@ -28,7 +28,6 @@ button{
 .view-modal{
   color: #7d2ae8;
   font-size: 18px;
-  padding: 10px 25px;
   background: #fff;
   transform: translate(-50%, -50%);
 }
@@ -184,7 +183,11 @@ header .close:hover{
 .field button:hover{
   background: #8d39fa;
 }
-
+.share-btn {
+ border-left:1px solid #ddd;
+ width:35px;
+ height:35px
+}
 
 
 
@@ -208,15 +211,27 @@ header .close:hover{
 
 
 <div class="shareLinks cta-section">
-  <p class="cta-section-title">$_('Share this book')</p>
+  <p class="cta-section-title">$_('Share this book')
+    
+  </p>
+
   <ul class="shareLinks-list">
+    <a class="view-modal">
+        <img class="share-btn" src="../../static/images/icons/share.svg"/>
+    </a>
+  </ul>
+ 
+  
+
+</div>
 
 
-    <button class="view-modal">View Modal</button>
     <div class="popup">
       <header>
         <span>Share this book</span>
-        <div class="close"><i class="uil uil-times"></i></div>
+        <div class="close">
+          <i class="uil uil-times"></i>
+        </div>
       </header>
       <div class="content">
         <p>Share via</p>
@@ -261,8 +276,8 @@ header .close:hover{
     
 
     
-  </ul>
-</div>
+  
+
 
 
 <script>
